@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink-950 text-slate-300 font-sans antialiased;
+  background-image:
+    radial-gradient(900px 500px at 80% -8%, rgba(109, 109, 240, 0.16), transparent 60%),
+    radial-gradient(700px 500px at 0% 0%, rgba(232, 184, 75, 0.06), transparent 55%);
+  background-attachment: fixed;
+}
+
+.container-x {
+  @apply mx-auto w-full max-w-content px-6;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 40%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 40%, transparent 75%);
+}
+
+.card {
+  @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm;
+}
+
+.text-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #c9c9e8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
