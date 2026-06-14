@@ -35,10 +35,21 @@
 >   ENV-DRIVEN — operator pastes 3 keys from the Supabase WEB dashboard into website/.env.local and
 >   runs the SQL file in the web SQL editor (no CLI). Project ref lundkydfijkkqaaxrvrz (memory
 >   [[product-infra-refs]]).
->   NOT YET DONE (next): channel-look PREVIEW (render sample frames from a draft ChannelSpec so users
->   iterate the vibe before committing) + make channel design the product front door; wire
->   transcription "choose at setup" into onboarding; a cloud render backend for the free demo; auth +
->   billing; deploy website/ to Vercel. The hosted-brain anti-piracy split is still future work.
+>   (4) CHANNEL-LOOK PREVIEW (done): NEW renderer/src/preview.ts (still-frame CLI via prepareContext +
+>   renderFramePng — no audio/ffmpeg) + NEW pipeline/src/channelPreview.ts (buildPreviewSpec uses DRAWN
+>   primitives only — no asset-gen/Opus — and embeds toRenderProfile; generateChannelPreview spawns the
+>   renderer like renderVideo) + `npm run channel:preview <ch>`. Verified on blueprint_board AND
+>   notebook_sketch: visually distinct, nothing cropped (invisible padded "art-frame" anchors + damped
+>   preview camera keep content in frame across seeds). Output → output/<ch>/_preview/preview_N.png.
+>   (5) SUPABASE LIVE: real keys in website/.env.local (gitignored; .example scrubbed to placeholders;
+>   the URL the operator typed had a typo — the correct ref is lundkydfijkkqaaxrvrz, encoded in the
+>   JWTs). The `leads` table was created via the Management API (`POST /v1/projects/{ref}/database/query`
+>   with the operator's PAT — NOT stored anywhere); /api/waitlist proven storing rows end-to-end.
+>   website/vercel.json pins framework=nextjs (fixes Vercel "no public dir"); operator set the 3 env
+>   vars in Vercel. (DDL gotcha: after a schema change run `notify pgrst, 'reload schema';`.)
+>   NOT YET DONE (next): surface the preview + make channel design the product FRONT DOOR in the UI;
+>   wire transcription "choose at setup" into onboarding; a cloud render backend for the free demo;
+>   auth + billing; the hosted-brain anti-piracy split.
 > Session 8 phase: GO LIVE — real credentials wired + the publish loop PROVEN end-to-end, plus a
 >   text-overlap render fix and a real posting schedule. Operator supplied all keys this session.
 >   (1) CREDENTIALS LIVE (all in `.env`, gitignored): FISH_API_KEY (real voice), YOUTUBE_API_KEY
