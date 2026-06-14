@@ -1,0 +1,53 @@
+<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Jar outer silhouette -->
+  <path d="M85 130 Q83 120 90 115 L210 115 Q217 120 215 130 L218 330 Q218 345 200 348 L100 348 Q82 345 82 330 Z" 
+        fill="none" stroke="#3B2A1E" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Lid -->
+  <path d="M88 115 L88 90 Q88 78 100 76 L200 76 Q212 78 212 90 L212 115" 
+        fill="#d16937" fill-opacity="0.35" stroke="#3B2A1E" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Lid ridges -->
+  <line x1="98" y1="84" x2="98" y2="113" stroke="#3B2A1E" stroke-width="1.2"/>
+  <line x1="112" y1="83" x2="112" y2="114" stroke="#3B2A1E" stroke-width="1.2"/>
+  <line x1="126" y1="83" x2="126" y2="114" stroke="#3B2A1E" stroke-width="1.2"/>
+  <line x1="140" y1="82" x2="140" y2="114" stroke="#3B2A1E" stroke-width="1.2"/>
+  <line x1="160" y1="82" x2="160" y2="114" stroke="#3B2A1E" stroke-width="1.2"/>
+  <line x1="174" y1="82" x2="174" y2="114" stroke="#3B2A1E" stroke-width="1.2"/>
+  <line x1="188" y1="83" x2="188" y2="113" stroke="#3B2A1E" stroke-width="1.2"/>
+  <line x1="202" y1="84" x2="202" y2="113" stroke="#3B2A1E" stroke-width="1.2"/>
+
+  <!-- Honey fill level line -->
+  <path d="M84 165 Q150 158 216 165" fill="none" stroke="#3B2A1E" stroke-width="1.8"/>
+
+  <!-- Crystallized honey body fill -->
+  <path d="M84 166 Q150 159 216 166 L218 330 Q218 345 200 348 L100 348 Q82 345 82 330 Z" 
+        fill="#d16937" fill-opacity="0.28" stroke="none"/>
+
+  <!-- Crystal granule texture (left to right) -->
+  <g stroke="#3B2A1E" stroke-width="1" fill="#d16937" fill-opacity="0.4">
+    <polygon points="100,200 108,196 113,204 105,210"/>
+    <polygon points="125,225 134,221 139,230 130,235"/>
+    <polygon points="98,255 107,251 111,260 102,264"/>
+    <polygon points="120,280 129,276 134,285 125,290"/>
+    <polygon points="100,310 109,306 113,315 104,320"/>
+    <polygon points="150,210 159,206 164,215 155,220"/>
+    <polygon points="148,250 157,246 162,255 153,260"/>
+    <polygon points="150,290 159,286 163,295 154,300"/>
+    <polygon points="175,225 184,221 189,230 180,235"/>
+    <polygon points="195,200 204,196 209,205 200,210"/>
+    <polygon points="190,260 199,256 204,265 195,270"/>
+    <polygon points="178,300 187,296 192,305 183,310"/>
+    <polygon points="200,315 209,311 213,320 204,325"/>
+  </g>
+  <!-- small granule dots -->
+  <g fill="#3B2A1E">
+    <circle cx="118" cy="195" r="1.5"/>
+    <circle cx="140" cy="235" r="1.5"/>
+    <circle cx="110" cy="270" r="1.5"/>
+    <circle cx="165" cy="265" r="1.5"/>
+    <circle cx="185" cy="240" r="1.5"/>
+    <circle cx="170" cy="195" r="1.5"/>
+    <circle cx="200" cy="285" r="1.5"/>
+    <circle cx="135" cy="305" r="1.5"/>
+    <circle cx="160" cy="330" r="1.5"/>
+  </g>
+</svg>

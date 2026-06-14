@@ -1,0 +1,42 @@
+<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cupboard outer frame -->
+  <path d="M40 40 Q40 38 42 38 L258 38 Q260 38 260 40 L260 360 Q260 362 258 362 L42 362 Q40 362 40 360 Z" fill="none" stroke="#3B2A1E" stroke-width="2.5"/>
+  <!-- Cupboard top trim -->
+  <path d="M34 38 L266 38 L262 26 L38 26 Z" fill="#d16937" stroke="#3B2A1E" stroke-width="2.5"/>
+  <!-- Middle shelf divider -->
+  <line x1="42" y1="200" x2="258" y2="200" stroke="#3B2A1E" stroke-width="2.5"/>
+  <!-- Vertical center post -->
+  <line x1="150" y1="40" x2="150" y2="360" stroke="#3B2A1E" stroke-width="1.5"/>
+
+  <!-- ===== Top-left honey jar ===== -->
+  <path d="M70 110 Q68 95 80 92 L120 92 Q132 95 130 110 L130 175 Q130 182 122 182 L78 182 Q70 182 70 175 Z" fill="#d16937" stroke="#3B2A1E" stroke-width="2"/>
+  <path d="M75 100 L125 100 L125 88 Q125 84 121 84 L79 84 Q75 84 75 88 Z" fill="none" stroke="#3B2A1E" stroke-width="2"/>
+  <rect x="83" y="125" width="34" height="38" rx="3" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+  <path d="M88 138 Q100 132 112 138" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+  <path d="M88 148 Q100 142 112 148" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+
+  <!-- ===== Top-right honey jar ===== -->
+  <path d="M170 110 Q168 95 180 92 L220 92 Q232 95 230 110 L230 175 Q230 182 222 182 L178 182 Q170 182 170 175 Z" fill="#d16937" stroke="#3B2A1E" stroke-width="2"/>
+  <path d="M175 100 L225 100 L225 88 Q225 84 221 84 L179 84 Q175 84 175 88 Z" fill="none" stroke="#3B2A1E" stroke-width="2"/>
+  <rect x="183" y="125" width="34" height="38" rx="3" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+  <path d="M188 138 Q200 132 212 138" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+  <path d="M188 148 Q200 142 212 148" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+
+  <!-- ===== Bottom-left honey jar ===== -->
+  <path d="M70 270 Q68 255 80 252 L120 252 Q132 255 130 270 L130 335 Q130 342 122 342 L78 342 Q70 342 70 335 Z" fill="#d16937" stroke="#3B2A1E" stroke-width="2"/>
+  <path d="M75 260 L125 260 L125 248 Q125 244 121 244 L79 244 Q75 244 75 248 Z" fill="none" stroke="#3B2A1E" stroke-width="2"/>
+  <rect x="83" y="285" width="34" height="38" rx="3" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+  <path d="M88 298 Q100 292 112 298" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+  <path d="M88 308 Q100 302 112 308" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+
+  <!-- ===== Bottom-right honey jar ===== -->
+  <path d="M170 270 Q168 255 180 252 L220 252 Q232 255 230 270 L230 335 Q230 342 222 342 L178 342 Q170 342 170 335 Z" fill="#d16937" stroke="#3B2A1E" stroke-width="2"/>
+  <path d="M175 260 L225 260 L225 248 Q225 244 221 244 L179 244 Q175 244 175 248 Z" fill="none" stroke="#3B2A1E" stroke-width="2"/>
+  <rect x="183" y="285" width="34" height="38" rx="3" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+  <path d="M188 298 Q200 292 212 298" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+  <path d="M188 308 Q200 302 212 308" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+
+  <!-- Cupboard legs -->
+  <line x1="55" y1="362" x2="55" y2="380" stroke="#3B2A1E" stroke-width="2.5"/>
+  <line x1="245" y1="362" x2="245" y2="380" stroke="#3B2A1E" stroke-width="2.5"/>
+</svg>

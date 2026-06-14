@@ -1,0 +1,41 @@
+<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#3B2A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Jar body silhouette -->
+  <path d="M78 120 Q76 118 78 112 L80 90 Q82 84 90 84 L210 84 Q218 84 220 90 L222 112 Q224 118 222 120 L228 130 Q236 142 236 160 L236 330 Q236 352 214 354 L86 354 Q64 352 64 330 L64 160 Q64 142 72 130 Z" fill="#d16937" fill-opacity="0.12"/>
+
+  <!-- Lid -->
+  <rect x="86" y="58" width="128" height="30" rx="6" fill="#d16937" fill-opacity="0.3"/>
+  <line x1="92" y1="66" x2="208" y2="66"/>
+  <line x1="92" y1="74" x2="208" y2="74"/>
+  <line x1="98" y1="80" x2="202" y2="80"/>
+
+  <!-- Neck -->
+  <path d="M80 90 L82 84 M218 90 L220 84"/>
+
+  <!-- Seasoning layers (left to right reveal-friendly bands) -->
+  <path d="M68 150 Q150 142 232 150" />
+  <path d="M67 192 Q150 184 233 192" />
+  <path d="M65 236 Q150 228 235 236" />
+  <path d="M65 286 Q150 278 235 286" />
+
+  <!-- Layer fills with depth -->
+  <path d="M68 150 Q150 142 232 150 L233 192 Q150 184 67 192 Z" fill="#d16937" fill-opacity="0.35"/>
+  <path d="M65 236 Q150 228 235 236 L235 286 Q150 278 65 286 Z" fill="#d16937" fill-opacity="0.45"/>
+
+  <!-- speckle detail in layers -->
+  <circle cx="100" cy="165" r="2.5" fill="#3B2A1E"/>
+  <circle cx="150" cy="172" r="2.5" fill="#3B2A1E"/>
+  <circle cx="195" cy="163" r="2.5" fill="#3B2A1E"/>
+  <circle cx="120" cy="210" r="2" fill="#3B2A1E"/>
+  <circle cx="180" cy="215" r="2" fill="#3B2A1E"/>
+  <circle cx="105" cy="258" r="2.5" fill="#3B2A1E"/>
+  <circle cx="160" cy="262" r="2.5" fill="#3B2A1E"/>
+  <circle cx="200" cy="255" r="2.5" fill="#3B2A1E"/>
+  <circle cx="115" cy="308" r="2" fill="#3B2A1E"/>
+  <circle cx="170" cy="312" r="2" fill="#3B2A1E"/>
+
+  <!-- bottom shading -->
+  <path d="M65 320 Q150 314 235 320" stroke-opacity="0.5"/>
+
+  <!-- glass highlight -->
+  <path d="M88 130 Q82 200 88 320" stroke-opacity="0.4"/>
+</svg>

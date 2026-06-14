@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- bottom bun: long rounded loaf cradling the sausage -->
+  <path d="M85 165 L315 165 Q360 165 360 192 Q360 220 315 220 L85 220 Q40 220 40 192 Q40 165 85 165 Z" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <!-- bun split seam -->
+  <path d="M60 178 Q200 168 340 178" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <!-- sausage: capsule seated in the bun, ends poking out -->
+  <path d="M95 120 L305 120 Q348 120 348 147 Q348 174 305 174 L95 174 Q52 174 52 147 Q52 120 95 120 Z" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <!-- mustard squiggle along the top of the sausage (left-to-right) -->
+  <polyline points="78,140 100,128 122,140 144,128 166,140 188,128 210,140 232,128 254,140 276,128 298,140 320,128" fill="none" stroke="#E0E0E0" stroke-width="2"/>
+</svg>

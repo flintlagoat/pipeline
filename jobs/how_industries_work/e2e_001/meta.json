@@ -1,0 +1,29 @@
+{
+  "topic": "Why Gyms Want You to Never Show Up",
+  "minutes": 8,
+  "scriptArc": "mechanism",
+  "packaging": {
+    "title": "Why Gyms Want You to Never Show Up",
+    "altTitles": [
+      "The Real Reason Gyms Are Cheap",
+      "How Gyms Survive on Empty Treadmills"
+    ],
+    "description": "An explanation of the gym membership business model, why low monthly fees depend on members not attending, and how overselling capacity keeps fitness chains profitable.",
+    "thumbnail": {
+      "bigText": "SOLD 6,500 SPOTS",
+      "emphasisWord": "6,500",
+      "assetName": "contract_document",
+      "visualIdea": "a gym membership card overlaid on a nearly empty treadmill row"
+    },
+    "hookPromise": "Your $10 gym is praying you don't come — because it sold 6,500 memberships for a building that only fits 300 people at once.",
+    "openLoops": [
+      "How can a gym charge so little and stay open?",
+      "What's the magic number of members who actually show up?",
+      "Why do gyms make canceling so hard?"
+    ],
+    "payoff": "Major chains sign up roughly 6,500 members per location that physically holds about 300, betting on a no-show rate above 80% — the entire pricing model collapses if even half of members actually used what they paid for.",
+    "whyItWorks": "Nearly everyone has an unused gym membership and feels personally implicated in the reveal.",
+    "score": 86
+  },
+  "createdAt": "2026-06-14T00:17:31.369Z"
+}

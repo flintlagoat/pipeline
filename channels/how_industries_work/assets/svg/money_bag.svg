@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <!-- Outer silhouette of money bag -->
+  <path d="M150 60 C110 60 70 90 55 130 C40 170 40 200 45 230 C52 270 80 310 110 330 C125 338 138 342 150 342 C162 342 175 338 190 330 C220 310 248 270 255 230 C260 200 260 170 245 130 C230 90 190 60 150 60 Z" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <!-- Neck/tie of bag -->
+  <path d="M125 60 C125 48 132 38 150 35 C168 38 175 48 175 60" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+  <!-- Tie knot band -->
+  <rect x="120" y="55" width="60" height="12" rx="4" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+  <!-- Top bow / knot detail -->
+  <path d="M130 55 C118 44 108 50 115 58" stroke="#E0E0E0" stroke-width="1" fill="none"/>
+  <path d="M170 55 C182 44 192 50 185 58" stroke="#E0E0E0" stroke-width="1" fill="none"/>
+  <!-- Dollar sign outer circle -->
+  <circle cx="150" cy="205" r="48" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+  <!-- Dollar sign vertical bar -->
+  <line x1="150" y1="168" x2="150" y2="242" stroke="#FFFFFF" stroke-width="1.5"/>
+  <!-- Dollar sign upper curve -->
+  <path d="M163 182 C163 174 138 170 132 182 C126 194 163 200 163 213 C163 226 136 228 132 220" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+  <!-- Bag surface contour lines for depth (left side) -->
+  <path d="M80 170 C72 190 72 215 78 238" stroke="#E0E0E0" stroke-width="1" fill="none"/>
+  <!-- Bag surface contour lines (right side) -->
+  <path d="M220 170 C228 190 228 215 222 238" stroke="#E0E0E0" stroke-width="1" fill="none"/>
+  <!-- Bottom weight line -->
+  <path d="M95 315 C115 328 140 335 150 335 C160 335 185 328 205 315" stroke="#E0E0E0" stroke-width="1" fill="none"/>
+  <!-- Small stitch marks on neck -->
+  <line x1="133" y1="55" x2="133" y2="67" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="143" y1="55" x2="143" y2="67" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="153" y1="55" x2="153" y2="67" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="163" y1="55" x2="163" y2="67" stroke="#E0E0E0" stroke-width="1"/>
+</svg>

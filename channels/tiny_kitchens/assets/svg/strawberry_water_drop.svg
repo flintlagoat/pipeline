@@ -1,0 +1,17 @@
+<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <path d="M150 40 C150 40 105 130 100 200 C96 265 118 340 150 350 C182 340 204 265 200 200 C195 130 150 40 150 40 Z" fill="#d16937" fill-opacity="0.25" stroke="#3B2A1E" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M118 90 C120 100 128 98 130 88" fill="none" stroke="#3B2A1E" stroke-width="1.5"/>
+  <path d="M125 130 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M165 115 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M105 175 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M150 165 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M192 180 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M120 225 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M168 230 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M105 270 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M150 285 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M192 275 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M135 315 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M168 320 l4 4 l-4 4 l-4 -4 Z" fill="#3B2A1E" opacity="0.7"/>
+  <path d="M150 55 C144 70 142 95 150 110 C158 95 156 70 150 55 Z" fill="#d16937" fill-opacity="0.4" stroke="#3B2A1E" stroke-width="1.2"/>
+</svg>

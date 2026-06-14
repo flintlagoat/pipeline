@@ -1,0 +1,37 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="120" width="340" height="60" rx="4" fill="none" stroke="#3B2A1E" stroke-width="2.5"/>
+
+  <line x1="64" y1="120" x2="64" y2="180" stroke="#3B2A1E" stroke-width="1.5"/>
+  <line x1="98" y1="120" x2="98" y2="180" stroke="#3B2A1E" stroke-width="1.5"/>
+  <line x1="132" y1="120" x2="132" y2="180" stroke="#3B2A1E" stroke-width="1.5"/>
+  <line x1="166" y1="120" x2="166" y2="180" stroke="#3B2A1E" stroke-width="1.5"/>
+  <line x1="200" y1="120" x2="200" y2="180" stroke="#3B2A1E" stroke-width="2.5"/>
+  <line x1="234" y1="120" x2="234" y2="180" stroke="#3B2A1E" stroke-width="1.5"/>
+  <line x1="268" y1="120" x2="268" y2="180" stroke="#3B2A1E" stroke-width="1.5"/>
+  <line x1="302" y1="120" x2="302" y2="180" stroke="#3B2A1E" stroke-width="1.5"/>
+  <line x1="336" y1="120" x2="336" y2="180" stroke="#3B2A1E" stroke-width="1.5"/>
+
+  <rect x="31" y="121" width="33" height="58" fill="#d16937" opacity="0.85"/>
+  <rect x="64" y="121" width="34" height="58" fill="#d16937" opacity="0.7"/>
+  <rect x="98" y="121" width="34" height="58" fill="#d16937" opacity="0.55"/>
+  <rect x="132" y="121" width="34" height="58" fill="#d16937" opacity="0.4"/>
+  <rect x="166" y="121" width="34" height="58" fill="#d16937" opacity="0.28"/>
+  <rect x="200" y="121" width="34" height="58" fill="#3B2A1E" opacity="0.2"/>
+  <rect x="234" y="121" width="34" height="58" fill="#3B2A1E" opacity="0.32"/>
+  <rect x="268" y="121" width="34" height="58" fill="#3B2A1E" opacity="0.45"/>
+  <rect x="302" y="121" width="34" height="58" fill="#3B2A1E" opacity="0.6"/>
+  <rect x="336" y="121" width="33" height="58" fill="#3B2A1E" opacity="0.75"/>
+
+  <line x1="30" y1="120" x2="370" y2="120" stroke="#3B2A1E" stroke-width="2.5"/>
+  <line x1="30" y1="180" x2="370" y2="180" stroke="#3B2A1E" stroke-width="2.5"/>
+
+  <path d="M30 100 Q35 95 65 98 Q90 96 130 99 Q170 95 200 99 Q250 96 300 99 Q340 96 370 100" fill="none" stroke="#3B2A1E" stroke-width="1.8"/>
+
+  <path d="M47 210 l-6 14 q6 4 12 0 z" fill="none" stroke="#3B2A1E" stroke-width="1.8"/>
+  <path d="M200 210 l-6 14 q6 4 12 0 z" fill="none" stroke="#3B2A1E" stroke-width="1.8"/>
+  <path d="M353 210 l-6 14 q6 4 12 0 z" fill="none" stroke="#3B2A1E" stroke-width="1.8"/>
+
+  <line x1="30" y1="245" x2="120" y2="245" stroke="#3B2A1E" stroke-width="1.5"/>
+  <line x1="160" y1="245" x2="240" y2="245" stroke="#3B2A1E" stroke-width="1.5"/>
+  <line x1="280" y1="245" x2="370" y2="245" stroke="#3B2A1E" stroke-width="1.5"/>
+</svg>

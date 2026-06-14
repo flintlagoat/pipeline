@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#3B2A1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer macrocycle ring connecting four pyrroles (porphyrin-like square) -->
+    <path d="M200 70 Q150 80 120 120 Q80 150 70 200 Q80 250 120 280" opacity="0"/>
+
+    <!-- Top-left pyrrole -->
+    <polygon points="120,90 155,100 152,138 118,142 100,108" fill="#d16937" fill-opacity="0.18"/>
+    <!-- Top-right pyrrole -->
+    <polygon points="280,90 282,108 300,142 266,138 245,100" fill="#d16937" fill-opacity="0.18"/>
+    <!-- Bottom-left pyrrole -->
+    <polygon points="120,210 155,200 152,162 118,158 100,192" fill="#d16937" fill-opacity="0.18"/>
+    <!-- Bottom-right pyrrole -->
+    <polygon points="280,210 282,192 300,158 266,162 245,200" fill="#d16937" fill-opacity="0.18"/>
+
+    <!-- N atoms inner -->
+    <circle cx="148" cy="135" r="3.5" fill="#3B2A1E"/>
+    <circle cx="252" cy="135" r="3.5" fill="#3B2A1E"/>
+    <circle cx="148" cy="165" r="3.5" fill="#3B2A1E"/>
+    <circle cx="252" cy="165" r="3.5" fill="#3B2A1E"/>
+
+    <!-- Methine bridges linking the four pyrroles -->
+    <path d="M155,100 Q200,75 245,100"/>
+    <path d="M152,138 Q160,150 152,162" stroke-width="1.6"/>
+    <path d="M248,138 Q240,150 248,162" stroke-width="1.6"/>
+    <path d="M155,200 Q200,225 245,200"/>
+    <path d="M118,142 Q90,150 118,158" stroke-width="1.6"/>
+    <path d="M282,142 Q310,150 282,158" stroke-width="1.6"/>
+
+    <!-- bridge carbon markers -->
+    <circle cx="200" cy="85" r="3" fill="#3B2A1E"/>
+    <circle cx="200" cy="215" r="3" fill="#3B2A1E"/>
+    <circle cx="100" cy="150" r="3" fill="#3B2A1E"/>
+    <circle cx="300" cy="150" r="3" fill="#3B2A1E"/>
+
+    <!-- inner double bond hints -->
+    <path d="M158,140 Q168,150 158,160" stroke-width="1.2"/>
+    <path d="M242,140 Q232,150 242,160" stroke-width="1.2"/>
+
+    <!-- center cross suggesting coordination cavity -->
+    <path d="M148,135 L252,165" stroke-width="1" opacity="0.5"/>
+    <path d="M252,135 L148,165" stroke-width="1" opacity="0.5"/>
+  </g>
+</svg>

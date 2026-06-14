@@ -1,0 +1,51 @@
+<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#3B2A1E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Jar body silhouette -->
+    <path d="M72 130 Q70 128 78 122 L222 122 Q230 128 228 130 L232 320 Q232 350 200 354 L100 354 Q68 350 68 320 Z"/>
+    <!-- Jar neck / rim -->
+    <path d="M88 122 L86 100 Q86 92 96 90 L204 90 Q214 92 214 100 L212 122"/>
+    <!-- Lid -->
+    <path d="M82 92 Q80 70 96 66 L204 66 Q220 70 218 92"/>
+    <path d="M88 66 L90 54 Q92 48 102 48 L198 48 Q208 48 210 54 L212 66"/>
+  </g>
+
+  <!-- Honey fill -->
+  <path d="M74 160 Q90 154 110 160 Q130 168 150 160 Q172 152 192 160 Q212 168 226 160 L230 318 Q230 346 200 350 L100 350 Q70 346 70 318 Z"
+        fill="#d16937" opacity="0.45" stroke="none"/>
+  <path d="M74 160 Q90 154 110 160 Q130 168 150 160 Q172 152 192 160 Q212 168 226 160"
+        fill="none" stroke="#3B2A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Sugar packing detail (granule texture) -->
+  <g stroke="#3B2A1E" stroke-width="1.1" fill="#d16937" opacity="0.85">
+    <circle cx="92" cy="200" r="4"/>
+    <circle cx="118" cy="220" r="5"/>
+    <circle cx="100" cy="250" r="4"/>
+    <circle cx="140" cy="205" r="4"/>
+    <circle cx="160" cy="235" r="5"/>
+    <circle cx="180" cy="210" r="4"/>
+    <circle cx="205" cy="240" r="4"/>
+    <circle cx="130" cy="270" r="5"/>
+    <circle cx="170" cy="285" r="4"/>
+    <circle cx="200" cy="280" r="4"/>
+    <circle cx="95" cy="295" r="4"/>
+    <circle cx="150" cy="310" r="5"/>
+    <circle cx="195" cy="315" r="4"/>
+    <circle cx="115" cy="330" r="4"/>
+    <circle cx="165" cy="335" r="4"/>
+  </g>
+
+  <!-- Label outline -->
+  <g fill="none" stroke="#3B2A1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="90" y="180" width="120" height="70" rx="6"/>
+    <path d="M105 200 Q150 192 195 200" stroke-width="1.4"/>
+    <path d="M100 222 L200 222" stroke-width="1.3"/>
+    <path d="M108 236 L192 236" stroke-width="1.3"/>
+  </g>
+
+  <!-- Honey dipper hint on top -->
+  <g fill="none" stroke="#3B2A1E" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M150 48 L150 30"/>
+    <ellipse cx="150" cy="22" rx="8" ry="10"/>
+    <path d="M144 16 L156 16 M143 22 L157 22 M145 28 L155 28"/>
+  </g>
+</svg>

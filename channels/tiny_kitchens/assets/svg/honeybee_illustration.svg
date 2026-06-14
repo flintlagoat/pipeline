@@ -1,0 +1,47 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#3B2A1E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Body silhouette: head, thorax, abdomen -->
+    <path d="M95 152 q-4 -22 18 -28 q20 -6 34 8 q26 -16 54 -10 q34 6 58 24 q30 24 36 60 q4 28 -14 46 q-22 22 -56 22 q-44 0 -78 -16 q-30 -14 -42 -42 q-14 -32 -10 -64 Z" fill="#d16937" fill-opacity="0.18"/>
+  </g>
+
+  <!-- Head -->
+  <g fill="none" stroke="#3B2A1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="118" cy="148" r="26" fill="#d16937" fill-opacity="0.25"/>
+    <!-- Antennae -->
+    <path d="M104 128 q-14 -16 -28 -16 q-8 0 -12 6"/>
+    <path d="M110 122 q-8 -22 -20 -30 q-6 -4 -12 -2"/>
+    <circle cx="63" cy="113" r="3.5" fill="#3B2A1E"/>
+    <circle cx="77" cy="89" r="3.5" fill="#3B2A1E"/>
+    <!-- Eye -->
+    <ellipse cx="108" cy="143" rx="6" ry="8" fill="#3B2A1E"/>
+  </g>
+
+  <!-- Thorax detail -->
+  <g fill="none" stroke="#3B2A1E" stroke-width="1.8" stroke-linecap="round">
+    <path d="M150 132 q4 16 -2 36" />
+    <!-- legs -->
+    <path d="M150 168 l-10 28 l-14 8"/>
+    <path d="M172 176 l-6 32 l-12 12"/>
+    <path d="M196 180 l-2 34 l-10 14"/>
+  </g>
+
+  <!-- Abdomen stripes -->
+  <g fill="none" stroke="#3B2A1E" stroke-width="2.2" stroke-linecap="round">
+    <path d="M218 130 q18 56 8 92" />
+    <path d="M252 124 q22 60 14 98" />
+    <path d="M288 130 q22 56 12 92" />
+    <path d="M320 146 q18 44 8 74" />
+  </g>
+
+  <!-- Stinger tip -->
+  <g fill="none" stroke="#3B2A1E" stroke-width="2.2" stroke-linecap="round">
+    <path d="M340 218 q14 6 22 18"/>
+  </g>
+
+  <!-- Wings -->
+  <g fill="none" stroke="#3B2A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M210 120 q30 -52 88 -56 q44 -2 50 24 q4 22 -28 30 q-50 12 -110 2 Z" fill="#d16937" fill-opacity="0.10"/>
+    <path d="M236 116 q34 -42 84 -42" stroke-width="1.2"/>
+    <path d="M250 108 q24 -28 60 -30" stroke-width="1.2"/>
+  </g>
+</svg>

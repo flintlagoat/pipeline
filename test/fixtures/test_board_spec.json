@@ -1,0 +1,55 @@
+{
+  "video_id": "test_001",
+  "channel_id": "how_industries_work",
+  "format": "landscape_16x9",
+  "duration_seconds": 20,
+  "fps": 30,
+  "audio_file": "",
+  "asset_needs": [],
+  "board": {
+    "width": 3840,
+    "height": 1080,
+    "background_color": "#08090f",
+    "sections": [
+      {
+        "id": "hook",
+        "section_type": "hook",
+        "x_offset": 0,
+        "y_offset": 0,
+        "width": 1300,
+        "height": 1080,
+        "elements": [
+          { "id": "e1", "type": "eyebrow", "reveal_at_seconds": 0.5, "reveal_type": "fade_up", "x": 80, "y": 80, "content": "HOW INDUSTRIES WORK", "color": "#00D8FF", "font_family": "mono", "letter_spacing": 4 },
+          { "id": "e2", "type": "headline", "reveal_at_seconds": 1.0, "reveal_type": "fade_up", "x": 80, "y": 165, "content": "COSTCO SELLS", "color": "#FFFFFF", "font_size": 88, "font_family": "display" },
+          { "id": "e3", "type": "headline", "reveal_at_seconds": 1.4, "reveal_type": "fade_up", "x": 80, "y": 262, "content": "$1.50 HOT DOGS", "color": "#FFE500", "font_size": 88, "font_family": "display" },
+          { "id": "e4", "type": "rule_line", "reveal_at_seconds": 2.0, "reveal_type": "draw_on", "x": 80, "y": 320, "x2": 720, "y2": 320, "stroke_color": "#00D8FF", "stroke_width": 1 },
+          { "id": "e5", "type": "body_text", "reveal_at_seconds": 2.4, "reveal_type": "fade_up", "x": 80, "y": 360, "content": "The price hasn't changed since 1985.", "color": "rgba(255,255,255,0.65)", "font_size": 22, "font_family": "body" },
+          { "id": "e6", "type": "label_tag", "reveal_at_seconds": 3.5, "reveal_type": "scale_in", "x": 80, "y": 460, "content": "INTENTIONAL", "color": "#FFE500" }
+        ]
+      },
+      {
+        "id": "diagram",
+        "section_type": "diagram",
+        "x_offset": 1500,
+        "y_offset": 0,
+        "width": 1500,
+        "height": 1080,
+        "elements": [
+          { "id": "e7", "type": "eyebrow", "reveal_at_seconds": 7.0, "reveal_type": "fade_up", "x": 1580, "y": 80, "content": "THE MECHANISM", "color": "#FFE500", "font_family": "mono", "letter_spacing": 4 },
+          { "id": "e8", "type": "node_box", "reveal_at_seconds": 7.5, "reveal_type": "scale_in", "x": 1580, "y": 200, "width": 260, "height": 80, "content": "HOT DOG  $1.50", "color": "#FF3B30", "stroke_width": 1.5, "border_radius": 4 },
+          { "id": "e9", "type": "connector_arrow", "reveal_at_seconds": 8.2, "reveal_type": "draw_on", "x": 1840, "y": 240, "x2": 2000, "y2": 240, "stroke_color": "#FFFFFF", "stroke_width": 1.5 },
+          { "id": "e10", "type": "node_box", "reveal_at_seconds": 8.6, "reveal_type": "scale_in", "x": 2000, "y": 200, "width": 300, "height": 80, "content": "PSYCHOLOGICAL ANCHOR", "color": "#FFE500", "stroke_width": 1.5, "border_radius": 4 },
+          { "id": "e11", "type": "list_reveal", "reveal_at_seconds": 10.0, "reveal_type": "fade_up", "x": 1580, "y": 420, "lines": ["Brain recalibrates what cheap means", "Trust in the store increases", "Average basket: $200+"], "color": "rgba(255,255,255,0.85)", "font_size": 20, "font_family": "body", "item_delay_seconds": 0.45 },
+          { "id": "e12", "type": "blur_reveal", "reveal_at_seconds": 13.5, "reveal_type": "blur_in", "x": 1580, "y": 660, "content": "THE HOT DOG IS NOT A PRODUCT.", "color": "#FFE500", "font_size": 42, "font_family": "display" }
+        ]
+      }
+    ],
+    "camera_keyframes": [
+      { "time_seconds": 0, "viewport_x": 0, "viewport_y": 0, "viewport_width": 1920, "viewport_height": 1080, "easing": "ease_in_out" },
+      { "time_seconds": 2.8, "viewport_x": 0, "viewport_y": 0, "viewport_width": 1400, "viewport_height": 787, "easing": "cinematic" },
+      { "time_seconds": 6.5, "viewport_x": 1300, "viewport_y": 0, "viewport_width": 1920, "viewport_height": 1080, "easing": "cinematic" },
+      { "time_seconds": 9.5, "viewport_x": 1500, "viewport_y": 80, "viewport_width": 1440, "viewport_height": 810, "easing": "ease_in_out" },
+      { "time_seconds": 13.0, "viewport_x": 1400, "viewport_y": 0, "viewport_width": 1920, "viewport_height": 1080, "easing": "ease_in_out" }
+    ]
+  }
+}

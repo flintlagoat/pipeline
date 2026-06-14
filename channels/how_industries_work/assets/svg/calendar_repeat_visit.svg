@@ -1,0 +1,21 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="60" y="60" width="280" height="200" rx="8" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="60" y1="100" x2="340" y2="100" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="110" y1="48" x2="110" y2="78" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="290" y1="48" x2="290" y2="78" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="200" y1="48" x2="200" y2="78" stroke="#FFFFFF" stroke-width="2"/>
+
+  <line x1="116" y1="130" x2="284" y2="130" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="116" y1="165" x2="284" y2="165" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="116" y1="200" x2="284" y2="200" stroke="#FFFFFF" stroke-width="1"/>
+
+  <line x1="144" y1="115" x2="144" y2="245" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="200" y1="115" x2="200" y2="245" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="256" y1="115" x2="256" y2="245" stroke="#FFFFFF" stroke-width="1"/>
+
+  <circle cx="172" cy="147" r="7" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="228" cy="217" r="7" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+
+  <path d="M 170 195 a 22 22 0 1 1 -6 16" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <polyline points="164 200 164 213 177 213" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+</svg>

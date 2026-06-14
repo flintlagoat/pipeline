@@ -1,0 +1,19 @@
+{
+  "audio": {
+    "sfx": {
+      "enabled": true,
+      "intensity": 1
+    },
+    "music": {
+      "track": "auto"
+    }
+  },
+  "voice": {
+    "voice": "536d3a5e000945adb7038665781a4aca",
+    "model": "s1",
+    "speed": 1,
+    "volume": 0,
+    "temperature": 0.8,
+    "topP": 0.7
+  }
+}

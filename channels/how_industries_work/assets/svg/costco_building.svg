@@ -1,0 +1,18 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="90" width="320" height="170" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <rect x="130" y="56" width="140" height="34" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="140" y1="73" x2="260" y2="73" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="70" y="64" width="34" height="18" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="296" y="64" width="34" height="18" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="60" y="112" width="46" height="28" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="116" y="112" width="46" height="28" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="238" y="112" width="46" height="28" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="294" y="112" width="46" height="28" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="40" y1="150" x2="360" y2="150" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="165" y="165" width="70" height="95" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="22" y1="260" x2="378" y2="260" stroke="#FFFFFF" stroke-width="2.5"/>
+  <!-- frame 1: doors closed -->
+  <line x1="200" y1="167" x2="200" y2="258" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="182" y1="167" x2="182" y2="258" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="218" y1="167" x2="218" y2="258" stroke="#E0E0E0" stroke-width="1"/>
+</svg>

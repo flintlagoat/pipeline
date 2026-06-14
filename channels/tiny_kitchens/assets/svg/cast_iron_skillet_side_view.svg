@@ -1,0 +1,29 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" stroke="#3B2A1E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+<!-- handle -->
+<path d="M40 150 q-8 -2 -10 -10 q-2 -9 8 -11 l36 2"/>
+<path d="M42 162 q-12 -1 -16 -12 q-3 -13 12 -16 l38 1"/>
+<!-- handle hole -->
+<ellipse cx="36" cy="142" rx="4" ry="5" fill="#d16937"/>
+<!-- skillet body outer -->
+<path d="M74 130 q30 -6 95 -6 q70 0 100 6 q12 3 12 10 l-6 56 q-2 30 -106 30 q-104 0 -107 -30 l-5 -56 q0 -7 12 -10 z"/>
+</g>
+<!-- inner bowl fill -->
+<path d="M86 138 q28 -5 84 -5 q60 0 86 5 l-5 50 q-2 22 -82 22 q-80 0 -82 -22 z" fill="#d16937" opacity="0.35" stroke="#3B2A1E" stroke-width="1.6"/>
+<g fill="none" stroke="#3B2A1E" stroke-width="1.5" stroke-linecap="round">
+<!-- pour spout left -->
+<path d="M76 132 q-6 4 -4 12"/>
+<!-- pour spout right -->
+<path d="M270 132 q6 4 4 12"/>
+<!-- rim line -->
+<path d="M80 144 q40 -7 90 -7 q52 0 90 7"/>
+<!-- inner cooking surface -->
+<path d="M100 156 q34 8 70 8 q38 0 70 -8"/>
+<!-- bottom seasoning hatching -->
+<path d="M120 196 l8 12"/>
+<path d="M150 200 l6 12"/>
+<path d="M185 202 l4 12"/>
+<path d="M220 200 l-6 12"/>
+<path d="M250 196 l-8 12"/>
+</g>
+</svg>

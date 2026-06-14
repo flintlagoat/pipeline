@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Outer silhouette: cart body -->
+  <path d="M 80 60 L 110 60 L 140 200 L 320 200 L 350 100 L 130 100" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <!-- Close basket bottom and right side -->
+  <line x1="140" y1="200" x2="320" y2="200" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Handle bar extending left -->
+  <line x1="60" y1="60" x2="110" y2="60" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Handle grip end -->
+  <line x1="60" y1="55" x2="60" y2="75" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="60" y1="55" x2="75" y2="55" stroke="#FFFFFF" stroke-width="1.5"/>
+  <line x1="60" y1="75" x2="75" y2="75" stroke="#FFFFFF" stroke-width="1.5"/>
+
+  <!-- Interior detail lines: vertical ribs left to right -->
+  <line x1="160" y1="100" x2="167" y2="200" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="190" y1="100" x2="194" y2="200" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="220" y1="100" x2="221" y2="200" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="250" y1="100" x2="248" y2="200" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="280" y1="100" x2="275" y2="200" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="310" y1="100" x2="302" y2="200" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Horizontal mid rail -->
+  <path d="M 135 150 L 335 150" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Top rail of basket -->
+  <line x1="130" y1="100" x2="350" y2="100" stroke="#FFFFFF" stroke-width="1.5"/>
+
+  <!-- Axle bar -->
+  <line x1="155" y1="215" x2="305" y2="215" stroke="#FFFFFF" stroke-width="1.5"/>
+
+  <!-- Left wheel -->
+  <circle cx="165" cy="232" r="18" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <circle cx="165" cy="232" r="5" stroke="#E0E0E0" stroke-width="1" fill="none"/>
+  <line x1="165" y1="214" x2="165" y2="250" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="147" y1="232" x2="183" y2="232" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="152" y1="219" x2="178" y2="245" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="178" y1="219" x2="152" y2="245" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Right wheel -->
+  <circle cx="295" cy="232" r="18" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <circle cx="295" cy="232" r="5" stroke="#E0E0E0" stroke-width="1" fill="none"/>
+  <line x1="295" y1="214" x2="295" y2="250" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="277" y1="232" x2="313" y2="232" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="282" y1="219" x2="308" y2="245" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="308" y1="219" x2="282" y2="245" stroke="#E0E0E0" stroke-width="1"/>
+</svg>

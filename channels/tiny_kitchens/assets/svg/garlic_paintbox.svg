@@ -1,0 +1,52 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#3B2A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Paintbox outer silhouette -->
+    <path d="M48 130 Q46 126 52 124 L348 124 Q354 126 352 132 L352 248 Q352 256 344 256 L56 256 Q48 256 48 248 Z"/>
+    <!-- Lid hinge line -->
+    <path d="M48 154 Q200 150 352 154"/>
+    <!-- Lid handle/latch -->
+    <path d="M186 124 Q188 116 200 116 Q212 116 214 124"/>
+  </g>
+
+  <!-- Paint wells inside (left to right) -->
+  <g fill="#d16937" stroke="#3B2A1E" stroke-width="1.5">
+    <ellipse cx="86" cy="200" rx="20" ry="14"/>
+    <ellipse cx="142" cy="200" rx="20" ry="14"/>
+    <ellipse cx="198" cy="200" rx="20" ry="14"/>
+    <ellipse cx="254" cy="200" rx="20" ry="14"/>
+    <ellipse cx="310" cy="200" rx="20" ry="14"/>
+  </g>
+  <g fill="none" stroke="#3B2A1E" stroke-width="1">
+    <path d="M78 196 Q86 192 94 196"/>
+    <path d="M134 196 Q142 192 150 196"/>
+    <path d="M190 196 Q198 192 206 196"/>
+    <path d="M246 196 Q254 192 262 196"/>
+    <path d="M302 196 Q310 192 318 196"/>
+  </g>
+
+  <!-- Garlic bulb sitting on/in the box -->
+  <g fill="#d16937" fill-opacity="0.55" stroke="#3B2A1E" stroke-width="2" stroke-linejoin="round">
+    <path d="M180 70 Q170 88 174 100 Q178 116 200 118 Q222 116 226 100 Q230 88 220 70 Q214 60 200 58 Q186 60 180 70 Z"/>
+  </g>
+  <g fill="none" stroke="#3B2A1E" stroke-width="1.3" stroke-linecap="round">
+    <!-- garlic clove segment lines -->
+    <path d="M200 60 Q198 88 200 116"/>
+    <path d="M188 64 Q183 90 190 114"/>
+    <path d="M212 64 Q217 90 210 114"/>
+    <path d="M179 76 Q177 96 184 110"/>
+    <path d="M221 76 Q223 96 216 110"/>
+    <!-- sprout/stem at top -->
+    <path d="M200 58 Q198 48 204 42 Q207 38 204 34"/>
+    <path d="M200 58 Q202 50 196 45"/>
+  </g>
+
+  <!-- Brush leaning against the box -->
+  <g fill="none" stroke="#3B2A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="330" y1="90" x2="300" y2="170"/>
+    <line x1="338" y1="93" x2="308" y2="173"/>
+    <!-- ferrule -->
+    <path d="M300 170 L308 173 L302 188 L294 185 Z"/>
+    <!-- bristles -->
+    <path d="M294 185 L302 188 Q300 200 296 204 Q290 200 288 192 Z" fill="#d16937" fill-opacity="0.5"/>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<line x1="50" y1="40" x2="50" y2="260" stroke="#FFFFFF" stroke-width="2"/>
+<line x1="50" y1="260" x2="370" y2="260" stroke="#FFFFFF" stroke-width="2"/>
+<polyline points="45,55 50,40 55,55" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+<polyline points="355,255 370,260 355,265" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+<line x1="50" y1="100" x2="360" y2="100" stroke="#E0E0E0" stroke-width="1"/>
+<line x1="50" y1="150" x2="360" y2="150" stroke="#E0E0E0" stroke-width="1"/>
+<line x1="50" y1="200" x2="360" y2="200" stroke="#E0E0E0" stroke-width="1"/>
+<polyline points="70,230 120,215 160,210 210,170 260,150 300,100 350,55" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+<polyline points="335,55 350,55 350,70" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="70" cy="230" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="120" cy="215" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="160" cy="210" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="210" cy="170" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="260" cy="150" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="300" cy="100" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="350" cy="55" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+</svg>

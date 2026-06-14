@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "channelId": "tiny_kitchens",
+  "updatedAt": "2026-06-12T14:22:06.561Z",
+  "thresholds": {
+    "promoteSampleSize": 3,
+    "minConfidence": 0.6
+  },
+  "videoLog": [],
+  "hypotheses": [],
+  "appliedRules": [],
+  "dropoffNotes": [],
+  "changelog": [
+    {
+      "date": "2026-06-12",
+      "change": "No change",
+      "why": "No published videos in the log yet — nothing to learn from (default to no change).",
+      "evidence": "0 videos"
+    }
+  ]
+}

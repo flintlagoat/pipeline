@@ -1,0 +1,38 @@
+{
+  "channel_id": "tiny_kitchens",
+  "niche": "food science",
+  "voice_guide": {
+    "tone": "warm, curious, and gently playful — like a friend explaining a kitchen secret over tea",
+    "sentence_style": "short and conversational with the occasional delighted aside",
+    "forbidden_phrases": [
+      "smash that like button",
+      "in today's video",
+      "let's dive in",
+      "without further ado"
+    ],
+    "hook_formula": "open with a tiny everyday kitchen mystery the viewer has definitely wondered about"
+  },
+  "design_system": {
+    "background_color": "#FBF3E2",
+    "accent_1": "#E2703A",
+    "accent_2": "#C75D4F",
+    "accent_3": "#5C9A6E",
+    "font_display": "Caveat",
+    "font_mono": "Space Mono",
+    "font_body": "Quicksand",
+    "asset_style": "hand-drawn",
+    "grain_intensity": 0.12
+  },
+  "svg_asset_library": [],
+  "combo_rules": [],
+  "audio": {
+    "sfx": {
+      "enabled": true,
+      "intensity": 0.4
+    },
+    "music": {
+      "enabled": true,
+      "track": null
+    }
+  }
+}

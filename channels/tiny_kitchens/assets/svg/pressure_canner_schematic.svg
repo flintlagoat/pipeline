@@ -1,0 +1,50 @@
+<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#3B2A1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Pot body outer silhouette -->
+    <path d="M60 175 Q58 172 62 170 L238 170 Q242 172 240 175 L232 350 Q231 365 215 366 L85 366 Q69 365 68 350 Z"/>
+    <!-- Side handles -->
+    <path d="M60 195 Q40 197 38 212 Q37 225 56 226"/>
+    <path d="M240 195 Q260 197 262 212 Q263 225 244 226"/>
+    <!-- Lid base / rim -->
+    <path d="M52 168 Q50 158 64 156 L236 156 Q250 158 248 168 Q248 172 240 172 L60 172 Q52 172 52 168 Z" fill="#d16937" fill-opacity="0.25"/>
+    <!-- Lid dome -->
+    <path d="M70 156 Q72 138 100 132 L200 132 Q228 138 230 156"/>
+  </g>
+
+  <!-- Interior details left to right -->
+  <g fill="none" stroke="#3B2A1E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Lid clamp bolt left -->
+    <path d="M82 132 L82 122 M76 122 L88 122"/>
+    <circle cx="82" cy="118" r="4"/>
+    <!-- Lid clamp bolt right -->
+    <path d="M218 132 L218 122 M212 122 L224 122"/>
+    <circle cx="218" cy="118" r="4"/>
+
+    <!-- Pressure gauge (dial) center-left -->
+    <line x1="120" y1="132" x2="120" y2="112"/>
+    <circle cx="120" cy="100" r="14" fill="#d16937" fill-opacity="0.3"/>
+    <line x1="120" y1="100" x2="128" y2="92"/>
+    <path d="M111 104 Q120 96 129 104"/>
+
+    <!-- Pressure regulator / weight center -->
+    <line x1="150" y1="132" x2="150" y2="118"/>
+    <path d="M140 118 L160 118 L156 104 L144 104 Z" fill="#d16937" fill-opacity="0.4"/>
+    <line x1="150" y1="104" x2="150" y2="96"/>
+    <circle cx="150" cy="93" r="3"/>
+
+    <!-- Safety vent valve right -->
+    <line x1="180" y1="132" x2="180" y2="116"/>
+    <rect x="174" y="106" width="12" height="10" rx="2" fill="#d16937" fill-opacity="0.3"/>
+    <path d="M180 106 L180 98 M176 98 L184 98"/>
+
+    <!-- Internal water level line -->
+    <path d="M72 250 Q150 256 228 250" stroke-dasharray="6 5"/>
+    <!-- Rack at bottom -->
+    <path d="M80 330 L220 330" stroke-dasharray="4 4"/>
+    <path d="M95 330 L95 322 M125 330 L125 322 M155 330 L155 322 M185 330 L185 322 M205 330 L205 322"/>
+
+    <!-- Steam wisps -->
+    <path d="M150 92 Q146 84 150 78 Q154 72 150 66" stroke-width="1.3"/>
+    <path d="M120 86 Q117 80 120 74" stroke-width="1.3"/>
+  </g>
+</svg>

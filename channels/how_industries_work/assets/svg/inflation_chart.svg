@@ -1,0 +1,26 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="30" width="330" height="220" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="40" y1="250" x2="40" y2="30" fill="none" stroke="#E0E0E0" stroke-width="1.5"/>
+  <line x1="40" y1="250" x2="370" y2="250" fill="none" stroke="#E0E0E0" stroke-width="1.5"/>
+  <line x1="40" y1="206" x2="370" y2="206" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="40" y1="162" x2="370" y2="162" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="40" y1="118" x2="370" y2="118" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="40" y1="74" x2="370" y2="74" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="40" y1="250" x2="35" y2="250" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="40" y1="206" x2="35" y2="206" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="40" y1="162" x2="35" y2="162" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="40" y1="118" x2="35" y2="118" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="40" y1="74" x2="35" y2="74" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <polyline points="55,215 100,205 145,210 190,180 235,150 280,120 325,75 360,45" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="55" cy="215" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="100" cy="205" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="145" cy="210" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="190" cy="180" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="235" cy="150" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="280" cy="120" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="325" cy="75" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="360" cy="45" r="3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <line x1="345" y1="55" x2="360" y2="45" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <line x1="360" y1="45" x2="352" y2="48" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <line x1="360" y1="45" x2="357" y2="53" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+</svg>

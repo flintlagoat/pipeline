@@ -1,0 +1,27 @@
+# ── Secrets (NEVER commit) ──────────────────────────────────────────────
+.env
+.env.local
+*.env
+# Per-channel YouTube OAuth refresh tokens (one per channel)
+channels/*/youtube.auth.json
+# Local quota ledger (global, per Google-Cloud-project) + per-channel scheduling state
+.quota/
+channels/*/.schedule.state.json
+# Raw analytics pulls can get large; learnings.json IS committed (it's the memory)
+channels/*/analytics/raw/
+
+# ── Dependencies / build output ─────────────────────────────────────────
+node_modules/
+ui/dist/
+**/*.tsbuildinfo
+
+# ── Generated media / job artifacts (large, reproducible) ───────────────
+jobs/*/*/voiceover.wav
+output/
+renderer/fonts/
+
+# ── OS / editor ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

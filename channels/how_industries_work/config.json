@@ -1,0 +1,35 @@
+{
+  "channel_id": "how_industries_work",
+  "niche": "hidden business systems and industry mechanics",
+  "voice_guide": {
+    "tone": "calm authority, slightly conspiratorial, insider knowledge",
+    "sentence_style": "short punchy sentences. then longer explanatory ones. rhetorical questions followed immediately by the answer.",
+    "forbidden_phrases": ["in today's video", "make sure to like", "as I mentioned", "basically"],
+    "hook_formula": "name the familiar thing, hint at the hidden mechanism, promise the reveal"
+  },
+  "design_system": {
+    "background_color": "#08090f",
+    "accent_1": "#FFE500",
+    "accent_2": "#FF3B30",
+    "accent_3": "#00D8FF",
+    "font_display": "Bebas Neue",
+    "font_mono": "IBM Plex Mono",
+    "font_body": "Syne",
+    "asset_style": "wireframe_schematic",
+    "grain_intensity": 0.45
+  },
+  "svg_asset_library": [
+    "costco_building", "warehouse_interior", "shopping_cart", "price_tag",
+    "conveyor_belt", "cash_register", "supply_chain_line", "org_chart_3tier",
+    "money_bag", "arrow_curved_right", "factory_exterior", "person_standing",
+    "person_sitting_chair", "fast_food_counter", "airplane_side", "casino_slot_machine",
+    "hot_dog", "soda_cup", "hot_dog_combo"
+  ],
+  "combo_rules": [
+    { "primary": "hot_dog", "partner": "soda_cup", "combo": "hot_dog_combo", "keywords": ["soda", "combo", "drink", "pop"] }
+  ],
+  "audio": {
+    "sfx": { "enabled": true, "intensity": 1.0, "max_cues": 6, "min_spacing_seconds": 2.5, "big_money_min": 100 },
+    "music": { "enabled": true, "track": null, "volume": 0.18, "duck": true }
+  }
+}

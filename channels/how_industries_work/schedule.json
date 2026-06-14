@@ -1,0 +1,13 @@
+{
+  "timezone": "America/New_York",
+  "cadence": { "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"], "times": ["14:00"] },
+  "cadenceRules": [
+    { "days": ["mon", "tue", "wed", "thu", "fri"], "times": ["14:00"] },
+    { "days": ["sat", "sun"], "times": ["10:00"] }
+  ],
+  "autoPublish": false,
+  "privacyStatus": "private",
+  "categoryId": "27",
+  "defaultTags": ["how industries work", "business explained", "hidden economics", "how it works"],
+  "descriptionBoilerplate": "Music: Kevin MacLeod (incompetech.com) — licensed under Creative Commons: By Attribution 4.0 (creativecommons.org/licenses/by/4.0/)"
+}

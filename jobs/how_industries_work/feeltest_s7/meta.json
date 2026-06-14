@@ -1,0 +1,29 @@
+{
+  "topic": "Why hotel minibars cost so much",
+  "minutes": 2,
+  "scriptArc": "expectation_gap",
+  "packaging": {
+    "title": "Why Hotel Minibars Charge $8 for Water",
+    "altTitles": [
+      "The Real Reason Minibars Cost So Much",
+      "How Hotel Minibars Are Designed to Lose Money"
+    ],
+    "description": "A breakdown of the hidden business system behind hotel minibar pricing, from sensor-triggered charges and labor costs to why most hotels actually lose money on the minibar itself.",
+    "thumbnail": {
+      "bigText": "$8 SODA",
+      "emphasisWord": "$8",
+      "assetName": "soda_cup",
+      "visualIdea": "a single can or small soda bottle with a glowing price tag reading $8 beside it"
+    },
+    "hookPromise": "That $8 bottle of water isn't overpriced by accident — the minibar is one of the most engineered traps in hospitality, and most hotels still lose money on it.",
+    "openLoops": [
+      "Why do some minibars charge you the moment you lift a bottle, even if you put it back?",
+      "If the prices are so high, why do hotels say the minibar barely breaks even?",
+      "What hidden cost makes a $1 soda cost the hotel far more than you'd guess?"
+    ],
+    "payoff": "The real expense isn't the soda — it's the labor: a staffer must individually inspect and restock each minibar in every room daily, plus track spoilage on items almost no one buys, making the markup a desperate attempt to cover a money-losing amenity most hotels keep only for prestige.",
+    "whyItWorks": "Nearly everyone has felt the sting of minibar prices, so the curiosity gap is universal, and the counterintuitive 'hotels lose money on it' payoff makes a casual scroller click.",
+    "score": 81
+  },
+  "createdAt": "2026-06-13T02:17:41.019Z"
+}

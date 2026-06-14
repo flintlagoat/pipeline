@@ -1,0 +1,29 @@
+{
+  "_comment": "Categorized SFX library. To add a sound: drop a .wav/.mp3 into the matching category folder — no code change needed. Each category fires on a different kind of event (see triggerEngine.ts). Per-category mix defaults below; omit a field to use the engine default. lead_ms = how far the sound's PEAK is pre-rolled BEFORE the event (so motion sounds anticipate the move). peak_align = align the file's loudest sample to the event instead of its first sample.",
+  "categories": {
+    "motion": {
+      "description": "whooshes / swooshes — fire on camera travels and major scene entrances",
+      "volume": 0.4,
+      "lead_ms": 100,
+      "peak_align": true
+    },
+    "money": {
+      "description": "cha-ching / register — fire ONLY on large, emphasized money beats",
+      "volume": 0.55,
+      "lead_ms": 0,
+      "peak_align": true
+    },
+    "impact": {
+      "description": "thuds / accents — fire sparingly on the single biggest revelation beat",
+      "volume": 0.45,
+      "lead_ms": 0,
+      "peak_align": true
+    },
+    "ui": {
+      "description": "ticks / clicks — optional, for list-item reveals; off by default unless files present",
+      "volume": 0.3,
+      "lead_ms": 0,
+      "peak_align": false
+    }
+  }
+}

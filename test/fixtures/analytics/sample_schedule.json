@@ -1,0 +1,9 @@
+{
+  "timezone": "America/New_York",
+  "cadence": { "days": ["mon", "wed", "fri"], "times": ["09:00", "17:00"] },
+  "autoPublish": false,
+  "privacyStatus": "private",
+  "categoryId": "27",
+  "defaultTags": ["how it works", "business explained", "hidden systems"],
+  "dailyQuota": 10000
+}

@@ -1,0 +1,30 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pot body outline -->
+  <path d="M70 150 Q68 145 75 144 L325 144 Q332 145 330 150 L318 245 Q316 258 300 259 L100 259 Q84 258 82 245 Z" fill="#d16937" fill-opacity="0.25" stroke="#3B2A1E" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Left handle -->
+  <path d="M70 158 Q40 156 38 172 Q37 184 60 184" fill="none" stroke="#3B2A1E" stroke-width="2.5"/>
+  <!-- Right handle -->
+  <path d="M330 158 Q360 156 362 172 Q363 184 340 184" fill="none" stroke="#3B2A1E" stroke-width="2.5"/>
+
+  <!-- Water surface line -->
+  <path d="M84 178 Q140 172 200 178 Q260 184 316 178" fill="none" stroke="#3B2A1E" stroke-width="1.6"/>
+  <path d="M90 188 Q150 183 210 188 Q270 193 312 188" fill="none" stroke="#3B2A1E" stroke-width="1.2" stroke-opacity="0.6"/>
+
+  <!-- Bubbles inside -->
+  <circle cx="130" cy="215" r="7" fill="none" stroke="#3B2A1E" stroke-width="1.4"/>
+  <circle cx="165" cy="230" r="5" fill="none" stroke="#3B2A1E" stroke-width="1.4"/>
+  <circle cx="200" cy="210" r="9" fill="none" stroke="#3B2A1E" stroke-width="1.4"/>
+  <circle cx="235" cy="232" r="4" fill="none" stroke="#3B2A1E" stroke-width="1.4"/>
+  <circle cx="262" cy="215" r="7" fill="none" stroke="#3B2A1E" stroke-width="1.4"/>
+  <circle cx="115" cy="240" r="4" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+  <circle cx="290" cy="238" r="5" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+
+  <!-- Steam wisps -->
+  <path d="M150 165 Q142 148 152 132 Q160 118 150 102" fill="none" stroke="#3B2A1E" stroke-width="1.8" stroke-opacity="0.7"/>
+  <path d="M200 160 Q192 142 202 124 Q210 108 200 90" fill="none" stroke="#3B2A1E" stroke-width="1.8" stroke-opacity="0.7"/>
+  <path d="M250 165 Q242 148 252 132 Q260 118 250 102" fill="none" stroke="#3B2A1E" stroke-width="1.8" stroke-opacity="0.7"/>
+
+  <!-- Base / stove line -->
+  <path d="M95 262 L305 262" stroke="#3B2A1E" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

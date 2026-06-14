@@ -1,0 +1,44 @@
+<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#3B2A1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Jar outline -->
+    <path d="M75 120 Q73 118 75 116 L80 100 Q82 92 92 90 L208 90 Q218 92 220 100 L225 116 Q227 118 225 120 Q230 130 230 145 L230 340 Q230 360 210 362 L90 362 Q70 360 70 340 L70 145 Q70 130 75 120 Z"/>
+    <!-- Jar rim/lid threads -->
+    <path d="M80 100 L220 100" stroke-width="2"/>
+    <path d="M78 110 L222 110" stroke-width="1.5"/>
+  </g>
+
+  <!-- Contents fill (powder/sugar) -->
+  <path d="M73 200 Q150 192 227 200 L227 340 Q227 357 208 359 L92 359 Q73 357 73 340 Z" fill="#d16937" fill-opacity="0.18" stroke="none"/>
+  <!-- contents surface line -->
+  <path d="M73 200 Q150 192 227 200" fill="none" stroke="#3B2A1E" stroke-width="1.6"/>
+
+  <g fill="none" stroke="#3B2A1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Spoon handle -->
+    <path d="M170 60 L195 200" />
+    <path d="M182 58 L207 198" />
+    <line x1="170" y1="60" x2="182" y2="58"/>
+    <!-- Spoon bowl (dipped in contents) -->
+    <path d="M195 200 Q175 205 165 225 Q160 245 175 258 Q195 270 210 255 Q222 240 218 218 Q214 202 207 198"/>
+  </g>
+
+  <!-- Wet spoon clump on bowl (moisture-caused) -->
+  <path d="M168 230 Q178 222 188 230 Q195 240 185 250 Q175 256 168 248 Q162 240 168 230 Z" fill="#d16937" fill-opacity="0.3" stroke="#3B2A1E" stroke-width="1.4"/>
+
+  <!-- Water droplets on handle (wetness) -->
+  <g fill="#d16937" fill-opacity="0.25" stroke="#3B2A1E" stroke-width="1.2">
+    <path d="M178 110 Q183 110 183 116 Q183 122 178 122 Q173 122 173 116 Q173 111 178 110 Z"/>
+    <path d="M188 150 Q192 150 192 155 Q192 160 188 160 Q184 160 184 155 Q184 151 188 150 Z"/>
+  </g>
+
+  <!-- Drip line below spoon bowl -->
+  <path d="M185 270 Q186 282 184 290" fill="none" stroke="#3B2A1E" stroke-width="1.2"/>
+
+  <!-- Clumping hatch in lower contents -->
+  <g stroke="#3B2A1E" stroke-width="1" stroke-opacity="0.5">
+    <line x1="95" y1="280" x2="110" y2="290"/>
+    <line x1="115" y1="300" x2="130" y2="310"/>
+    <line x1="200" y1="290" x2="215" y2="300"/>
+    <line x1="100" y1="320" x2="118" y2="328"/>
+    <line x1="195" y1="320" x2="210" y2="330"/>
+  </g>
+</svg>

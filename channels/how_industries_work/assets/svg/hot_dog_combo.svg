@@ -1,0 +1,18 @@
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- ── hot dog (left) ── -->
+  <path d="M70 170 L210 170 Q250 170 250 194 Q250 218 210 218 L70 218 Q30 218 30 194 Q30 170 70 170 Z" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <path d="M48 182 Q140 173 232 182" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  <path d="M78 130 L202 130 Q238 130 238 154 Q238 178 202 178 L78 178 Q42 178 42 154 Q42 130 78 130 Z" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <polyline points="62,148 82,137 102,148 122,137 142,148 162,137 182,148 202,137 222,148" fill="none" stroke="#E0E0E0" stroke-width="2"/>
+
+  <!-- ── soda cup (right) ── -->
+  <path d="M348 128 L452 128 L434 272 L366 272 Z" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <path d="M340 112 L460 112 L452 128 L348 128 Z" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <ellipse cx="400" cy="112" rx="60" ry="9" fill="none" stroke="#E0E0E0" stroke-width="1.5"/>
+  <line x1="414" y1="106" x2="426" y2="52" stroke="#FFFFFF" stroke-width="2.5"/>
+  <line x1="430" y1="106" x2="442" y2="52" stroke="#FFFFFF" stroke-width="2.5"/>
+  <line x1="426" y1="52" x2="442" y2="52" stroke="#FFFFFF" stroke-width="2.5"/>
+  <line x1="372" y1="170" x2="430" y2="170" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="384" y1="140" x2="377" y2="262" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="416" y1="140" x2="423" y2="262" stroke="#E0E0E0" stroke-width="1"/>
+</svg>

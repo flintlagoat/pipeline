@@ -1,0 +1,278 @@
+{
+  "version": 1,
+  "channelId": "selftest",
+  "updatedAt": "2026-06-12T12:54:57.210Z",
+  "thresholds": {
+    "promoteSampleSize": 3,
+    "minConfidence": 0.6
+  },
+  "videoLog": [
+    {
+      "jobId": "v_001",
+      "videoId": "AAAA1111aaa",
+      "title": "Why airport lounges lose money on purpose",
+      "publishedAt": "2026-05-10T14:00:00Z",
+      "hookText": "Ever wonder why an airport lounge hands you free champagne it clearly loses money on? There's a reason, and it isn't generosity.",
+      "injectedRuleIds": [],
+      "metrics": {
+        "views": 41200,
+        "impressions": 520000,
+        "ctr": 0.079,
+        "averageViewDuration": 168,
+        "averageViewPercentage": 58,
+        "subscribersGained": 610
+      },
+      "retentionCurve": [
+        {
+          "elapsedRatio": 0,
+          "relativeRetention": 1
+        },
+        {
+          "elapsedRatio": 0.1,
+          "relativeRetention": 0.92
+        },
+        {
+          "elapsedRatio": 0.25,
+          "relativeRetention": 0.81
+        },
+        {
+          "elapsedRatio": 0.5,
+          "relativeRetention": 0.66
+        },
+        {
+          "elapsedRatio": 0.75,
+          "relativeRetention": 0.54
+        },
+        {
+          "elapsedRatio": 1,
+          "relativeRetention": 0.41
+        }
+      ],
+      "pulledAt": "2026-06-11T00:00:00Z"
+    },
+    {
+      "jobId": "v_002",
+      "videoId": "BBBB2222bbb",
+      "title": "What a vending machine really costs to run",
+      "publishedAt": "2026-05-17T14:00:00Z",
+      "hookText": "A vending machine is a definition of passive income: a box that sells snacks while you sleep. It is a coin-operated retail unit.",
+      "injectedRuleIds": [],
+      "metrics": {
+        "views": 9800,
+        "impressions": 410000,
+        "ctr": 0.031,
+        "averageViewDuration": 74,
+        "averageViewPercentage": 32,
+        "subscribersGained": 88
+      },
+      "retentionCurve": [
+        {
+          "elapsedRatio": 0,
+          "relativeRetention": 1
+        },
+        {
+          "elapsedRatio": 0.1,
+          "relativeRetention": 0.62
+        },
+        {
+          "elapsedRatio": 0.25,
+          "relativeRetention": 0.41
+        },
+        {
+          "elapsedRatio": 0.5,
+          "relativeRetention": 0.3
+        },
+        {
+          "elapsedRatio": 0.75,
+          "relativeRetention": 0.22
+        },
+        {
+          "elapsedRatio": 1,
+          "relativeRetention": 0.16
+        }
+      ],
+      "pulledAt": "2026-06-11T00:00:00Z"
+    },
+    {
+      "jobId": "v_003",
+      "videoId": "CCCC3333ccc",
+      "title": "How does a casino guarantee it wins?",
+      "publishedAt": "2026-05-24T14:00:00Z",
+      "hookText": "How does a casino guarantee it wins, every single night, no matter who is at the table? The answer is hidden in the carpet.",
+      "injectedRuleIds": [],
+      "metrics": {
+        "views": 58700,
+        "impressions": 690000,
+        "ctr": 0.085,
+        "averageViewDuration": 181,
+        "averageViewPercentage": 61,
+        "subscribersGained": 940
+      },
+      "retentionCurve": [
+        {
+          "elapsedRatio": 0,
+          "relativeRetention": 1
+        },
+        {
+          "elapsedRatio": 0.1,
+          "relativeRetention": 0.94
+        },
+        {
+          "elapsedRatio": 0.25,
+          "relativeRetention": 0.83
+        },
+        {
+          "elapsedRatio": 0.5,
+          "relativeRetention": 0.69
+        },
+        {
+          "elapsedRatio": 0.75,
+          "relativeRetention": 0.57
+        },
+        {
+          "elapsedRatio": 1,
+          "relativeRetention": 0.44
+        }
+      ],
+      "pulledAt": "2026-06-11T00:00:00Z"
+    },
+    {
+      "jobId": "v_004",
+      "videoId": "DDDD4444ddd",
+      "title": "The supply chain behind a banana",
+      "publishedAt": "2026-05-31T14:00:00Z",
+      "hookText": "The banana is the world's most popular fruit. It is a tropical berry grown in over 100 countries and shipped green.",
+      "injectedRuleIds": [],
+      "metrics": {
+        "views": 12400,
+        "impressions": 480000,
+        "ctr": 0.034,
+        "averageViewDuration": 80,
+        "averageViewPercentage": 34,
+        "subscribersGained": 120
+      },
+      "retentionCurve": [
+        {
+          "elapsedRatio": 0,
+          "relativeRetention": 1
+        },
+        {
+          "elapsedRatio": 0.1,
+          "relativeRetention": 0.6
+        },
+        {
+          "elapsedRatio": 0.2,
+          "relativeRetention": 0.43
+        },
+        {
+          "elapsedRatio": 0.5,
+          "relativeRetention": 0.31
+        },
+        {
+          "elapsedRatio": 0.75,
+          "relativeRetention": 0.23
+        },
+        {
+          "elapsedRatio": 1,
+          "relativeRetention": 0.17
+        }
+      ],
+      "pulledAt": "2026-06-11T00:00:00Z"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-curiosity-hook",
+      "pattern": "Opening with a curiosity-gap question that names a mystery and promises a hidden reason sustains early retention; flat declarative/definitional openers collapse in the first 10%.",
+      "evidenceVideoIds": [
+        "AAAA1111aaa",
+        "CCCC3333ccc",
+        "BBBB2222bbb",
+        "DDDD4444ddd"
+      ],
+      "sampleSize": 4,
+      "confidence": 0.68,
+      "status": "promoted",
+      "createdAt": "2026-06-12T12:54:57.209Z",
+      "updatedAt": "2026-06-12T12:54:57.209Z"
+    },
+    {
+      "id": "hyp-ctr-hook-correlation",
+      "pattern": "Question-style mystery hooks also correlate with higher CTR (~0.08 vs ~0.03), suggesting the title/hook framing carries both click and hold.",
+      "evidenceVideoIds": [
+        "AAAA1111aaa",
+        "CCCC3333ccc",
+        "BBBB2222bbb",
+        "DDDD4444ddd"
+      ],
+      "sampleSize": 4,
+      "confidence": 0.5,
+      "status": "open",
+      "createdAt": "2026-06-12T12:54:57.209Z",
+      "updatedAt": "2026-06-12T12:54:57.209Z"
+    }
+  ],
+  "appliedRules": [
+    {
+      "id": "r_hyp-curiosity-hook",
+      "rule": "Opening with a curiosity-gap question that names a mystery and promises a hidden reason sustains early retention; flat declarative/definitional openers collapse in the first 10%.",
+      "rationale": "Promoted from hypothesis on sufficient evidence.",
+      "sampleSize": 4,
+      "confidence": 0.68,
+      "evidenceVideoIds": [
+        "AAAA1111aaa",
+        "CCCC3333ccc",
+        "BBBB2222bbb",
+        "DDDD4444ddd"
+      ],
+      "promotedAt": "2026-06-12T12:54:57.209Z",
+      "status": "active"
+    },
+    {
+      "id": "r_open_every_script_with_a_curiosity_gap_q",
+      "rule": "Open every script with a curiosity-gap question that names a specific mystery and explicitly promises a hidden/non-obvious reason. Never open with a flat definitional statement (e.g., 'X is a...').",
+      "rationale": "Both videos using question/mystery hooks held ~0.92-0.94 retention at the 10% mark and finished above 0.40; both videos using definitional openers dropped to ~0.60 by 10% and below 0.20 by the end.",
+      "sampleSize": 4,
+      "confidence": 0.66,
+      "evidenceVideoIds": [
+        "AAAA1111aaa",
+        "CCCC3333ccc",
+        "BBBB2222bbb",
+        "DDDD4444ddd"
+      ],
+      "promotedAt": "2026-06-12T12:54:57.209Z",
+      "status": "active"
+    }
+  ],
+  "dropoffNotes": [
+    {
+      "zone": "0-10%",
+      "pattern": "Scripts that open with a definitional/declarative statement lose ~40% of viewers within the first 10% of runtime, vs ~6-8% loss for question-hook scripts.",
+      "mappedTo": "Replace definitional cold opens with an unresolved curiosity-gap question; defer definitions until after the hook lands.",
+      "evidenceVideoIds": [
+        "BBBB2222bbb",
+        "DDDD4444ddd"
+      ]
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-06-12",
+      "change": "Created hypothesis hyp-curiosity-hook and promoted it to an applied rule on hook shape.",
+      "why": "Clean 2-vs-2 structural contrast: mystery-question hooks held early retention and finished strong; definitional hooks cratered in the first 10%.",
+      "evidence": "AAAA1111(10%:0.92,end:0.41) + CCCC3333(10%:0.94,end:0.44) vs BBBB2222(10%:0.62,end:0.16) + DDDD4444(10%:0.60,end:0.17)"
+    },
+    {
+      "date": "2026-06-12",
+      "change": "Logged hyp-ctr-hook-correlation as an unpromoted hypothesis.",
+      "why": "CTR co-moves with hook style but click behavior is confounded by title/thumbnail; insufficient isolation to rule-ify.",
+      "evidence": "CTR 0.079/0.085 (question) vs 0.031/0.034 (declarative)"
+    },
+    {
+      "date": "2026-06-12",
+      "change": "Added 0-10% dropoff note mapping early crater to definitional cold opens.",
+      "why": "The retention loss is concentrated structurally at the open, not spread across the video.",
+      "evidence": "BBBB2222 and DDDD4444 both ~0.60 at 10%"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "how_industries_work",
+  "title": "how_industries_work",
+  "description": "hidden business systems and industry mechanics",
+  "niche": "hidden business systems and industry mechanics",
+  "archetype": "blueprint_board",
+  "palette": {
+    "background": "#08090f",
+    "surface": "#10131c",
+    "textPrimary": "#FFFFFF",
+    "textSecondary": "rgba(255,255,255,0.75)",
+    "accent1": "#FFE500",
+    "accent2": "#00D8FF",
+    "money": "#FFE500",
+    "up": "#00D8FF",
+    "down": "#FF3B30"
+  },
+  "typography": {
+    "display": "Bebas Neue",
+    "body": "Syne",
+    "mono": "IBM Plex Mono",
+    "case": "upper",
+    "letterSpacing": 0
+  },
+  "layout": {
+    "density": "normal",
+    "alignment": "left"
+  },
+  "assetStyle": {
+    "style": "blueprint-wireframe",
+    "stroke": 2,
+    "fill": "none",
+    "strokeColor": "#FFFFFF"
+  },
+  "cameraProfile": {
+    "movement": "cinematic",
+    "pushZoom": 0.93,
+    "maxTravel": 2,
+    "minDwell": 0.7,
+    "easing": "cinematic"
+  },
+  "motionProfile": {
+    "bobAmp": 1,
+    "entrance": "fade_up",
+    "fillerDensity": "low"
+  },
+  "background": {
+    "mode": "board_grid",
+    "color": "#08090f",
+    "grain": 0.45
+  },
+  "audioIdentity": {
+    "voice": "536d3a5e000945adb7038665781a4aca",
+    "musicMoods": [
+      "curious",
+      "tense",
+      "uplifting",
+      "reflective",
+      "neutral"
+    ],
+    "sfxPack": "default",
+    "sfxIntensity": 1
+  },
+  "scriptStyle": {
+    "tone": "calm authority, slightly conspiratorial, insider knowledge",
+    "sentenceStyle": "short punchy sentences. then longer explanatory ones. rhetorical questions followed immediately by the answer.",
+    "hookStyle": "name the familiar thing, hint at the hidden mechanism, promise the reveal",
+    "pacing": "measured",
+    "vocabulary": "plain, concrete",
+    "episodeArchetype": "explainer",
+    "forbiddenPhrases": [
+      "in today's video",
+      "make sure to like",
+      "as I mentioned",
+      "basically"
+    ]
+  },
+  "format": {
+    "minutes": 8,
+    "sectionPattern": [
+      "hook",
+      "comparison",
+      "diagram",
+      "revelation",
+      "conclusion"
+    ],
+    "recurringSegments": []
+  },
+  "comboRules": [
+    {
+      "primary": "hot_dog",
+      "partner": "soda_cup",
+      "combo": "hot_dog_combo",
+      "keywords": [
+        "soda",
+        "combo",
+        "drink",
+        "pop"
+      ]
+    }
+  ]
+}

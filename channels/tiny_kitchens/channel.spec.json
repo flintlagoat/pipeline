@@ -1,0 +1,95 @@
+{
+  "id": "tiny_kitchens",
+  "title": "Tiny Kitchens",
+  "description": "Cozy, hand-illustrated explainers about the science and history of home cooking — warm, playful, sketchbook feel, for curious foodies and hobby cooks",
+  "niche": "food science",
+  "archetype": "notebook_sketch",
+  "palette": {
+    "background": "#FBF3E2",
+    "surface": "#F4E6CC",
+    "textPrimary": "#3B2A1E",
+    "textSecondary": "#7A6450",
+    "accent1": "#E2703A",
+    "accent2": "#5C9A6E",
+    "money": "#C9A227",
+    "up": "#5C9A6E",
+    "down": "#C75D4F"
+  },
+  "typography": {
+    "display": "Caveat",
+    "body": "Quicksand",
+    "mono": "Space Mono",
+    "case": "title",
+    "letterSpacing": 0
+  },
+  "layout": {
+    "density": "normal",
+    "alignment": "left"
+  },
+  "assetStyle": {
+    "style": "hand-drawn",
+    "stroke": 2,
+    "fill": "soft",
+    "strokeColor": "#3B2A1E",
+    "fillColor": "#E2703A"
+  },
+  "cameraProfile": {
+    "movement": "gentle",
+    "pushZoom": 0.94,
+    "maxTravel": 1.2,
+    "minDwell": 1,
+    "easing": "ease_in_out"
+  },
+  "motionProfile": {
+    "bobAmp": 1.2,
+    "entrance": "draw_on",
+    "fillerDensity": "medium"
+  },
+  "background": {
+    "mode": "dotted",
+    "color": "#FBF3E2",
+    "color2": "#E8D7B6",
+    "grain": 0.12
+  },
+  "audioIdentity": {
+    "voice": "933563129e564b19a115bedd57b7406a",
+    "musicMoods": [
+      "cozy",
+      "playful",
+      "acoustic-warm",
+      "curious"
+    ],
+    "sfxPack": "default",
+    "sfxIntensity": 0.4
+  },
+  "scriptStyle": {
+    "tone": "warm, curious, and gently playful — like a friend explaining a kitchen secret over tea",
+    "sentenceStyle": "short and conversational with the occasional delighted aside",
+    "hookStyle": "open with a tiny everyday kitchen mystery the viewer has definitely wondered about",
+    "pacing": "relaxed but steady, building little 'aha' beats",
+    "vocabulary": "approachable everyday words, science terms gently unpacked, sensory food language",
+    "episodeArchetype": "one humble ingredient or technique unpacked through its science and history",
+    "forbiddenPhrases": [
+      "smash that like button",
+      "in today's video",
+      "let's dive in",
+      "without further ado"
+    ]
+  },
+  "format": {
+    "minutes": 7,
+    "sectionPattern": [
+      "hook",
+      "the-question",
+      "the-science",
+      "the-history",
+      "kitchen-experiment",
+      "takeaway"
+    ],
+    "recurringSegments": [
+      "tiny-tip",
+      "myth-vs-fact"
+    ]
+  },
+  "comboRules": []
+}

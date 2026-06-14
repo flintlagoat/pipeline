@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Outer price tag silhouette -->
+  <path d="M 60 40 L 240 40 L 340 150 L 240 260 L 60 260 Z" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <!-- Hole at left side -->
+  <circle cx="95" cy="150" r="18" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <!-- String through hole -->
+  <line x1="60" y1="140" x2="77" y2="150" stroke="#E0E0E0" stroke-width="1.5"/>
+  <line x1="60" y1="160" x2="77" y2="150" stroke="#E0E0E0" stroke-width="1.5"/>
+  <!-- Inner border / inset line -->
+  <path d="M 72 60 L 230 60 L 318 150 L 230 240 L 72 240 Z" stroke="#E0E0E0" stroke-width="1" fill="none"/>
+  <!-- Dollar sign main vertical bar -->
+  <line x1="210" y1="115" x2="210" y2="185" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Dollar sign top curve -->
+  <path d="M 230 128 Q 230 115 210 115 Q 190 115 190 130 Q 190 150 210 150" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <!-- Dollar sign bottom curve -->
+  <path d="M 190 172 Q 190 185 210 185 Q 230 185 230 170 Q 230 150 210 150" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <!-- Price lines / horizontal detail bars -->
+  <line x1="140" y1="200" x2="280" y2="200" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="155" y1="215" x2="265" y2="215" stroke="#E0E0E0" stroke-width="1"/>
+  <!-- Small tick marks on price lines -->
+  <line x1="140" y1="196" x2="140" y2="204" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="280" y1="196" x2="280" y2="204" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="155" y1="211" x2="155" y2="219" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="265" y1="211" x2="265" y2="219" stroke="#E0E0E0" stroke-width="1"/>
+  <!-- Diagonal notch lines on pointed tip area -->
+  <line x1="290" y1="135" x2="308" y2="150" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="290" y1="165" x2="308" y2="150" stroke="#E0E0E0" stroke-width="1"/>
+  <!-- Top left fold corner detail -->
+  <line x1="60" y1="60" x2="72" y2="60" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="60" y1="240" x2="72" y2="240" stroke="#E0E0E0" stroke-width="1"/>
+</svg>

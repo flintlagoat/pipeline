@@ -1,0 +1,58 @@
+<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer pot silhouette -->
+  <path d="M95 110 Q70 130 65 190 Q60 250 80 300 Q100 350 150 355 Q200 350 220 300 Q240 250 235 190 Q230 130 205 110 Z" fill="#d16937" fill-opacity="0.25" stroke="#3B2A1E" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Pot rim / neck -->
+  <path d="M95 110 Q90 95 100 88 L200 88 Q210 95 205 110" fill="#d16937" fill-opacity="0.3" stroke="#3B2A1E" stroke-width="2.5"/>
+  <ellipse cx="150" cy="88" rx="51" ry="11" fill="#d16937" fill-opacity="0.2" stroke="#3B2A1E" stroke-width="2.5"/>
+  <!-- Lid -->
+  <path d="M105 84 Q150 72 195 84" fill="none" stroke="#3B2A1E" stroke-width="2"/>
+  <path d="M120 78 Q150 60 180 78 L185 84 L115 84 Z" fill="#d16937" fill-opacity="0.3" stroke="#3B2A1E" stroke-width="2"/>
+  <ellipse cx="150" cy="62" rx="10" ry="6" fill="#d16937" fill-opacity="0.4" stroke="#3B2A1E" stroke-width="2"/>
+
+  <!-- Decorative band top -->
+  <path d="M78 145 Q150 158 222 145" fill="none" stroke="#3B2A1E" stroke-width="1.6"/>
+  <path d="M75 160 Q150 173 225 160" fill="none" stroke="#3B2A1E" stroke-width="1.6"/>
+
+  <!-- Hieroglyph-style panel left -->
+  <g stroke="#3B2A1E" stroke-width="1.4" fill="none">
+    <!-- eye of horus -->
+    <path d="M95 195 Q105 188 118 195 Q108 205 95 195 Z"/>
+    <circle cx="106" cy="195" r="2.5" fill="#3B2A1E"/>
+    <path d="M118 195 L124 202"/>
+    <path d="M100 200 Q98 210 105 213"/>
+  </g>
+
+  <!-- Center column of glyphs -->
+  <g stroke="#3B2A1E" stroke-width="1.4" fill="none">
+    <!-- ankh -->
+    <ellipse cx="150" cy="195" rx="7" ry="9"/>
+    <line x1="150" y1="204" x2="150" y2="225"/>
+    <line x1="140" y1="212" x2="160" y2="212"/>
+    <!-- wavy water -->
+    <path d="M138 240 q5 -6 10 0 t10 0" />
+    <path d="M138 250 q5 -6 10 0 t10 0" />
+  </g>
+
+  <!-- Right panel: bee glyph (honey) -->
+  <g stroke="#3B2A1E" stroke-width="1.4">
+    <ellipse cx="190" cy="200" rx="9" ry="6" fill="#d16937" fill-opacity="0.4"/>
+    <line x1="184" y1="200" x2="196" y2="200"/>
+    <line x1="187" y1="195" x2="187" y2="206"/>
+    <line x1="193" y1="195" x2="193" y2="206"/>
+    <path d="M183 196 q-6 -5 -3 5" fill="none"/>
+    <path d="M197 196 q6 -5 3 5" fill="none"/>
+  </g>
+
+  <!-- honeycomb hint near base -->
+  <g stroke="#3B2A1E" stroke-width="1.3" fill="none">
+    <polygon points="130,280 138,275 146,280 146,290 138,295 130,290"/>
+    <polygon points="148,280 156,275 164,280 164,290 156,295 148,290"/>
+    <polygon points="139,296 147,291 155,296 155,306 147,311 139,306"/>
+  </g>
+
+  <!-- bottom decorative band -->
+  <path d="M85 320 Q150 332 215 320" fill="none" stroke="#3B2A1E" stroke-width="1.6"/>
+
+  <!-- honey drip from rim -->
+  <path d="M170 92 q3 14 0 24 q-3 8 0 14" fill="#d16937" fill-opacity="0.5" stroke="#3B2A1E" stroke-width="1.5"/>
+</svg>

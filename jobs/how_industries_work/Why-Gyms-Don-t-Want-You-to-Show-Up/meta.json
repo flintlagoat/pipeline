@@ -1,0 +1,29 @@
+{
+  "topic": "Why Gyms Want you to never show up",
+  "minutes": 8,
+  "scriptArc": "expectation_gap",
+  "packaging": {
+    "title": "Why Gyms Are Built to Make You Quit",
+    "altTitles": [
+      "The Gym Business Model Needs You Absent",
+      "Why Gyms Sell More Memberships Than They Fit"
+    ],
+    "description": "A breakdown of the gym membership business model, why fitness clubs oversell memberships far beyond capacity, and how no-shows quietly fund the entire industry.",
+    "thumbnail": {
+      "bigText": "6,500 MEMBERS 300 SPOTS",
+      "emphasisWord": "6,500",
+      "assetName": "contract_document",
+      "visualIdea": "An empty gym floor with rows of unused treadmills, a single dusty membership card in the foreground"
+    },
+    "hookPromise": "The average gym sells memberships to ten times more people than its building could ever hold on one day — and the whole business quietly depends on you forgetting to come.",
+    "openLoops": [
+      "What happens to a gym's profit if every member actually showed up on the same morning?",
+      "Why does the contract make canceling harder than signing up?",
+      "Why are the cheapest memberships the most profitable ones for the gym?"
+    ],
+    "payoff": "Big-box gyms intentionally sell roughly 10x more memberships than capacity, and roughly half of members never go — meaning the gym's entire margin is built on ghost members paying monthly for a service they don't use, by design.",
+    "whyItWorks": "Nearly everyone has signed a gym membership and quit, so the betrayal angle hits a universal personal experience while exposing a hidden industry math nobody told them.",
+    "score": 84
+  },
+  "createdAt": "2026-06-14T00:42:04.073Z"
+}
