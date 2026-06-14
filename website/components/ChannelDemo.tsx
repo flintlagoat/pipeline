@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { createClient } from '@/lib/supabase/client';
 
 type Spec = {
   title: string;
@@ -112,12 +113,39 @@ export default function ChannelDemo() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
   const [spec, setSpec] = useState<Spec | null>(null);
   const [err, setErr] = useState('');
+  const [supabase] = useState(() => createClient());
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => setLoggedIn(!!data.user));
+  }, [supabase]);
+
+  async function save() {
+    if (!spec) return;
+    setSaving(true);
+    try {
+      const res = await fetch('/api/channels', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ spec }),
+      });
+      if (!res.ok) throw new Error();
+      setSaved(true);
+    } catch {
+      /* keep the CTA; saving is best-effort */
+    } finally {
+      setSaving(false);
+    }
+  }
 
   async function generate(e: React.FormEvent) {
     e.preventDefault();
     if (idea.trim().length < 4) return;
     setStatus('loading');
     setErr('');
+    setSaved(false);
     try {
       const res = await fetch('/api/demo/channel', {
         method: 'POST',
@@ -186,9 +214,30 @@ export default function ChannelDemo() {
           <div className="rounded-2xl border border-quill-500/40 bg-quill-500/10 p-6 text-center">
             <p className="text-lg font-medium text-white">This is just the look. Inkwell makes the whole video.</p>
             <p className="mt-1 text-sm text-slate-400">Retention-engineered script, rendered animation, voiceover — auto-published on a schedule.</p>
-            <a href="/#waitlist" className="mt-4 inline-block rounded-xl bg-quill-500 px-6 py-3 font-semibold text-white transition hover:bg-quill-400">
-              Get my first video free
-            </a>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+              {loggedIn ? (
+                saved ? (
+                  <a href="/app" className="rounded-xl bg-quill-500 px-6 py-3 font-semibold text-white transition hover:bg-quill-400">
+                    Saved ✓ — open your studio
+                  </a>
+                ) : (
+                  <button
+                    onClick={save}
+                    disabled={saving}
+                    className="rounded-xl bg-quill-500 px-6 py-3 font-semibold text-white transition hover:bg-quill-400 disabled:opacity-60"
+                  >
+                    {saving ? 'Saving…' : 'Save to my studio'}
+                  </button>
+                )
+              ) : (
+                <a href="/login" className="rounded-xl bg-quill-500 px-6 py-3 font-semibold text-white transition hover:bg-quill-400">
+                  Sign up to save this channel
+                </a>
+              )}
+              <a href="/#waitlist" className="rounded-xl border border-white/15 px-6 py-3 font-semibold text-slate-200 transition hover:border-white/30 hover:text-white">
+                Get my first video free
+              </a>
+            </div>
           </div>
         </div>
       )}

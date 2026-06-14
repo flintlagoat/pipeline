@@ -14,6 +14,12 @@ export default async function AppPage() {
   const credits = profile?.credits ?? 0;
   const email = profile?.email ?? user.email;
 
+  const { data: channels } = await supabase
+    .from('channels')
+    .select('id,title,niche,archetype,created_at')
+    .order('created_at', { ascending: false });
+  const chs = (channels ?? []) as { id: string; title: string | null; niche: string | null; archetype: string | null; created_at: string }[];
+
   return (
     <main>
       <header className="sticky top-0 z-50 border-b border-white/5 bg-ink-950/70 backdrop-blur-md">
@@ -37,8 +43,8 @@ export default async function AppPage() {
           </div>
           <div className="card p-6">
             <div className="text-xs uppercase tracking-wide text-slate-500">Channels</div>
-            <div className="mt-1 font-display text-4xl font-semibold text-white">0</div>
-            <div className="mt-1 text-sm text-slate-400">Design your first channel look.</div>
+            <div className="mt-1 font-display text-4xl font-semibold text-white">{chs.length}</div>
+            <div className="mt-1 text-sm text-slate-400">{chs.length ? 'Saved to your studio.' : 'Design your first channel look.'}</div>
           </div>
           <div className="card flex flex-col justify-between p-6">
             <div>
@@ -50,6 +56,25 @@ export default async function AppPage() {
             </a>
           </div>
         </div>
+
+        {chs.length > 0 && (
+          <div className="mt-8 card p-6">
+            <h2 className="text-lg font-semibold text-white">Your channels</h2>
+            <div className="mt-4 divide-y divide-white/5">
+              {chs.map((c) => (
+                <div key={c.id} className="flex items-center justify-between py-3">
+                  <div>
+                    <div className="font-medium text-white">{c.title ?? 'Untitled channel'}</div>
+                    <div className="text-sm text-slate-400">{c.niche}</div>
+                  </div>
+                  <span className="rounded-md border border-white/10 px-2 py-1 text-xs capitalize text-slate-400">
+                    {(c.archetype ?? '').replace(/_/g, ' ')}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="mt-8 card p-6">
           <h2 className="text-lg font-semibold text-white">Coming to your studio</h2>
