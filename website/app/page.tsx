@@ -24,7 +24,7 @@ function Nav() {
           <a href="#features" className="transition hover:text-white">Features</a>
           <a href="#pricing" className="transition hover:text-white">Pricing</a>
         </div>
-        <a href="#waitlist" className="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-ink-950 transition hover:bg-slate-200">
+        <a href="/demo" className="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-ink-950 transition hover:bg-slate-200">
           Try free
         </a>
       </nav>
@@ -53,7 +53,7 @@ function Hero() {
             every channel, designed to be watched, not skipped. You set up a channel. It does the rest.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a href="#waitlist" className="rounded-xl bg-quill-500 px-6 py-3.5 font-semibold text-white transition hover:bg-quill-400">
+            <a href="/demo" className="rounded-xl bg-quill-500 px-6 py-3.5 font-semibold text-white transition hover:bg-quill-400">
               Generate a free video
             </a>
             <a href="#how" className="rounded-xl border border-white/15 px-6 py-3.5 font-semibold text-slate-200 transition hover:border-white/30 hover:text-white">
