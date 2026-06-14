@@ -23,6 +23,7 @@ function Nav() {
           <a href="#how" className="transition hover:text-white">How it works</a>
           <a href="#features" className="transition hover:text-white">Features</a>
           <a href="#pricing" className="transition hover:text-white">Pricing</a>
+          <a href="/login" className="transition hover:text-white">Sign in</a>
         </div>
         <a href="/demo" className="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-ink-950 transition hover:bg-slate-200">
           Try free
