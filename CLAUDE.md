@@ -1,7 +1,44 @@
 # YouTube Automation Pipeline — Project State
 > READ THIS FILE COMPLETELY before writing any code.
 > UPDATE THIS FILE before ending every session.
-> Last updated: 2026-06-13 (session 8)
+> Last updated: 2026-06-14 (session 9)
+> Session 9 phase: PRODUCTIZATION — begin turning the pipeline into a sellable product, "Inkwell".
+>   Decided in a market brainstorm (full notes in memory [[productization-pivot]]): position as the
+>   ANTI-SLOP tool vs the demonetized stock-footage crowd; business model = free cloud demo → cloud
+>   credit subscription → paid local app whose render runs local but whose spec/script "brain" calls
+>   a HOSTED API (so the prompt IP never ships). Build order operator gave: pipeline channel-vibe +
+>   fix risks → dependency fix → website → name. THIS SESSION SHIPPED + PUSHED to a NEW git repo
+>   github.com/flintlagoat/pipeline (the folder was NOT a repo before; secret-scanned — .env, the
+>   youtube.auth.json tokens, .quota, node_modules all excluded):
+>   (1) DEPENDENCY FIX — transcription is now a PLUGGABLE backend (NEW pipeline/src/audio/transcribe/
+>   {index.ts dispatcher, backends/localWhisper.ts, backends/cloud.ts}), selectable local|cloud|auto
+>   via TRANSCRIBE_BACKEND or opts (mirrors tts/). cloud = any OpenAI-compatible /audio/transcriptions
+>   (Groq whisper-large-v3 default) over global fetch — ZERO install for non-technical buyers. auto
+>   keeps existing machines working (local if whisper present, else cloud). DeepFilterNet REMOVED
+>   ENTIRELY (denoise.ts + checkDependencies.ts deleted; audioProcessor no longer denoises — clean/AI
+>   VO needs none). .env.example documents TRANSCRIBE_*. tsc clean. (The "choose at setup" UI still
+>   needs wiring into product onboarding; the engine reads env/opts already.)
+>   (2) CHANNEL DISTINCTNESS — NEW pipeline/src/channelDistinct.ts: a deterministic per-channel
+>   signature (seeded off channel id: accent hue-rotation + camera/motion/grain nudges) + a
+>   LOW-SENSITIVITY collision guard (only re-rolls — bigger hue shift + display-font swap — when a
+>   freshly generated channel is near-identical, by coarse fingerprint, to an existing one; per
+>   operator: it's fine if two look similar, fresh gen spreads 200 apart). Wired into
+>   generateChannelSpec right after validation (applies on preview AND save). Offline test
+>   `npm run test:distinct` (all pass) + tsc clean. This is the anti-fingerprint = anti-demonetization
+>   moat I flagged as the #1 risk.
+>   (3) INKWELL WEBSITE — NEW website/ (Next.js 14.2.35 [patched] + Tailwind + Supabase). Landing page
+>   (anti-slop hero, the demonetization problem, the empty-market-quadrant positioning, how-it-works,
+>   features, 3-tier pricing, waitlist) + app/api/waitlist/route.ts + lib/supabaseAdmin.ts (server-only,
+>   null-safe before keys exist) + supabase/migrations/0001_init.sql (leads table, RLS service-role
+>   only). Brand NAME = Inkwell (operator picked from a shortlist). `npm run build` verified clean.
+>   SUPABASE WORKAROUND: the MCP can't be authed inside the Claude Code desktop app, so the site is
+>   ENV-DRIVEN — operator pastes 3 keys from the Supabase WEB dashboard into website/.env.local and
+>   runs the SQL file in the web SQL editor (no CLI). Project ref lundkydfijkkqaaxrvrz (memory
+>   [[product-infra-refs]]).
+>   NOT YET DONE (next): channel-look PREVIEW (render sample frames from a draft ChannelSpec so users
+>   iterate the vibe before committing) + make channel design the product front door; wire
+>   transcription "choose at setup" into onboarding; a cloud render backend for the free demo; auth +
+>   billing; deploy website/ to Vercel. The hosted-brain anti-piracy split is still future work.
 > Session 8 phase: GO LIVE — real credentials wired + the publish loop PROVEN end-to-end, plus a
 >   text-overlap render fix and a real posting schedule. Operator supplied all keys this session.
 >   (1) CREDENTIALS LIVE (all in `.env`, gitignored): FISH_API_KEY (real voice), YOUTUBE_API_KEY
