@@ -5,6 +5,7 @@
   "scripts": {
     "watch": "ts-node src/cli.ts watch",
     "channel:new": "ts-node src/cli.ts channel:new",
+    "channel:preview": "ts-node src/cli.ts channel:preview",
     "script": "ts-node src/cli.ts script",
     "voiceover": "ts-node src/cli.ts voiceover",
     "process": "ts-node src/cli.ts process",

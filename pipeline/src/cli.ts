@@ -2,6 +2,9 @@ import './config/env'; // load .env into process.env FIRST, before anything read
 import { processJob, approveJob, printStatus, startWatcher, generateScriptForJob, generateVoiceoverForJob } from './orchestrator';
 import { generateThumbnailForJob } from './thumbnailGenerator';
 import { generateChannelSpec } from './channelGenerator';
+import { loadChannelSpec } from './channelSpec';
+import { generateChannelPreview } from './channelPreview';
+import * as path from 'path';
 import { TtsBackendId } from './tts';
 import { youtubeAuthFlow } from './publish/youtubeAuth';
 import { publishJob } from './publish';
@@ -35,6 +38,23 @@ async function main(): Promise<void> {
       console.log(`   fonts:     ${spec.typography.display} / ${spec.typography.body} / ${spec.typography.mono}`);
       console.log(`   assets:    ${spec.assetStyle.style}   background: ${spec.background.mode} (grain ${spec.background.grain})`);
       console.log(`   saved →    channels/${spec.id}/channel.spec.json (+ config.json)`);
+      break;
+    }
+
+    case 'channel:preview': {
+      // npm run channel:preview <channel_id> [t1,t2,...seconds]
+      const [channelId, timesArg] = args;
+      if (!channelId) {
+        console.error('Usage: npm run channel:preview <channel_id> [t1,t2,...seconds]');
+        process.exit(1);
+      }
+      const spec = loadChannelSpec(channelId);
+      const outDir = path.resolve(__dirname, '..', '..', 'output', channelId, '_preview');
+      const times = timesArg ? timesArg.split(',').map(Number).filter((t) => Number.isFinite(t)) : undefined;
+      console.log(`Rendering channel-look preview for "${channelId}"...`);
+      const pngs = generateChannelPreview(spec, outDir, times);
+      console.log(`\n✅ Preview frames (${pngs.length}):`);
+      for (const pp of pngs) console.log(`   ${pp}`);
       break;
     }
 
@@ -195,6 +215,7 @@ YouTube Automation Pipeline
 Commands:
   npm run watch                                    Watch for new jobs and process automatically
   npm run channel:new "<title>" "<desc>" ...       Generate a new channel (ChannelSpec)
+  npm run channel:preview <channel>                Render still preview frames of a channel's look (no API)
   npm run script <channel> <job> <min> "<topic>"   Phase 0: generate a narration script
   npm run voiceover <channel> <job> [fish|sapi]    Phase 0.5: synthesize voiceover (default Fish S1)
   npm run process <channel> <job> [--draft]        Manually process a job → video (--draft = fast preview)
