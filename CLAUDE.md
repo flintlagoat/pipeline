@@ -1,7 +1,48 @@
 # YouTube Automation Pipeline — Project State
 > READ THIS FILE COMPLETELY before writing any code.
 > UPDATE THIS FILE before ending every session.
-> Last updated: 2026-06-14 (session 9)
+> Last updated: 2026-06-14 (session 10)
+> Session 10 phase: BACK-THIRD DEAD-CAMERA FIX — operator reported a rendered video (airline-oversell
+>   "THE OVERSELL", output/how_industries_work/idk) with "static camera for elongated times" and "from
+>   minute 2 on many errors / low quality." DIAGNOSED with ffmpeg freezedetect + frame inspection +
+>   reading board_spec.json: a 14.1s HARD freeze (−50dB) and 25.7s NEAR-freeze (−45dB) across 2:05–2:33.
+>   ROOT CAUSE = SPEC GENERATION, not the camera. The generator front-loaded detail (front sections:
+>   7–8 timed elements + a hero each) and STARVED the back: a `punch` section spanned 122–155s (~33s)
+>   with only 3 elements and ZERO asset (reveals 122.0/138.7/153.3 → 16.8s & 14.5s gaps). The renderer
+>   camera is reveal-driven, so with nothing revealing it had nothing to track; `driftFrames` fired but
+>   framed the whole-section union (incl. a font-130 headline whose width ESTIMATE exceeds the section)
+>   → every drift frame clamped to full-width → frozen. Also: the conclusion crammed into ~5s with the
+>   last body line clipped off the bottom; the big payoff headline flashed ~3s. Memory [[render-back-third-dead-camera]].
+>   FIXED (operator chose "spec-gen fix + camera net") — all verified on idk; both tsc clean; test:camera,
+>   test:overlap, test:pacing pass:
+>   (1) PROMPT (prompts/boardSpecSystemPrompt.ts) — NEW "VISUAL DENSITY" rule block: every content
+>   section needs a hero; ≤16s/section (split longer runs); ≤6s max intra-section reveal gap (add an
+>   intermediate beat); even density end-to-end; conclusion not crammed. PUNCH beat tightened to BRIEF
+>   (not a long section). Replaced the now-vestigial CAMERA RULES (the renderer ignores spec keyframes —
+>   renderSetup overwrites them via buildCameraPath) with an honest "emit only the start keyframe" note,
+>   freeing token budget for dense sections.
+>   (2) VALIDATION (validation/validateSpec.ts) — camera_keyframes min(2)→min(1) (the single-start-
+>   keyframe prompt was forcing a wasted Opus retry; renderer overwrites them anyway).
+>   (3) CAMERA NET (renderer/src/camera.ts) — rewrote `driftFrames`: frames only what's VISIBLE at the
+>   hold start, clamped to the section (new clampFrameToSection), CONTENT-relative fill via frameForContent
+>   (a lone eyebrow is framed tight ~2× instead of marooned in empty board), guaranteed push/pull + seeded
+>   pan. Kills the frozen drift even on a sparse spec.
+>   (4) RELAYOUT (relayout.ts fitSectionToSafeArea) — fixed the vertical-overflow bug: when content is
+>   taller than the safe band and TEXT is the binding dimension, it used to pin to SAFE_TOP and let the
+>   bottom overflow PAST the section (the "text half off the bottom" clip). Now bottom-aligns within the
+>   section + a last-resort whole-content scale. Skips the pointless hero-shrink when text is binding.
+>   (5) pacingAudit.ts DEAD_WINDOW_THRESHOLD 14→9 (warns earlier, matches the new ≤6s target).
+>   (6) NEW pipeline/src/reprocessSpec.ts + `npm run reprocess <ch> <job>` — re-run Phase 2 (spec) + 2.5
+>   (assets) from the EXISTING output/<ch>/<job>/timestamps.json + clean_audio, NO Whisper re-run. This
+>   is the fast "re-spec from existing timestamps" fix-iteration tool the s8 handoff flagged as nice-to-have.
+>   RESULTS on idk (regenerated via reprocess, re-rendered): 11 sections (was 7), each hero-bearing +
+>   6–7 elements; punch now a 1s title card (was 33s); longest reveal gap 16.8s→7.8s (pacing audit);
+>   freezedetect worst HARD freeze 14.1s→7.4s, worst NEAR-freeze 25.7s→8.1s (≈3× better, no more dead
+>   empty zones — the ~7s holds now sit on rich content with the camera drifting); the payoff headline
+>   "A PROFITABLE ROUNDING ERROR" is now shown properly; the bridge-question ending is fully on-frame
+>   (no clip). NOTE: the regenerated idk/video.mp4 + board_spec.json REPLACE the old ones on disk; the
+>   operator's original "bad" copy is still in their Downloads. Re-verify any future spec change with
+>   `npm run reprocess how_industries_work idk` then the direct renderer call (no Whisper needed).
 > Session 9 phase: PRODUCTIZATION — begin turning the pipeline into a sellable product, "Inkwell".
 >   Decided in a market brainstorm (full notes in memory [[productization-pivot]]): position as the
 >   ANTI-SLOP tool vs the demonetized stock-footage crowd; business model = free cloud demo → cloud
@@ -47,9 +88,22 @@
 >   with the operator's PAT — NOT stored anywhere); /api/waitlist proven storing rows end-to-end.
 >   website/vercel.json pins framework=nextjs (fixes Vercel "no public dir"); operator set the 3 env
 >   vars in Vercel. (DDL gotcha: after a schema change run `notify pgrst, 'reload schema';`.)
->   NOT YET DONE (next): surface the preview + make channel design the product FRONT DOOR in the UI;
->   wire transcription "choose at setup" into onboarding; a cloud render backend for the free demo;
->   auth + billing; the hosted-brain anti-piracy split.
+>   (6) WEBSITE PRODUCT (customer-facing, all on Vercel — no separate backend needed yet). FREE DEMO:
+>   `/demo` + `/api/demo/channel` (Anthropic sonnet-4-6 → a channel look + a sample frame written in
+>   its voice), rendered instantly as a CSS "channel look" (components/ChannelDemo.tsx loads the
+>   chosen Google Fonts live). VERIFIED live: "economics of coffee shops" → "Grounds for Profit",
+>   coffee-brown blueprint, sample "$0.14 actual espresso cost". ACCOUNTS: Supabase email/password
+>   auth via @supabase/ssr (lib/supabase/{client,server}.ts + middleware.ts), `/login`, gated `/app`
+>   dashboard (credit balance), `/auth/signout`. profiles table + on-signup trigger (3 starter
+>   credits, RLS owner-only) applied via the Management API + VERIFIED end-to-end (signup → profile →
+>   3 credits → delete). Auth autoconfirm is ON (toggle in the Supabase dashboard later). Landing CTAs
+>   now point to /demo + a Sign-in link. website/.env.local holds ANTHROPIC_API_KEY (ALSO add it in
+>   Vercel env or the demo 503s in prod). website/supabase/migrations/0002_profiles.sql is the record.
+>   NOT YET DONE (needs operator input/infra): a CLOUD RENDER BACKEND so the demo/app can produce full
+>   VIDEOS (the pipeline — canvas/ffmpeg/workers — can't run in Vercel serverless; needs a host like a
+>   VM/Render/Fly worker); BILLING (e.g. Stripe) to buy credits + gate/rate-limit the demo in prod;
+>   confirm the Vercel deploys are green; (optional/lower-value) an operator-UI channel-preview button
+>   + transcription "choose at setup" UI; the hosted-brain anti-piracy split.
 > Session 8 phase: GO LIVE — real credentials wired + the publish loop PROVEN end-to-end, plus a
 >   text-overlap render fix and a real posting schedule. Operator supplied all keys this session.
 >   (1) CREDENTIALS LIVE (all in `.env`, gitignored): FISH_API_KEY (real voice), YOUTUBE_API_KEY
