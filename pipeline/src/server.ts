@@ -214,7 +214,13 @@ function beginRun(item: QueueItem): void {
 
     saveQueue();
     broadcastQueue();
-    tryStartNext();
+    // Cooldown before the next job: a render saturates every core, so give the OS a moment to
+    // reclaim memory/handles between jobs. If a job failed FAST (e.g. the machine was wedged and the
+    // process couldn't even spawn — Windows 0xC0000142), back off much longer so a transient
+    // resource crunch can't blast through and fail the whole queue in seconds.
+    const ranMs = item.startedAt ? Date.now() - new Date(item.startedAt).getTime() : 0;
+    const cooldownMs = code !== 0 && ranMs < 20000 ? 60000 : 8000;
+    setTimeout(tryStartNext, cooldownMs);
   });
 }
 
