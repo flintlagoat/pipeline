@@ -1,9 +1,12 @@
 import { NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 import { DEMO_SYSTEM_PROMPT, demoUserPrompt } from '@/lib/channelPrompt';
+import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 
 export const runtime = 'nodejs';
 export const maxDuration = 30;
+
+const DAILY_LIMIT = 15;
 
 function stripFences(t: string): string {
   return t.replace(/^```(?:json)?\r?\n?/, '').replace(/\r?\n?```$/, '').trim();
@@ -23,6 +26,26 @@ export async function POST(req: Request) {
 
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) return NextResponse.json({ error: 'The demo is not configured yet.' }, { status: 503 });
+
+  // Best-effort per-IP daily rate limit (cost protection for the public demo). Skips silently if
+  // Supabase isn't configured. IP comes from the platform's forwarded header.
+  const admin = getSupabaseAdmin();
+  if (admin) {
+    const ip = (req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || '').split(',')[0].trim() || 'unknown';
+    const since = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
+    const { count } = await admin
+      .from('demo_runs')
+      .select('id', { count: 'exact', head: true })
+      .eq('ip', ip)
+      .gte('created_at', since);
+    if ((count ?? 0) >= DAILY_LIMIT) {
+      return NextResponse.json(
+        { error: "You've reached today's free demo limit. Join the waitlist to keep going." },
+        { status: 429 }
+      );
+    }
+    await admin.from('demo_runs').insert({ ip });
+  }
 
   try {
     const client = new Anthropic({ apiKey: key });
