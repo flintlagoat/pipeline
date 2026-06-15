@@ -1,4 +1,8 @@
 # YouTube Automation Pipeline — Project State
+> 🟣 PRODUCT/WEBSITE/CLOUD: the project is now also a LIVE product, "Inkwell" — read **PRODUCT.md**
+>   FIRST for the website, cloud render worker, Supabase/Vercel/Render infra, live URLs, env vars,
+>   and the product roadmap. THIS file (CLAUDE.md) is the video ENGINE (pipeline + renderer) deep
+>   log + session history.
 > READ THIS FILE COMPLETELY before writing any code.
 > UPDATE THIS FILE before ending every session.
 > Last updated: 2026-06-14 (session 10)
