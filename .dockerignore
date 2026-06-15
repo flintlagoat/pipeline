@@ -1,0 +1,16 @@
+**/node_modules
+.git
+.env
+*.env
+**/.env.local
+channels/*/youtube.auth.json
+channels/*/.schedule.state.json
+.quota
+output
+jobs
+website
+ui
+renderer/fonts
+test
+**/*.tsbuildinfo
+*.log
