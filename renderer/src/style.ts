@@ -50,11 +50,59 @@ export const NOTEBOOK_SKETCH: RenderProfile = {
   motion: { bobAmp: 1.3 },
 };
 
+// tech_terminal = near-black flat console, phosphor/amber accents, mono-forward type, light
+// scanline grain, no grid. Reads as a hacker/terminal data channel.
+export const TECH_TERMINAL: RenderProfile = {
+  background: { mode: 'flat', color: '#07100B' },
+  grain: 0.28,
+  filler: { enabled: false, grid: false, gridColor: '60,255,150', gridAlpha: 0.06, accentColor: '124,255,203' },
+  fonts: { display: 'Share Tech Mono', body: 'IBM Plex Sans', mono: 'JetBrains Mono' },
+  camera: { pushZoom: 1.0, maxTravel: 0.9, minDwell: 0.5, travelEasing: 'snap' },
+  motion: { bobAmp: 0.4 },
+};
+
+// vintage_press = aged newsprint paper, heavy print tooth (grain), slab/serif headlines, red+ink
+// spot color, typewriter mono. Reads as a printed broadsheet / historical exposé.
+export const VINTAGE_PRESS: RenderProfile = {
+  background: { mode: 'paper', color: '#ECE3CE', color2: '#D8CBA8' },
+  grain: 0.38,
+  filler: { enabled: false, grid: false, gridColor: '120,110,90', gridAlpha: 0.05, accentColor: '46,71,86' },
+  fonts: { display: 'Zilla Slab', body: 'Bitter', mono: 'Courier Prime' },
+  camera: { pushZoom: 0.94, maxTravel: 1.6, minDwell: 0.9, travelEasing: 'ease_in_out' },
+  motion: { bobAmp: 0.4 },
+};
+
+// editorial_magazine = bright near-white, airy whitespace, high-contrast modern serif display +
+// clean grotesk body, ONE vivid accent, no grain/grid. Reads as a polished design magazine.
+export const EDITORIAL_MAGAZINE: RenderProfile = {
+  background: { mode: 'flat', color: '#FAF8F3' },
+  grain: 0,
+  filler: { enabled: false, grid: false, gridColor: '180,180,180', gridAlpha: 0.04, accentColor: '26,26,26' },
+  fonts: { display: 'Fraunces', body: 'Inter', mono: 'Space Mono' },
+  camera: { pushZoom: 0.97, maxTravel: 1.0, minDwell: 0.8, travelEasing: 'ease_in_out' },
+  motion: { bobAmp: 0.4 },
+};
+
+// chalkboard = dark slate-green board, chalk-white handwriting, pastel chalk accents, chalk-dust
+// grain, hand-drawn assets. Reads as a teacher working through it on the board.
+export const CHALKBOARD: RenderProfile = {
+  background: { mode: 'flat', color: '#1E2B24' },
+  grain: 0.3,
+  filler: { enabled: false, grid: false, gridColor: '230,230,220', gridAlpha: 0.05, accentColor: '143,208,201' },
+  fonts: { display: 'Architects Daughter', body: 'Patrick Hand', mono: 'Cutive Mono' },
+  camera: { pushZoom: 0.95, maxTravel: 1.3, minDwell: 0.7, travelEasing: 'ease_in_out' },
+  motion: { bobAmp: 1.0 },
+};
+
 export const ARCHETYPES: Record<string, RenderProfile> = {
   blueprint_board: BLUEPRINT_BOARD,
   flat_motion_explainer: FLAT_MOTION_EXPLAINER,
   documentary_slate: DOCUMENTARY_SLATE,
   notebook_sketch: NOTEBOOK_SKETCH,
+  tech_terminal: TECH_TERMINAL,
+  vintage_press: VINTAGE_PRESS,
+  editorial_magazine: EDITORIAL_MAGAZINE,
+  chalkboard: CHALKBOARD,
 };
 
 // Deep-merge a partial profile over the blueprint_board default so a spec's `style` can be

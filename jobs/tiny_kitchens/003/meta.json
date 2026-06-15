@@ -1,0 +1,29 @@
+{
+  "topic": "Why Cut Onions Make You Cry (and Garlic Doesn't)",
+  "minutes": 5,
+  "scriptArc": "expectation_gap",
+  "packaging": {
+    "title": "Why Cut Onions Make You Cry (and Garlic Doesn't)",
+    "altTitles": [
+      "The Real Reason Onions Make You Cry",
+      "How Onions Fire a Tear-Gas Trap"
+    ],
+    "description": "The food science of why slicing an onion makes you cry, covering the enzyme reaction that builds a volatile tear-gas compound and the simple kitchen tricks that actually shut it down.",
+    "thumbnail": {
+      "bigText": "TINY TEAR GAS",
+      "emphasisWord": "TEAR GAS",
+      "assetName": "alliinase_molecular_scissors",
+      "visualIdea": "a halved onion releasing faint wavy vapor lines rising toward a watering eye"
+    },
+    "hookPromise": "Your onion isn't just smelly — the moment your knife cuts it, it manufactures an actual airborne tear-gas chemical aimed straight at your eyes. Here's the trap, and how to disarm it.",
+    "openLoops": [
+      "What does the knife actually trigger inside the onion?",
+      "Why does chilling the onion stop the tears?",
+      "Why doesn't garlic, its close cousin, do this to you?"
+    ],
+    "payoff": "Cutting ruptures cells that mix an enzyme with a sulfur compound, producing a volatile acid gas that turns to mild sulfuric acid on your wet eyes — and because the enzyme works slower when cold and the gas is water-soluble, a chilled onion or a wet cut barely fires.",
+    "whyItWorks": "Universal kitchen annoyance with a built-in 'and how do I stop it' payoff that everyone wants.",
+    "score": 86
+  },
+  "createdAt": "2026-06-15T14:11:46.353Z"
+}

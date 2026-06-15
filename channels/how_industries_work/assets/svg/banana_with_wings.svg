@@ -1,0 +1,15 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <path d="M120 200 Q130 240 175 250 Q240 260 285 220 Q300 205 295 195 Q290 200 280 205 Q235 235 180 225 Q140 215 135 185 Q130 195 120 200 Z" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M120 200 Q124 180 135 185" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M295 195 Q305 190 300 178 Q296 182 290 184" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="119" y1="201" x2="113" y2="207" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M170 232 Q175 244 185 248" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <path d="M220 235 Q224 246 232 248" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <path d="M160 215 Q200 228 250 222" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <path d="M150 195 Q160 175 130 150 Q90 120 55 130 Q70 140 75 155 Q60 150 50 160 Q70 168 80 180 Q66 178 60 190 Q88 192 110 198 Q130 202 150 195 Z" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M75 155 Q105 168 130 185" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <path d="M80 180 Q105 185 125 192" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <path d="M250 195 Q260 175 290 150 Q330 120 365 130 Q350 140 345 155 Q360 150 370 160 Q350 168 340 180 Q354 178 360 190 Q332 192 310 198 Q290 202 270 195 Z" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M345 155 Q315 168 290 185" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <path d="M340 180 Q315 185 295 192" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+</svg>

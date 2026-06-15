@@ -1,0 +1,67 @@
+{
+  "claims": [
+    {
+      "text": "a thin film of water",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "forming a trace of — wait for it — sulfuric acid",
+      "confidence": "medium",
+      "issue": "The exact acid formed and its concentration are biochemically specific; while the general mechanism is correct, calling it 'sulfuric acid' is a simplification that could be questioned",
+      "fix": ""
+    },
+    {
+      "text": "Wildly dilute, harmless",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "the lachrymatory factor",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "syn-propanethial-S-oxide",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "alliinase",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "allicin",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "sulfur-based compounds",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "in milliseconds",
+      "confidence": "low",
+      "issue": "Suspiciously precise timeframe for a complex enzyme reaction; the actual reaction time is not established with this precision in food science literature",
+      "fix": "in moments"
+    },
+    {
+      "text": "thousands of cells",
+      "confidence": "low",
+      "issue": "A single knife cut does not rupture a precisely countable 'thousands' of cells; this is an over-specific quantification",
+      "fix": "many cells"
+    }
+  ],
+  "script": "The moment your knife touches an onion, it builds a weapon. Not a smell — a weapon: a tiny cloud of airborne tear gas, manufactured on the spot and aimed straight at your eyes. And the trap is so specific that its close cousin, garlic, can't pull it off at all. Let me show you the mechanism — and how to disarm it.\n\nBecause here's the part that feels almost personal: the onion isn't crying. You are. It's doing this *to* you, on purpose, as a defense. The question is what the blade actually triggers — and why a cold one barely bothers.\n\nStart with what you *think* is happening. You assume an onion is just full of \"onion smell,\" and cutting lets that smell escape. Slice, sniff, sting. Simple, right?\n\nIt's not. An intact onion is almost odorless. Go on — sniff a whole one. Nothing. That pungent firepower doesn't exist yet. The onion has to *make* it, and it only starts the instant you wreck it.\n\nHere's why. Inside the cells, the ingredients are stored in separate rooms. In one compartment sit sulfur-based compounds — harmless, locked away. In another waits an enzyme called alliinase. Kept apart, they do nothing. The whole thing is a trap that only springs when something breaks the walls.\n\nThat something is your knife. Cutting ruptures many cells and spills their contents together. The enzyme finally meets the sulfur compounds, and an assembly line fires up in moments. The product is a molecule with a name as dramatic as its job: *syn-propanethial-S-oxide*. The lachrymatory factor. The tear-maker.\n\nAnd it's *light*. So light it lifts straight off the board and drifts up — toward the warm, wet surface of your eyeballs. This isn't an accident of cooking. It's a delivery system, evolved to punish anything that bites.\n\nSo what happens when it lands? Your eyes are coated in a thin film of water. The molecule hits that film and reacts, forming a trace of — wait for it — sulfuric acid. Wildly dilute, harmless, but your eye doesn't care. Nerves sense the irritation and sound the alarm. Your tear glands flood the area to wash the attacker out. That flood is the crying. You're not sad. You're rinsing acid off your own corneas.\n\nNow we can crack the first kitchen trick. Why does chilling the onion stop the tears? Because alliinase is a worker — and like most enzymes, it slows way down in the cold. Drop it toward fridge temperature and the assembly line crawls. Fewer molecules get built, fewer reach your eyes. You haven't removed the weapon. You've throttled the factory.\n\nThere's a second trick hiding in the same chemistry. The tear molecule is water-soluble — it loves water more than air. So cut under running water, or with a wet blade, and much of that gas gets caught and dissolved before it can ever climb to your face.\n\nWhich finally tells us why garlic — same family, same sulfur, same enzyme trick — *doesn't* make you cry. Crush a clove and the enzyme fires too, but garlic's line is built around a different starting compound. It produces allicin, the molecule behind garlic's punch and most of its health buzz. Allicin is pungent, reactive, it'll sting your nose — but it's heavier and far less eager to fly off and turn into acid mist on your eyes. Garlic skips the one specific factory that builds the tear gas. It went a different chemical direction entirely.\n\nSo look at the gap. You thought you were cutting a vegetable that happens to smell strong. You were actually disarming a single-use defense system — a sulfur bomb with an enzyme trigger, a volatile airborne agent, and an acid payload tuned for moisture.\n\nWhich raises the better question. If a cut onion sprays acid gas to defend itself, why does *heat* make it turn sweet and gentle and irresistible instead? That's a completely different reaction — and it starts the second the pan gets hot.",
+  "changed": true,
+  "lowCount": 2
+}

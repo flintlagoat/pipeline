@@ -1,0 +1,29 @@
+{
+  "topic": "Why Gyms Want You to Never Show Up",
+  "minutes": 5.5,
+  "scriptArc": "mechanism",
+  "packaging": {
+    "title": "Why Gyms Want You to Never Show Up",
+    "altTitles": [
+      "The Real Reason Gyms Oversell Memberships",
+      "How Gyms Profit From Empty Treadmills"
+    ],
+    "description": "A deep dive into the gym membership business model, why facilities sell far more memberships than they can hold, and how no-shows quietly fund the entire industry.",
+    "thumbnail": {
+      "bigText": "10x OVERSOLD",
+      "emphasisWord": "10x",
+      "assetName": "gym_floor_plan",
+      "visualIdea": "an empty gym floor plan with rows of treadmills and a single lonely figure"
+    },
+    "hookPromise": "Your gym sold roughly ten times more memberships than it could ever physically hold — and its entire profit model depends on you breaking your New Year's resolution.",
+    "openLoops": [
+      "How many members can a gym actually fit at once?",
+      "Why is the cancellation process designed to be a maze?",
+      "Why does January pricing target people who won't last?"
+    ],
+    "payoff": "A typical gym holds a few hundred people but sells thousands of memberships; the business is engineered around the ~50% who stop coming by month two, whose dues are pure profit.",
+    "whyItWorks": "Almost everyone has paid for a gym they stopped using; the oversell number turns personal guilt into an exposed industry trick.",
+    "score": 85
+  },
+  "createdAt": "2026-06-15T00:38:50.229Z"
+}

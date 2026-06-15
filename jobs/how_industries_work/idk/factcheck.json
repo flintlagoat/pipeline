@@ -1,0 +1,37 @@
+{
+  "claims": [
+    {
+      "text": "Around fifteen percent of passengers with confirmed reservations simply never showed up",
+      "confidence": "medium",
+      "issue": "Plausible historical figure for the 1960s, but the exact percentage is difficult to verify across all airlines and time periods",
+      "fix": ""
+    },
+    {
+      "text": "if roughly one in ten people won't show, sell one in ten extra tickets",
+      "confidence": "medium",
+      "issue": "This is a simplification of the logic; the actual ratio varied and was more sophisticated",
+      "fix": ""
+    },
+    {
+      "text": "the no-show prediction models — fed by decades of data, weather, day of week, route, even the time of booking — land within a point or two per flight",
+      "confidence": "low",
+      "issue": "The phrase 'within a point or two per flight' is suspiciously precise; no airline publishes the exact accuracy margin of their models",
+      "fix": "the no-show prediction models — fed by decades of data, weather, day of week, route, even the time of booking — achieve reasonably high accuracy across most flights"
+    },
+    {
+      "text": "a voucher, maybe a few hundred dollars",
+      "confidence": "medium",
+      "issue": "Bumped passenger compensation varies widely by regulation and airline; 'a few hundred dollars' is a reasonable ballpark but not precise",
+      "fix": ""
+    },
+    {
+      "text": "why the seat next to you cost a third of what you paid",
+      "confidence": "low",
+      "issue": "The ratio 'a third' is suspiciously specific and used as a general example; seat pricing variance is huge and context-dependent",
+      "fix": "why the seat next to you often cost significantly less than what you paid"
+    }
+  ],
+  "script": "That flight you boarded last week had more tickets sold than seats on the plane. On purpose. And somewhere in the airline's system, an algorithm had already calculated exactly how many people it was willing to leave standing at the gate.\n\nHere's the contradiction. An airline sells a seat that physically does not exist. Why would any business sell a product it can't deliver? The answer starts with one number that haunts every airline executive: the empty seat.\n\nAn empty seat is worth nothing the second the door closes. You can't sell a Tuesday flight on Wednesday. It's the most perishable product on Earth — a banana with wings. So airlines became obsessed with one enemy: the no-show.\n\nGo back to the 1960s. American Airlines noticed something maddening. Around fifteen percent of passengers with confirmed reservations simply never showed up. Planes flew half empty while travelers were turned away days earlier because the flight \"sold out.\" Money evaporating on every leg.\n\nSo in 1966, American built a system called SABRE, and buried inside it, the first crude overbooking logic. The idea was simple and a little reckless: if roughly one in ten people won't show, sell one in ten extra tickets, and the plane fills perfectly.\n\nBut that small fix got dangerous fast. Predicting no-shows isn't guessing — it's a statistical bet. Bet too low, you fly empty. Bet too high, you sell seats to real humans who actually arrive. And then you have to physically deny someone boarding.\n\nThat's the bump. And the way the system decides who gets bumped is colder than you'd think. When too many people show, the gate agent first offers vouchers — money to volunteer to leave. If nobody bites, the algorithm sorts passengers by fare class, check-in time, and loyalty status. The cheapest last-minute ticket on a non-elite traveler? First out the door.\n\nWhich explains that other mystery — why the seat next to you often cost significantly less than what you paid. Airlines don't price seats. They price probabilities. Every fare bucket carries a hidden no-show rate, and the model overbooks each one differently. A flexible business fare is more likely to cancel, so it gets oversold harder than a locked-in vacation ticket.\n\nNow the part they don't advertise. You'd assume airlines overbook cautiously, terrified of paying bumped passengers. It's the opposite. The no-show prediction models — fed by decades of data, weather, day of week, route, even the time of booking — achieve reasonably high accuracy across most flights.\n\nAnd the math is brutal. Bumping is rare and capped — a voucher, maybe a few hundred dollars, on a tiny fraction of flights. The empty seat happens constantly, on every route, forever. So the model is tuned to fear that empty seat far more than the payout. The bump isn't a failure. It's a profitable rounding error.\n\nAnd if they can predict whether you'll show up — what else does that booking engine already know about you before you've even paid?",
+  "changed": true,
+  "lowCount": 2
+}

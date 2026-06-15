@@ -9,6 +9,7 @@
     "script": "ts-node src/cli.ts script",
     "voiceover": "ts-node src/cli.ts voiceover",
     "process": "ts-node src/cli.ts process",
+    "reprocess": "ts-node --transpile-only src/reprocessSpec.ts",
     "thumbnail": "ts-node src/cli.ts thumbnail",
     "approve": "ts-node src/cli.ts approve",
     "status": "ts-node src/cli.ts status",

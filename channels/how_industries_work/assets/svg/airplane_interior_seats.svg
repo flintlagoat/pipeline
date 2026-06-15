@@ -1,0 +1,65 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cabin outer outline -->
+  <path d="M30 40 Q30 25 50 25 L350 25 Q370 25 370 40 L370 270 Q370 285 350 285 L50 285 Q30 285 30 270 Z" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Aisle dividing lines -->
+  <line x1="175" y1="25" x2="175" y2="285" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="225" y1="25" x2="225" y2="285" stroke="#FFFFFF" stroke-width="1"/>
+
+  <!-- LEFT block of seats (2 columns x 3 rows) -->
+  <!-- Row 1 -->
+  <g stroke="#FFFFFF" fill="none" stroke-width="1.5">
+    <rect x="48" y="50" width="55" height="55" rx="6"/>
+    <rect x="55" y="42" width="41" height="14" rx="4"/>
+    <path d="M48 95 Q44 95 44 100 L44 100 Q44 105 48 105"/>
+    <rect x="108" y="50" width="55" height="55" rx="6"/>
+    <rect x="115" y="42" width="41" height="14" rx="4"/>
+    <path d="M163 95 Q167 95 167 100 Q167 105 163 105"/>
+  </g>
+  <!-- Row 2 -->
+  <g stroke="#FFFFFF" fill="none" stroke-width="1.5">
+    <rect x="48" y="125" width="55" height="55" rx="6"/>
+    <rect x="55" y="117" width="41" height="14" rx="4"/>
+    <path d="M48 170 Q44 170 44 175 Q44 180 48 180"/>
+    <rect x="108" y="125" width="55" height="55" rx="6"/>
+    <rect x="115" y="117" width="41" height="14" rx="4"/>
+    <path d="M163 170 Q167 170 167 175 Q167 180 163 180"/>
+  </g>
+  <!-- Row 3 -->
+  <g stroke="#FFFFFF" fill="none" stroke-width="1.5">
+    <rect x="48" y="200" width="55" height="55" rx="6"/>
+    <rect x="55" y="192" width="41" height="14" rx="4"/>
+    <path d="M48 245 Q44 245 44 250 Q44 255 48 255"/>
+    <rect x="108" y="200" width="55" height="55" rx="6"/>
+    <rect x="115" y="192" width="41" height="14" rx="4"/>
+    <path d="M163 245 Q167 245 167 250 Q167 255 163 255"/>
+  </g>
+
+  <!-- RIGHT block of seats (2 columns x 3 rows) -->
+  <!-- Row 1 -->
+  <g stroke="#FFFFFF" fill="none" stroke-width="1.5">
+    <rect x="237" y="50" width="55" height="55" rx="6"/>
+    <rect x="244" y="42" width="41" height="14" rx="4"/>
+    <path d="M237 95 Q233 95 233 100 Q233 105 237 105"/>
+    <rect x="297" y="50" width="55" height="55" rx="6"/>
+    <rect x="304" y="42" width="41" height="14" rx="4"/>
+    <path d="M352 95 Q356 95 356 100 Q356 105 352 105"/>
+  </g>
+  <!-- Row 2 -->
+  <g stroke="#FFFFFF" fill="none" stroke-width="1.5">
+    <rect x="237" y="125" width="55" height="55" rx="6"/>
+    <rect x="244" y="117" width="41" height="14" rx="4"/>
+    <path d="M237 170 Q233 170 233 175 Q233 180 237 180"/>
+    <rect x="297" y="125" width="55" height="55" rx="6"/>
+    <rect x="304" y="117" width="41" height="14" rx="4"/>
+    <path d="M352 170 Q356 170 356 175 Q356 180 352 180"/>
+  </g>
+  <!-- Row 3 -->
+  <g stroke="#FFFFFF" fill="none" stroke-width="1.5">
+    <rect x="237" y="200" width="55" height="55" rx="6"/>
+    <rect x="244" y="192" width="41" height="14" rx="4"/>
+    <path d="M237 245 Q233 245 233 250 Q233 255 237 255"/>
+    <rect x="297" y="200" width="55" height="55" rx="6"/>
+    <rect x="304" y="192" width="41" height="14" rx="4"/>
+    <path d="M352 245 Q356 245 356 250 Q356 255 352 255"/>
+  </g>
+</svg>

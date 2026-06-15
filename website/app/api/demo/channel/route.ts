@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 import { DEMO_SYSTEM_PROMPT, demoUserPrompt } from '@/lib/channelPrompt';
+import { applyDemoSkin } from '@/lib/channelSkins';
 import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 
 export const runtime = 'nodejs';
@@ -57,7 +58,10 @@ export async function POST(req: Request) {
     });
     const block = resp.content[0];
     if (block.type !== 'text') throw new Error('unexpected response');
-    const spec = JSON.parse(stripFences(block.text));
+    const raw = JSON.parse(stripFences(block.text));
+    // Stamp a curated, seeded skin (palette + fonts + background) over the model's raw guesses so the
+    // public demo always shows a distinct, contrast-safe look instead of converging on one archetype.
+    const spec = applyDemoSkin(raw, idea);
     return NextResponse.json({ ok: true, spec });
   } catch {
     return NextResponse.json({ error: 'Generation failed — please try again.' }, { status: 500 });

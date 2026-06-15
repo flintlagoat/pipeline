@@ -1,0 +1,28 @@
+{
+  "topic": "Why Airlines Overbook Every Flight",
+  "minutes": 3.5,
+  "scriptArc": "origin_to_now",
+  "packaging": {
+    "title": "Why Airlines Overbook Every Flight",
+    "altTitles": [
+      "How Airlines Sell Seats That Don't Exist",
+      "The Real Reason You Got Bumped"
+    ],
+    "description": "Inside airline yield management, why carriers deliberately sell more tickets than seats, and the statistical models that decide who gets bumped and who flies.",
+    "thumbnail": {
+      "bigText": "MORE TICKETS THAN SEATS",
+      "emphasisWord": "MORE",
+      "visualIdea": "a single airplane seat with multiple boarding passes stacked on it"
+    },
+    "hookPromise": "Airlines sell more tickets than there are seats on purpose, and a hidden algorithm decides every day exactly how many passengers to leave at the gate.",
+    "openLoops": [
+      "Why would an airline sell a seat it doesn't have?",
+      "How does the system decide who gets bumped?",
+      "Why is the same seat priced ten different ways?"
+    ],
+    "payoff": "Airlines run no-show prediction models so precise that overbooking earns more than the rare payout to bumped passengers — the empty-seat loss is a bigger fear than the bumping cost.",
+    "whyItWorks": "Flying is a shared frustration and 'they sold a seat that doesn't exist' is an irresistible insider mechanism.",
+    "score": 82
+  },
+  "createdAt": "2026-06-14T16:35:14.993Z"
+}

@@ -5,7 +5,54 @@
 >   log + session history.
 > READ THIS FILE COMPLETELY before writing any code.
 > UPDATE THIS FILE before ending every session.
-> Last updated: 2026-06-14 (session 10)
+> Last updated: 2026-06-15 (session 11)
+> Session 11 phase: CHANNEL-LOOK VARIETY OVERHAUL — operator reported channel generation "most of the
+>   time does notebook look and isn't unique or far varying from the others." DIAGNOSED two root causes:
+>   (a) ARCHETYPE-SELECTION BIAS — both generators (pipeline prompts/channelSpecPrompt.ts AND the live
+>   website demo website/lib/channelPrompt.ts) said "do NOT default to blueprint," and with blueprint
+>   pushed away + notebook_sketch described as the catch-all for "education/study/creative/casual," the
+>   model funnelled to notebook for almost any idea; nothing balanced the pick. (b) WEAK WITHIN-ARCHETYPE
+>   VARIATION — channelDistinct.ts only nudged accent hue ±6-16° and swapped the display font on a near-
+>   EXACT collision, so every notebook channel ended up cream-paper + Caveat. KEY ENABLER: the renderer's
+>   resolveStyle reads palette/fonts/background/grain/camera/motion from the board_spec `style` block as
+>   FREE-FORM values (it only hard-switches on `archetype` for the no-style fallback, which generated
+>   specs never hit), so palette/fonts/bg can vary arbitrarily per channel with ZERO renderer changes.
+>   FIXED (operator chose "also add new archetypes" — the big swing); all verified, every tsc + ui build
+>   clean, test:distinct ALL PASS, 4 new archetypes frame-inspected:
+>   (1) +4 ARCHETYPES → 8 total: tech_terminal (near-black console, phosphor/amber, mono display, scanline
+>   grain), vintage_press (aged newsprint paper, slab/serif, red+ink, typewriter mono), editorial_magazine
+>   (bright near-white, modern serif + grotesk, one vivid accent, airy), chalkboard (dark slate board,
+>   chalk-white handwriting, pastel chalk, chalk-dust grain). Wired through: types/channelSpec.ts
+>   ARCHETYPE_IDS, channelSpec.ts ARCHETYPE_DEFAULTS, renderer/src/style.ts presets + ARCHETYPES fallback
+>   map, both generator prompts, and the UI archetype <select> (ui/src/App.tsx). Renderer needs NO logic
+>   change (free-form style block); the ~12 new Google Fonts download on demand (per-font failure is
+>   non-fatal). The Record<ArchetypeId,…> maps make tsc fail loudly if any archetype is left unwired.
+>   (2) channelDistinct.ts REWRITE — per-archetype curated SKIN pools (5-6 full, contrast-vetted palettes
+>   each) + display/body/mono FONT pools. A seeded skin + font triple is now stamped AUTHORITATIVELY over
+>   palette/typography/background/assetStyle/camera/motion on EVERY generation (the model keeps its
+>   archetype CHOICE + voice; its raw hex/font guesses are replaced with a curated skin). Discrete picks
+>   (skin index + each font) come from INDEPENDENT id-hashes (decorrelated → uniform spread; this fixed a
+>   documentary clustering that gave only 2 distinct display fonts of 8). Micro hue-rotation diverges
+>   same-skin draws; the collision guard advances the skin + re-salts fonts. NOTE: existing channels
+>   (how_industries_work, tiny_kitchens) are UNCHANGED — distinctness runs only at generation time, so
+>   their saved channel.spec.json look is untouched (no regression).
+>   (3) BALANCED SELECTION — new loadArchetypeCounts() injects the studio's current archetype distribution
+>   into the user prompt ("already use: notebook ×3 … prefer one NOT saturated"); both prompts de-biased
+>   (notebook is NOT a catch-all; all 8 described with subject mappings).
+>   (4) WEBSITE DEMO — same prompt de-bias + NEW website/lib/channelSkins.ts (compact mirror of the skin
+>   registry) applied in app/api/demo/channel/route.ts, seeded off the idea text, so the live free demo
+>   shows curated, varied, contrast-safe looks instead of converging on notebook.
+>   (5) PREVIEW ROBUSTNESS — channelPreview.ts headline shrunk (82→64) + copy shortened so WIDE serif/slab
+>   display fonts (Fraunces, Roboto Slab) no longer collide with the fixed right-hand schematic column in
+>   the still preview (the preview board is one fixed layout shared by all 8 archetypes).
+>   VERIFIED: pipeline+renderer+website tsc clean; ui vite build clean; `npm run test:distinct` ALL PASS
+>   (per archetype across 8 channels: 4-5 distinct backgrounds, 4-5 distinct display fonts, 6-8 distinct
+>   look-combos of 8). API-FREE still previews rendered for all 4 new archetypes (fonts downloaded, palettes
+>   applied, no clipping/overlap) and frame-inspected: tech_terminal=amber VT323 console, vintage_press=
+>   cream Roboto-Slab newsprint w/ red ink, editorial_magazine=white Fraunces + purple/gold, chalkboard=
+>   espresso board + Patrick-Hand chalk. Files: pipeline/src/{types/channelSpec.ts, channelSpec.ts,
+>   channelDistinct.ts (rewrite), channelGenerator.ts, prompts/channelSpecPrompt.ts, channelPreview.ts,
+>   test_distinct.ts}; renderer/src/style.ts; ui/src/App.tsx; website/{lib/channelPrompt.ts, lib/channelSkins.ts (new), app/api/demo/channel/route.ts}.
 > Session 10 phase: BACK-THIRD DEAD-CAMERA FIX — operator reported a rendered video (airline-oversell
 >   "THE OVERSELL", output/how_industries_work/idk) with "static camera for elongated times" and "from
 >   minute 2 on many errors / low quality." DIAGNOSED with ffmpeg freezedetect + frame inspection +
@@ -62,6 +109,20 @@
 >   on the chart+body while the payoff headline waits for its narration cue at 153s — a calm hold on rich
 >   content; the late headline leaves its slot briefly empty, a minor artifact of anchoring the punchline
 >   to its spoken words.)
+>   FOLLOW-UP 2 (same session, operator-reported on a freshly generated gym video how_industries_work/002
+>   "JANUARY ADS": the headline "THE MOST PROFITABLE CUSTOMER" overlapped the statistical_bet_scale asset).
+>   ROOT CAUSE: an OVERLOADED section (eyebrow + headline + rule + a 4-line list of LONG unwrapped lines +
+>   a SECOND blur_reveal headline + a big svg_asset). list_reveal lines don't wrap, so the text runs ~1080px
+>   wide and the stack overflows its template region — and relayout had NO guarantee that the text and the
+>   visual hero don't overlap (templates only PLACE them in separate regions; overflow breaks that). FIX
+>   (relayout.ts): NEW `separateVisualFromText(textEls, visualEls, caption)` runs after fitSectionToSafeArea
+>   per section — if the hero's box intersects the text's box, it shrinks the hero and reseats it into the
+>   LARGEST free band around the text within the safe area (visual-only move; caption follows; no-op when
+>   there's no overlap, so clean sections are untouched). VERIFIED: extended `npm run test:overlap` with an
+>   overloaded january-shape section → hero now overlaps 0 text elements + stays on-frame; all prior overlap
+>   assertions still pass; pipeline tsc clean. (Deeper cause is the spec over-packing one section; the new
+>   VISUAL DENSITY prompt should split such runs, and this guard is the deterministic safety net. To see it
+>   on 002, `npm run reprocess how_industries_work 002` + the direct renderer call.)
 > Session 9 phase: PRODUCTIZATION — begin turning the pipeline into a sellable product, "Inkwell".
 >   Decided in a market brainstorm (full notes in memory [[productization-pivot]]): position as the
 >   ANTI-SLOP tool vs the demonetized stock-footage crowd; business model = free cloud demo → cloud
@@ -1469,6 +1530,18 @@ job later). The contrast guard mutated the 12 cached tiny_kitchens SVGs in place
 ---
 
 ## Current Sprint
+
+Just shipped (2026-06-15 session 11): **Channel-look variety overhaul** (see the session-11 block at
+the top). Channel generation no longer funnels to notebook + same-y looks: +4 archetypes (8 total:
+tech_terminal, vintage_press, editorial_magazine, chalkboard), a curated per-archetype SKIN system in
+`channelDistinct.ts` (seeded, always-on, authoritative palette+fonts+bg+camera/motion; decorrelated
+id-hash picks), de-biased + archetype-balanced selection prompts, and the live website demo gets the
+same variety via `website/lib/channelSkins.ts`. Existing channels unchanged (skin runs only at
+generation). All tsc + ui build clean; `npm run test:distinct` ALL PASS (4-5 distinct bg + 4-5 distinct
+display fonts + 6-8 look-combos of 8 per archetype); 4 new archetypes frame-inspected. To exercise on
+the real path: `npm run channel:new "<title>" "<description>"` (or the Studio "+ New Channel" → Preview
+look), then `npm run channel:preview <id>`. NOTE: only the 4 base archetypes' fonts were pre-cached; a
+brand-new archetype downloads its Google Fonts on first render (non-fatal if one fails).
 
 Just shipped (2026-06-13 session 8): **Go live** (see the session-8 block at the top). All operator
 keys wired in `.env`; YouTube OAuth done; FIRST REAL UPLOAD succeeded (private, API-confirmed):

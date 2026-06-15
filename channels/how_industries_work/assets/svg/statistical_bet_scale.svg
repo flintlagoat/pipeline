@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Central support column -->
+  <line x1="200" y1="70" x2="200" y2="250" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Base -->
+  <polygon points="160,250 240,250 255,270 145,270" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <line x1="135" y1="280" x2="265" y2="280" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Fulcrum pivot -->
+  <circle cx="200" cy="75" r="7" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+
+  <!-- Balance beam (tilted) -->
+  <line x1="80" y1="95" x2="320" y2="55" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- beam scale ticks -->
+  <line x1="120" y1="88" x2="120" y2="80" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="160" y1="81" x2="160" y2="73" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="240" y1="68" x2="240" y2="60" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="280" y1="61" x2="280" y2="53" stroke="#FFFFFF" stroke-width="1"/>
+
+  <!-- Left pan (heavier - risk) -->
+  <line x1="80" y1="95" x2="60" y2="150" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="80" y1="95" x2="100" y2="150" stroke="#FFFFFF" stroke-width="1"/>
+  <path d="M50 150 Q80 185 110 150 Z" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <line x1="50" y1="150" x2="110" y2="150" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- left pan content: downside markers -->
+  <line x1="70" y1="158" x2="78" y2="166" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="78" y1="158" x2="70" y2="166" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="88" y1="158" x2="96" y2="166" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="96" y1="158" x2="88" y2="166" stroke="#FFFFFF" stroke-width="1"/>
+
+  <!-- Right pan (lighter - reward) -->
+  <line x1="320" y1="55" x2="300" y2="110" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="320" y1="55" x2="340" y2="110" stroke="#FFFFFF" stroke-width="1"/>
+  <path d="M290 110 Q320 145 350 110 Z" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  <line x1="290" y1="110" x2="350" y2="110" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- right pan content: upside markers -->
+  <line x1="320" y1="120" x2="320" y2="132" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="314" y1="126" x2="326" y2="126" stroke="#FFFFFF" stroke-width="1"/>
+
+  <!-- Probability distribution curve at base (statistical element) -->
+  <path d="M120 230 Q150 230 165 210 Q180 175 200 175 Q220 175 235 210 Q250 230 280 230"
+        stroke="#FFFFFF" stroke-width="1" fill="none"/>
+  <line x1="120" y1="230" x2="280" y2="230" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="200" y1="175" x2="200" y2="230" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="3 3"/>
+</svg>

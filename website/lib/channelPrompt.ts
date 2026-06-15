@@ -7,11 +7,15 @@ export const DEMO_SYSTEM_PROMPT = `You are a brand + video-format designer for a
 channel idea, design a distinctive channel LOOK and a sample on-screen frame. Pick the ONE archetype
 that fits best and customize it. Return ONE valid JSON object — no markdown, no prose.
 
-Archetypes (pick the best fit; do NOT default to blueprint):
-- "blueprint_board": dark near-black board, neon accents, condensed UPPERCASE display, faint grid. Systems / business / how-it-works.
-- "flat_motion_explainer": bright saturated FLAT colors, bold heavy sans, no grain/grid. Pop / tech / finance-for-beginners.
-- "documentary_slate": muted cinematic, deep vignette, elegant SERIF display. History / true-stories / prestige.
-- "notebook_sketch": warm PAPER background, dotted grid, handwritten display font. Education / creative / casual.
+Archetypes (pick the ONE that truly fits — do NOT default to notebook_sketch or blueprint):
+- "blueprint_board": dark near-black board, neon accents, condensed UPPERCASE display, faint grid. Systems / business / how-it-works / logistics.
+- "flat_motion_explainer": bright saturated FLAT colors, bold heavy sans, no grain/grid. Pop-science / consumer tech / startups / finance-for-beginners.
+- "documentary_slate": muted dark cinematic, deep vignette, elegant SERIF display. History / true crime / biography / prestige.
+- "notebook_sketch": warm PAPER, dotted grid, handwritten display. ONLY cozy/casual hobbies, food & craft, kids/study doodles — NOT a catch-all for "educational."
+- "tech_terminal": near-black console, phosphor-green/amber, mono-forward type. Coding / cybersecurity / data / AI / crypto.
+- "vintage_press": aged newsprint paper, slab/serif headlines, red+ink spot color. History exposés / scandals / old-money business.
+- "editorial_magazine": bright near-white, airy whitespace, modern serif + grotesk, one vivid accent. Design / architecture / fashion / luxury / brand profiles.
+- "chalkboard": dark slate board, chalk-white handwriting, pastel chalk accents. Teaching / math & science lessons / study.
 
 Rules:
 - Strong contrast: light text on dark bg, OR dark text on light/paper bg. Never low-contrast.
@@ -23,7 +27,7 @@ Rules:
 Output shape (exact keys):
 {
  "title": string, "niche": string,
- "archetype": "blueprint_board"|"flat_motion_explainer"|"documentary_slate"|"notebook_sketch",
+ "archetype": "blueprint_board"|"flat_motion_explainer"|"documentary_slate"|"notebook_sketch"|"tech_terminal"|"vintage_press"|"editorial_magazine"|"chalkboard",
  "palette": { "background":hex,"surface":hex,"textPrimary":hex,"textSecondary":hex,"accent1":hex,"accent2":hex,"money":hex },
  "typography": { "display":string,"body":string,"mono":string,"case":"upper"|"title"|"none" },
  "background": { "mode":"flat"|"board_grid"|"paper"|"gradient"|"dotted","grain":0-1 },

@@ -84,7 +84,10 @@ const BoardSpecSchema = z.object({
     height: z.number().positive(),
     background_color: z.string().min(1),
     sections: z.array(SectionSchema).min(1),
-    camera_keyframes: z.array(CameraKeyframeSchema).min(2),
+    // ≥1: the renderer DERIVES the whole camera path from sections + reveal times (buildCameraPath
+    // overwrites these), so the model only needs to emit the mandatory start keyframe. (Was min(2),
+    // which forced a wasted retry now that the prompt asks for a single start keyframe.)
+    camera_keyframes: z.array(CameraKeyframeSchema).min(1),
   }),
 });
 

@@ -341,13 +341,18 @@ function fitSectionToSafeArea(allEls: Element[], visualEls: Element[], caption: 
   let bbox = unionBox(allEls);
   if (!bbox) return;
 
-  // Too big in either axis ⇒ scale the hero down by the binding factor (pivot at hero top so it
-  // shrinks upward/inward, freeing edge space). Re-seat the caption under the shrunk hero.
+  // Too big in either axis ⇒ shrink the hero by the binding factor (pivot at hero top so it shrinks
+  // upward/inward, freeing edge space). Re-seat the caption under the shrunk hero. Skip the VERTICAL
+  // shrink when the TEXT stack alone is already taller than the band: shrinking the hero can't fix a
+  // text-bound overflow (it would just needlessly shrink the asset); the vertical pass below contains
+  // it within the section instead.
   if ((bbox.w > safeW || bbox.h > safeH) && visualEls.length > 0) {
     const vbox = unionBox(visualEls);
+    const textBox = unionBox(allEls.filter((e) => !visualEls.includes(e)));
+    const textBound = !!textBox && textBox.h >= safeH;
     if (vbox && vbox.w > 0 && vbox.h > 0) {
       const fW = bbox.w > safeW ? Math.max(0.4, 1 - (bbox.w - safeW) / vbox.w) : 1;
-      const fH = bbox.h > safeH ? Math.max(0.4, 1 - (bbox.h - safeH) / vbox.h) : 1;
+      const fH = (bbox.h > safeH && !textBound) ? Math.max(0.4, 1 - (bbox.h - safeH) / vbox.h) : 1;
       const f = Math.min(fW, fH);
       if (f < 0.999) {
         scaleVisualCluster(visualEls, f, vbox.x + vbox.w / 2, vbox.y);
@@ -363,10 +368,20 @@ function fitSectionToSafeArea(allEls: Element[], visualEls: Element[], caption: 
   else if (bbox.x < SAFE_LEFT) shiftX = SAFE_LEFT - bbox.x;
   else if (bbox.x + bbox.w > SAFE_RIGHT) shiftX = SAFE_RIGHT - (bbox.x + bbox.w);
 
-  // Vertical: sit inside the band (bottom-priority — that's the edge that was cutting off text).
+  // Vertical: prefer the safe band. If content is TALLER than the band (a big headline + multi-line
+  // body + a hero that can't shrink), keep the BOTTOM off the frame edge — the bottom is what clips
+  // and reads worst (the "text half off the bottom" bug) — letting the top use the upper margin.
+  // NEVER pin to SAFE_TOP in a way that pushes the bottom past the section (the old bug).
+  const HARD_MARGIN = 24;
   let shiftY = 0;
-  if (bbox.y + bbox.h > SAFE_BOTTOM) shiftY = SAFE_BOTTOM - (bbox.y + bbox.h);
-  if (bbox.y + shiftY < SAFE_TOP) shiftY = SAFE_TOP - bbox.y;
+  const top = bbox.y, bot = bbox.y + bbox.h;
+  if (bbox.h <= safeH) {
+    if (top < SAFE_TOP) shiftY = SAFE_TOP - top;
+    else if (bot > SAFE_BOTTOM) shiftY = SAFE_BOTTOM - bot;
+  } else {
+    shiftY = (SECTION_H - HARD_MARGIN) - bot;                  // bottom-align within the section
+    if (top + shiftY < HARD_MARGIN) shiftY = HARD_MARGIN - top; // taller than the section ⇒ top-align
+  }
 
   if (shiftX !== 0 || shiftY !== 0) {
     for (const el of allEls) {
@@ -375,6 +390,68 @@ function fitSectionToSafeArea(allEls: Element[], visualEls: Element[], caption: 
       if (typeof el.y2 === 'number') el.y2 += shiftY;
     }
   }
+
+  // Last resort: still taller than the whole section (very rare) — uniformly scale EVERYTHING about
+  // the section centre so nothing clips off the frame. Text is scaled too here (the ONLY case we ever
+  // shrink text) because a clipped line reads far worse than slightly smaller copy.
+  const finalBox = unionBox(allEls);
+  if (finalBox && finalBox.h > SECTION_H - 2 * HARD_MARGIN) {
+    const f = (SECTION_H - 2 * HARD_MARGIN) / finalBox.h;
+    const px = SECTION_W / 2, py = SECTION_H / 2;
+    for (const el of allEls) {
+      el.x = px + (el.x - px) * f; el.y = py + (el.y - py) * f;
+      if (typeof el.x2 === 'number') el.x2 = px + (el.x2 - px) * f;
+      if (typeof el.y2 === 'number') el.y2 = py + (el.y2 - py) * f;
+      if (typeof el.font_size === 'number') el.font_size = Math.max(22, el.font_size * f);
+      if (typeof el.width === 'number') el.width *= f;
+      if (typeof el.height === 'number') el.height *= f;
+      if (typeof el.asset_width === 'number') el.asset_width *= f;
+      if (typeof el.asset_height === 'number') el.asset_height *= f;
+      if (typeof el.radius === 'number') el.radius *= f;
+    }
+  }
+}
+
+function rectsOverlap(a: Rect, b: Rect, pad = 8): boolean {
+  return !(a.x + a.w <= b.x + pad || b.x + b.w <= a.x + pad || a.y + a.h <= b.y + pad || b.y + b.h <= a.y + pad);
+}
+
+// GUARANTEE the visual hero never overlaps the text. Templates put text + visual in separate regions,
+// but a tall section (a multi-line list + an extra blur_reveal headline) can overflow its text region,
+// and list lines don't wrap — so the text can run across and collide with the hero (the "headline over
+// the scale" bug). If they overlap, shrink the visual and reseat it into the LARGEST free band around
+// the text within the safe area. Visual-only move (text is left where it reads); a caption follows the
+// hero. No-op when there's no overlap, so well-laid-out sections are untouched.
+function separateVisualFromText(textEls: Element[], visualEls: Element[], caption: Element | null): void {
+  if (visualEls.length === 0 || textEls.length === 0) return;
+  const tbox = unionBox(textEls);
+  let vbox = unionBox(visualEls);
+  if (!tbox || !vbox || !rectsOverlap(tbox, vbox)) return;
+
+  // Free bands around the text, within the safe content area.
+  const bands: Rect[] = [
+    { x: SAFE_LEFT, y: SAFE_TOP, w: SAFE_RIGHT - SAFE_LEFT, h: tbox.y - SAFE_TOP },                       // above
+    { x: SAFE_LEFT, y: tbox.y + tbox.h, w: SAFE_RIGHT - SAFE_LEFT, h: SAFE_BOTTOM - (tbox.y + tbox.h) },  // below
+    { x: SAFE_LEFT, y: SAFE_TOP, w: tbox.x - SAFE_LEFT, h: SAFE_BOTTOM - SAFE_TOP },                      // left
+    { x: tbox.x + tbox.w, y: SAFE_TOP, w: SAFE_RIGHT - (tbox.x + tbox.w), h: SAFE_BOTTOM - SAFE_TOP },    // right
+  ].filter((b) => b.w > 90 && b.h > 90);
+  // If the text fills the safe area, tuck a shrunk hero into the bottom-right corner as a last resort.
+  if (bands.length === 0) bands.push({ x: SAFE_RIGHT - 340, y: SAFE_BOTTOM - 260, w: 340, h: 260 });
+  bands.sort((a, b) => a.w * a.h - b.w * b.h);
+  const band = bands[bands.length - 1]; // largest
+
+  const margin = 24;
+  const f = Math.min(1, (band.w - margin * 2) / vbox.w, (band.h - margin * 2) / vbox.h);
+  if (f < 0.999) scaleVisualCluster(visualEls, f, vbox.x + vbox.w / 2, vbox.y + vbox.h / 2);
+  vbox = unionBox(visualEls)!;
+  const dx = band.x + (band.w - vbox.w) / 2 - vbox.x;
+  const dy = band.y + (band.h - vbox.h) / 2 - vbox.y;
+  for (const el of visualEls) {
+    el.x += dx; el.y += dy;
+    if (typeof el.x2 === 'number') el.x2 += dx;
+    if (typeof el.y2 === 'number') el.y2 += dy;
+  }
+  if (caption) placeCaption(caption, unionBox(visualEls)!, 20);
 }
 
 // Clamp every element so it stays within the section's safe area [margin, SECTION-margin].
@@ -497,6 +574,10 @@ export function relayoutBoard(spec: BoardSpec, seedStr?: string): RelayoutResult
     // Keep the whole section within the camera-safe content band (both axes) so nothing sits at the
     // frame edge AND the camera has room to push/pan (shrinks an oversized hero + re-seats caption).
     fitSectionToSafeArea(section.elements, visualEls, caption);
+
+    // Final guarantee: the hero never overlaps the text (a tall list + extra headline can overflow its
+    // region into the hero). Reseats the hero into the largest free band if they collide. No-op otherwise.
+    separateVisualFromText(textEls, visualEls, caption);
 
     clampToFrame(section.elements);
 

@@ -1,0 +1,30 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Large box outer outline -->
+  <polygon points="40,150 130,120 130,250 40,280" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <polygon points="40,150 130,120 215,150 125,180" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <polygon points="130,120 215,150 215,225 130,250" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Large box top flaps -->
+  <polyline points="40,150 125,180 215,150" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="125" y1="180" x2="125" y2="150" stroke="#FFFFFF" stroke-width="1"/>
+  <!-- Large box tape line -->
+  <line x1="85" y1="135" x2="85" y2="265" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="170" y1="150" x2="170" y2="237" stroke="#FFFFFF" stroke-width="1"/>
+
+  <!-- Medium box outer outline -->
+  <polygon points="225,190 285,170 285,265 225,285" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <polygon points="225,190 285,170 345,192 285,212" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <polygon points="285,170 345,192 345,245 285,265" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Medium box flap detail -->
+  <polyline points="225,190 285,212 345,192" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="285" y1="212" x2="285" y2="170" stroke="#FFFFFF" stroke-width="1"/>
+
+  <!-- Small box on top of large box -->
+  <polygon points="150,75 200,60 200,118 150,133" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <polygon points="150,75 200,60 248,78 198,93" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <polygon points="200,60 248,78 248,100 200,118" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <polyline points="150,75 198,93 248,78" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="198" y1="93" x2="198" y2="60" stroke="#FFFFFF" stroke-width="1"/>
+
+  <!-- Ground line -->
+  <line x1="20" y1="290" x2="370" y2="265" stroke="#FFFFFF" stroke-width="1"/>
+</svg>

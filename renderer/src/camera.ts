@@ -369,6 +369,21 @@ export function buildCameraPath(
     }
   }
 
+  // Collapse near-duplicate-time keyframes (a keyframe landing within ~1 frame of the one before it —
+  // e.g. a drift keyframe on the same instant as the moment/hold keyframe pushed right after). Keep the
+  // LATER (destination) frame so the camera GLIDES to it from the prior keyframe instead of snapping
+  // there instantly. Insurance on top of the strict-interior drift spacing.
+  const deduped: CameraKeyframe[] = [];
+  for (const k of out) {
+    if (deduped.length && k.time_seconds - deduped[deduped.length - 1].time_seconds < 0.03) {
+      deduped[deduped.length - 1] = k;
+    } else {
+      deduped.push(k);
+    }
+  }
+  out.length = 0;
+  out.push(...deduped);
+
   // Final pass: no two consecutive MOVING keyframes may share a direction+easing combo, so the
   // motion never reads as a mechanical repeat (only keyframes that actually move count).
   let prevMoveCombo = '';
@@ -385,29 +400,85 @@ export function buildCameraPath(
   return out;
 }
 
-// Gentle drift keyframes to fill a stretch where the camera would otherwise sit still — i.e. a long
-// narration gap with no new reveals. These are slow, subtle pans/zooms over the WHOLE visible content
-// (a quiet Ken Burns while the narrator keeps talking about what's already on screen), NOT a push-to-
-// visual tour. Clip-safe so nothing is bisected; varied pan per step so it never looks mechanical.
-const HOLD_GAP = 4.5; // a gap longer than this (incl. between spread-out reveals) gets a gentle breath
-// Alternating TIGHT/WIDE coverage (plus varied pan) so the drift always produces a gentle zoom
-// breath — even on a near-full-width text section where panning has no room. Subtle, not a push.
-const DRIFT_VARIANTS: Array<[number, number, number]> = [ // [coverage, panX, panY]
-  [0.95, -0.3, -0.2], [0.82, 0.35, 0.3], [0.93, 0.3, -0.3], [0.84, -0.3, 0.25], [0.90, 0.0, 0.35],
-];
+// Clamp a frame so it never exceeds the section bounds. A text width/height ESTIMATE can be larger
+// than the section (a condensed display headline measured at 0.62em estimates ~2176px wide on a
+// 1920 section), which would otherwise force every drift frame to full-section size and kill the
+// motion. Clamping here keeps the drift box honest.
+function clampFrameToSection(f: Frame, section: Section): Frame {
+  const w = Math.min(f.viewport_width, section.width);
+  const h = Math.min(f.viewport_height, section.height);
+  return {
+    viewport_x: clampN(f.viewport_x, section.x_offset, section.x_offset + section.width - w),
+    viewport_y: clampN(f.viewport_y, section.y_offset, section.y_offset + section.height - h),
+    viewport_width: w,
+    viewport_height: h,
+  };
+}
+
+function lerpFrame(a: Frame, b: Frame, t: number): Frame {
+  return {
+    viewport_x: a.viewport_x + (b.viewport_x - a.viewport_x) * t,
+    viewport_y: a.viewport_y + (b.viewport_y - a.viewport_y) * t,
+    viewport_width: a.viewport_width + (b.viewport_width - a.viewport_width) * t,
+    viewport_height: a.viewport_height + (b.viewport_height - a.viewport_height) * t,
+  };
+}
+
+// Deliberate Ken-Burns drift to fill a stretch where the camera would otherwise sit still — a long
+// narration gap with no new reveals. REWRITTEN 2026-06-14: the old version framed the whole-section
+// union (incl. not-yet-revealed elements) at ~0.9 coverage, so an oversized headline blew the box
+// past the section and EVERY drift frame clamped to full-section width ⇒ a 14–26s FROZEN hold
+// (measured by ffmpeg freezedetect on the airline-oversell video). Now it frames only what is
+// VISIBLE at the start of the hold, centred, clamped to the section, with a GUARANTEED zoom delta
+// (push/pull) plus a gentle seeded pan — so a sparse or slow-revealing section is never a frozen
+// slide, and the tighter framing fills the frame with the actual content instead of empty board.
+const HOLD_GAP = 4.5;            // a gap longer than this gets a drift breath
+const DRIFT_STEP = 3.2;          // ~one drift keyframe every this many seconds
+// Drift framings are CONTENT-relative (the fraction of the frame the VISIBLE content fills), not a
+// fixed fraction of the section — so a lone eyebrow is framed TIGHT (fills the frame, not marooned in
+// acres of empty board) while a busy section is framed loose. Wider pose (lower fill) ↔ tighter pose.
+const DRIFT_FILL_WIDE = 0.58;    // content fills ~58% of the frame (looser)
+const DRIFT_FILL_TIGHT = 0.82;   // content fills ~82% of the frame (tighter push)
+const DRIFT_MINFRAC = 0.5;       // cap drift zoom at ~2× — a push-in never whiplashes when the next
+                                 // reveal pulls back to frame the full content (no "snap all the way out")
+// Seeded pan directions so the lateral drift varies per hold (x,y in [-1,1]).
+const DRIFT_PANS: Array<[number, number]> = [[-0.5, -0.3], [0.5, 0.3], [0.4, -0.4], [-0.4, 0.35], [0.0, 0.5]];
+
+// A drift pose frames the visible content to fill `fill` of the frame (a real push into already-seen
+// content — the intended Ken-Burns feel), centred + seeded-pan, clamped inside the section. Reuses
+// frameForContent with a low min-width so small content (a lone eyebrow) is framed tight rather than
+// left floating in empty board.
+function driftPose(section: Section, box: Frame, fill: number, panX: number, panY: number): Frame {
+  return frameForContent(section, box, fill, panX, panY, DRIFT_MINFRAC);
+}
 
 function driftFrames(section: Section, fromT: number, toT: number, startVariant: number): CameraKeyframe[] {
   const span = toT - fromT;
-  const n = Math.floor(span / HOLD_GAP);
-  if (n < 1) return [];
-  const visible = section.elements.filter((e) => Number.isFinite(e.reveal_at_seconds));
-  const box = unionFrame(visible) ?? baseFrame(section);
+  if (span < 2.2) return [];
+  const finite = section.elements.filter((e) => Number.isFinite(e.reveal_at_seconds));
+  // Frame what's ACTUALLY on screen at the start of the hold (elements revealing later would pull the
+  // box over empty board); clamp to the section so an over-wide estimate can't freeze the motion.
+  const visibleNow = finite.filter((e) => e.reveal_at_seconds <= fromT + 0.1);
+  const box = clampFrameToSection(unionFrame(visibleNow.length ? visibleNow : finite) ?? baseFrame(section), section);
+
+  const p1 = DRIFT_PANS[startVariant % DRIFT_PANS.length];
+  const p2 = DRIFT_PANS[(startVariant + 2) % DRIFT_PANS.length];
+  const wide = driftPose(section, box, DRIFT_FILL_WIDE, p1[0], p1[1]);
+  const tight = driftPose(section, box, DRIFT_FILL_TIGHT, p2[0], p2[1]);
+  // Alternate push-in vs pull-out per hold so consecutive holds don't all move the same way.
+  const push = startVariant % 2 === 0;
+  const from = push ? wide : tight;
+  const to = push ? tight : wide;
+
+  const n = Math.max(2, Math.round(span / DRIFT_STEP));
   const ease: CameraKeyframe['easing'][] = ['drift', 'ease_in_out', 'cinematic', 'ease_out'];
   const out: CameraKeyframe[] = [];
+  // Space keyframes STRICTLY INSIDE (fromT, toT) via s/(n+1) — never landing on toT — so the last
+  // drift keyframe can't collide with the moment/hold keyframe the caller pushes AT toT. A same-time
+  // collision made getCameraAtTime snap instantly "all the way out", skipping the transition.
   for (let s = 1; s <= n; s++) {
-    const t = fromT + span * (s / (n + 1));
-    const [cov, px, py] = DRIFT_VARIANTS[(startVariant + s) % DRIFT_VARIANTS.length];
-    out.push(kf(t, clipSafeFrame(section, expandBox(box, 1.04), cov, [px, py], visible), ease[s % ease.length]));
+    const u = s / (n + 1);
+    out.push(kf(fromT + span * u, lerpFrame(from, to, u), ease[s % ease.length]));
   }
   return out;
 }

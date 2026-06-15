@@ -9,11 +9,11 @@
     }
   },
   "voice": {
-    "voice": "933563129e564b19a115bedd57b7406a",
+    "voice": "536d3a5e000945adb7038665781a4aca",
     "model": "s1",
     "speed": 1,
     "volume": 0,
-    "temperature": 0.75,
+    "temperature": 0.8,
     "topP": 0.7
   }
 }

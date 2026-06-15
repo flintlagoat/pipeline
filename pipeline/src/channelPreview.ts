@@ -30,7 +30,10 @@ export function buildPreviewSpec(spec: ChannelSpec): BoardSpec {
     { id: '_a_tl', type: 'rule_line', reveal_at_seconds: 0, reveal_type: 'instant', x: 180, y: 130, x2: 182, y2: 132, stroke_color: p.background, stroke_width: 1 },
     { id: '_a_br', type: 'rule_line', reveal_at_seconds: 0, reveal_type: 'instant', x: 1740, y: 950, x2: 1742, y2: 952, stroke_color: p.background, stroke_width: 1 },
     { id: 'eyebrow', type: 'eyebrow', reveal_at_seconds: 0.0, reveal_type: 'fade_up', x: 305, y: 215, content: niche.toUpperCase().slice(0, 24), font_size: 28, color: p.accent2, font_family: 'mono', letter_spacing: 4 },
-    { id: 'headline', type: 'headline', reveal_at_seconds: 0.3, reveal_type: 'type_on', reveal_duration_seconds: 1.1, x: 305, y: 290, content: 'The part nobody explains', font_size: 82, color: p.textPrimary, font_family: 'display', emphasis_words: ['nobody'], emphasis_color: p.accent1 },
+    // font_size kept modest + copy short so even WIDE serif/slab display fonts stay left of the
+    // right-hand schematic column (x≈1170) — the preview board is a fixed layout shared by every
+    // archetype, from condensed Bebas to wide Fraunces.
+    { id: 'headline', type: 'headline', reveal_at_seconds: 0.3, reveal_type: 'type_on', reveal_duration_seconds: 1.1, x: 305, y: 300, content: 'The part nobody sees', font_size: 64, color: p.textPrimary, font_family: 'display', emphasis_words: ['nobody'], emphasis_color: p.accent1 },
     { id: 'bignum', type: 'headline', reveal_at_seconds: 1.0, reveal_type: 'count_up', x: 305, y: 470, content: '$3,000', font_size: 116, color: p.money, font_family: 'display' },
     { id: 'rule', type: 'rule_line', reveal_at_seconds: 1.3, reveal_type: 'draw_on', x: 308, y: 600, x2: 760, y2: 600, stroke_color: p.accent1, stroke_width: 3 },
     { id: 'body', type: 'body_text', reveal_at_seconds: 1.6, reveal_type: 'fade_up', x: 308, y: 650, content: 'Every channel gets its own look, voice, and rhythm — built to be watched, not skipped.', font_size: 30, color: p.textSecondary, font_family: 'body', wrap_chars: 32 },

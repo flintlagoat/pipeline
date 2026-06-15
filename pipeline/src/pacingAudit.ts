@@ -14,9 +14,11 @@ export interface PacingReport {
   ok: boolean;                // longestGap within the healthy threshold
 }
 
-// A window longer than this with nothing new appearing is flagged. Camera drift keeps the frame
-// from freezing, but ~14s+ with no new information is a real attention risk for explainer content.
-export const DEAD_WINDOW_THRESHOLD = 14;
+// A window longer than this with nothing new appearing is flagged. The spec prompt now targets a
+// ≤6s max reveal gap (VISUAL DENSITY rule); 9s gives headroom for the model's imperfection while
+// still catching a spec drifting back toward the old dead-back-third failure mode. Camera drift
+// keeps the frame from freezing, but a long no-new-information window is a real attention risk.
+export const DEAD_WINDOW_THRESHOLD = 9;
 
 export function auditPacing(spec: BoardSpec, threshold = DEAD_WINDOW_THRESHOLD): PacingReport {
   const duration = spec.duration_seconds || 0;

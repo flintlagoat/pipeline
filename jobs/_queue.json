@@ -63,5 +63,57 @@
     "startedAt": "2026-06-14T00:59:07.017Z",
     "finishedAt": "2026-06-14T01:16:50.796Z",
     "error": null
+  },
+  {
+    "id": "mqe0ci66_v5g4r",
+    "channel": "how_industries_work",
+    "job": "idk",
+    "runAt": null,
+    "draft": false,
+    "autoPublish": false,
+    "status": "done",
+    "addedAt": "2026-06-14T16:37:40.734Z",
+    "startedAt": "2026-06-14T16:37:40.736Z",
+    "finishedAt": "2026-06-14T16:51:14.035Z",
+    "error": null
+  },
+  {
+    "id": "mqehjjfw_jcjn9",
+    "channel": "how_industries_work",
+    "job": "002",
+    "runAt": null,
+    "draft": false,
+    "autoPublish": false,
+    "status": "done",
+    "addedAt": "2026-06-15T00:39:02.444Z",
+    "startedAt": "2026-06-15T00:39:02.445Z",
+    "finishedAt": "2026-06-15T00:52:00.395Z",
+    "error": null
+  },
+  {
+    "id": "mqfam19l_851qh",
+    "channel": "tiny_kitchens",
+    "job": "001",
+    "runAt": null,
+    "draft": false,
+    "autoPublish": false,
+    "status": "done",
+    "addedAt": "2026-06-15T14:12:47.721Z",
+    "startedAt": "2026-06-15T14:12:47.723Z",
+    "finishedAt": "2026-06-15T14:27:17.883Z",
+    "error": null
+  },
+  {
+    "id": "mqfb9zp3_ejold",
+    "channel": "tiny_kitchens",
+    "job": "002",
+    "runAt": null,
+    "draft": false,
+    "autoPublish": false,
+    "status": "done",
+    "addedAt": "2026-06-15T14:31:25.431Z",
+    "startedAt": "2026-06-15T14:31:25.433Z",
+    "finishedAt": "2026-06-15T14:48:46.899Z",
+    "error": null
   }
 ]

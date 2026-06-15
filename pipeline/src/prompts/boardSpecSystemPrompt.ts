@@ -118,35 +118,35 @@ RULE 5 — REAL-TIME FEEL. The viewer must hear the introducing word AT or BEFOR
   appears, every time. If you cannot point to the exact word that justifies a reveal time,
   the timing is wrong.
 
-━━━ CAMERA RULES — HOLD STILL, MOVE RARELY (STRICT) ━━━
-The camera must feel calm and deliberate. The element-entrance stagger already carries the
-"things appearing" energy — the camera should MOSTLY HOLD STILL.
+━━━ VISUAL DENSITY — EVEN PACING, NEVER A DEAD SLIDE (STRICT) ━━━
+The #1 quality defect is a stretch where the screen holds near-empty while the narrator keeps
+talking. Obey ALL of these for the WHOLE video — the final third must be as rich as the opening:
+- EVERY content section MUST contain at least one svg_asset hero (the concrete object the beat is
+  about). A section that is only an eyebrow + body_text on empty canvas is a dead slide. The single
+  PUNCH beat below is the ONLY allowed asset-less section.
+- NO SECTION may cover more than ~16 seconds of narration. If a run of narration is longer, SPLIT
+  it into multiple sections, each with its OWN hero + beats and its own section entry. A 30-second
+  stretch of script is TWO or THREE sections, never one.
+- WITHIN a section, the gap between consecutive reveal_at_seconds must NEVER exceed ~6 seconds. If
+  the narration runs longer than ~6s before your next planned element, ADD an intermediate beat
+  anchored to a word in that span — a supporting body_text line, a label_tag pulling a key phrase,
+  a secondary svg_asset, or a list item — so something NEW appears at least every ~6s.
+- DISTRIBUTE reveals EVENLY across the whole duration — roughly one new reveal every 3–5 seconds,
+  start to finish. Do NOT front-load detail into the first half and starve the end. The final 30
+  seconds need just as many reveals as the opening 30.
+- The CONCLUSION's elements must be spread across its narration (hero + eyebrow + headline + body
+  each at their spoken word), NOT crammed into the last 2–3 seconds.
 
-CHOREOGRAPHY (most important):
-- Emit a camera keyframe ONLY to move to a new section, plus the mandatory start keyframe.
-  ONE move per section/scene — the pan that arrives at it. After arriving, DO NOT emit any
-  more keyframes for that section (no zoom nudges, no re-targeting on element entrances).
-- NEVER add a keyframe for an element entrance, a label, or a small reveal. A scene that has
-  fully arrived should have NO further camera keyframes until the next section.
-- At most one gentle zoom is permitted per video, reserved for the single biggest punchline —
-  and even that is optional. Prefer no zoom at all.
-
-MECHANICS (every section is exactly 1920 wide at x_offset = 1920×index):
-- Always start: { "time_seconds": 0, "viewport_x": 0, "viewport_y": 0, "viewport_width": 1920, "viewport_height": 1080, "easing": "ease_in_out" }
-- Pan to section N: set viewport_x = 1920 × N (its x_offset), viewport_width = 1920. Begin the
-  pan ~0.5s before the first word of that section so the camera arrives as narration enters.
-- A section-resting keyframe MUST have viewport_x = 1920×N and viewport_width = 1920 (exact
-  fit, zero dead canvas). Never park with viewport_width > section width.
-- If you use the single optional zoom: reduce viewport_width by no more than 15% (min 1632)
-  while keeping the viewport INSIDE the section: viewport_x within [1920×N, 1920×N + 1920 −
-  viewport_width]. To hold the left edge, keep viewport_x = 1920×N.
-- viewport_x must NEVER be less than the current section's x_offset (clips left content) and
-  the right edge (viewport_x + viewport_width) must NEVER exceed x_offset + 1920.
-- viewport_height = viewport_width × (9/16). The final keyframe's time_seconds should reach
-  the end of the narration.
-Easing: "cinematic" for major pans, "ease_in_out" for the rare zoom, "snap" only for hard cuts.
-(Note: the renderer ALSO hard-caps this to one move per scene and a 15% zoom ceiling, so
-extra/large keyframes will be discarded — follow the rules and the result matches your intent.)
+━━━ CAMERA (the renderer drives it — DO NOT craft a path) ━━━
+The renderer computes ALL camera motion automatically from your section layout + element reveal
+times: it follows the reveals, frames each new beat as it appears, and gently drifts during a hold —
+it never sits on empty board. You therefore do NOT design camera moves, zooms, or pans. Emit ONLY
+the single mandatory start keyframe and nothing else:
+  "camera_keyframes": [ { "time_seconds": 0, "viewport_x": 0, "viewport_y": 0, "viewport_width": 1920, "viewport_height": 1080, "easing": "ease_in_out" } ]
+What makes the camera look good is your CONTENT, not a camera path: keep each section's elements
+within [x_offset+80, x_offset+1840] horizontally and 90–1000 vertically, and obey VISUAL DENSITY
+above — the camera can only stay alive if every section has enough, evenly-timed content to move
+between. Spend your effort on dense, well-timed sections, not on keyframes (they are discarded).
 
 ━━━ REVEAL TYPES ━━━
 fade_up → text (headline, eyebrow, body_text, blur_reveal)
@@ -174,6 +174,11 @@ Exactly ONE section in the video should be a PUNCH beat: a single huge centered 
 most a one-line caption. It lands on the video's hardest line (often the revelation). This breaks
 the steady left-text/right-visual rhythm so the video doesn't feel like a uniform slideshow. Do
 NOT make more than one punch beat, and never the first or last section.
+CRITICAL — the punch beat is BRIEF: it covers only the few seconds around its one hard line. NEVER
+assign a long run of narration to it (a punch beat that spans 15+ seconds is a dead slide, because
+it has no hero and almost no text). If the narration around your punch line keeps going, the
+surrounding material belongs in normal, hero-bearing sections before and after the punch — the punch
+is just the single title-card moment, not a whole chapter.
 
 ━━━ SVG ASSET LIBRARY ━━━
 Existing library assets (prefer these when they match — type "svg_asset", reveal_type "draw_on"):

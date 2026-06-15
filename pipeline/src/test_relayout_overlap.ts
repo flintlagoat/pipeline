@@ -118,5 +118,64 @@ for (const el of textEls) {
 }
 assert(offFrame === 0, `no text runs off the frame edge (found ${offFrame})`);
 
+// ── Text↔visual overlap (the "headline over the scale" bug) ─────────────────────────────────────
+// An OVERLOADED section: eyebrow + headline + rule + a 4-line list of LONG (unwrapped) lines + a
+// second blur_reveal headline + a big svg_asset — the exact shape that overflowed its text region and
+// collided with the hero. After relayout, the hero must not overlap ANY text element.
+function genericBox(el: Element): { x: number; y: number; w: number; h: number } {
+  if (['svg_asset', 'png_asset', 'node_box', 'highlight_box'].includes(el.type)) {
+    return { x: el.x, y: el.y, w: el.asset_width ?? el.width ?? 320, h: el.asset_height ?? el.height ?? 320 };
+  }
+  const fs = el.font_size ?? 32;
+  const lh = el.type === 'list_reveal' ? 1.5 : el.type === 'body_text' ? 1.45 : 1.35;
+  let lines = el.lines?.length ?? 1;
+  if (el.type === 'body_text' && el.content) lines = wrapLines(el.content, el.wrap_chars ?? 52);
+  const chars = el.content
+    ? (el.type === 'body_text' ? Math.min(el.content.length, el.wrap_chars ?? 52) : el.content.length)
+    : (el.lines ? Math.max(...el.lines.map((l) => l.length)) : 10);
+  return { x: el.x, y: el.y, w: Math.max(40, chars * fs * 0.55), h: lines * fs * lh };
+}
+function overlap(a: ReturnType<typeof genericBox>, b: ReturnType<typeof genericBox>, pad = 8): boolean {
+  return !(a.x + a.w <= b.x + pad || b.x + b.w <= a.x + pad || a.y + a.h <= b.y + pad || b.y + b.h <= a.y + pad);
+}
+
+console.log('\noverloaded section (list + extra headline + hero): hero must not overlap any text:');
+const ov: BoardSpec = {
+  video_id: 'overloaded_fixed_seed', channel_id: 'how_industries_work', format: 'landscape_16x9',
+  duration_seconds: 30, fps: 30, audio_file: '', asset_needs: ['statistical_bet_scale'],
+  board: {
+    width: 1920, height: 1080, background_color: '#08090f',
+    sections: [{
+      id: 'january', section_type: 'list_reveal', x_offset: 0, y_offset: 0, width: 1920, height: 1080,
+      elements: [
+        { id: 'j_eye', type: 'eyebrow', reveal_at_seconds: 0.3, reveal_type: 'fade_up', x: 100, y: 90, content: 'HUNTING SEASON', color: '#00D8FF', font_family: 'mono' },
+        { id: 'j_head', type: 'headline', reveal_at_seconds: 1, reveal_type: 'type_on', x: 100, y: 160, content: 'JANUARY ADS', font_size: 90, color: '#FFFFFF', font_family: 'display' },
+        { id: 'j_rule', type: 'rule_line', reveal_at_seconds: 2, reveal_type: 'draw_on', x: 100, y: 300, x2: 580, y2: 300, stroke_color: '#00D8FF', stroke_width: 1 },
+        { id: 'j_list', type: 'list_reveal', reveal_at_seconds: 3, reveal_type: 'fade_up', x: 100, y: 320, lines: ['Not hunting for athletes.', 'Hunting for the person most likely to quit by March.', 'Motivated, guilty, optimistic — buys a year, uses five weeks.', 'Pays like a regular, consumes like a ghost.'], font_size: 36, color: '#FFFFFF', font_family: 'body' },
+        { id: 'j_punch', type: 'blur_reveal', reveal_at_seconds: 18, reveal_type: 'blur_in', x: 100, y: 560, content: 'THE MOST PROFITABLE CUSTOMER', font_size: 64, color: '#FFE500', font_family: 'display' },
+        { id: 'j_asset', type: 'svg_asset', reveal_at_seconds: 4, reveal_type: 'draw_on', x: 700, y: 470, width: 680, height: 465, asset_name: 'statistical_bet_scale' },
+      ],
+    }],
+    camera_keyframes: [],
+  },
+};
+relayoutBoard(ov);
+const oels = ov.board.sections[0].elements;
+const oox = ov.board.sections[0].x_offset, ooy = ov.board.sections[0].y_offset;
+for (const el of oels) { el.x -= oox; el.y -= ooy; if (typeof el.x2 === 'number') el.x2 -= oox; if (typeof el.y2 === 'number') el.y2 -= ooy; }
+const heroEl = oels.find((e) => e.type === 'svg_asset')!;
+const heroBox = genericBox(heroEl);
+let heroHits = 0;
+for (const el of oels) {
+  if (el === heroEl) continue;
+  if (['eyebrow', 'headline', 'body_text', 'label_tag', 'list_reveal', 'blur_reveal'].includes(el.type) && overlap(heroBox, genericBox(el))) {
+    heroHits++;
+    console.log(`    ✗ hero overlaps ${el.id} (${el.type})`);
+  }
+}
+assert(heroHits === 0, `hero does not overlap any text element (found ${heroHits})`);
+// And the hero must still be on-frame.
+assert(heroBox.x >= 0 && heroBox.y >= 0 && heroBox.x + heroBox.w <= 1920 && heroBox.y + heroBox.h <= 1080, 'hero stays within the frame');
+
 console.log(`\n${failures === 0 ? '✅ overlap regression test passed' : `❌ ${failures} test(s) failed`}`);
 process.exit(failures === 0 ? 0 : 1);

@@ -69,6 +69,42 @@ export const ARCHETYPE_DEFAULTS: Record<ArchetypeId, ArchetypeDefaults> = {
     camera: { movement: 'gentle', pushZoom: 0.95, maxTravel: 1.4, minDwell: 0.6, easing: 'ease_in_out' },
     motion: { bobAmp: 1.3, entrance: 'draw_on', fillerDensity: 'low' },
   },
+  tech_terminal: {
+    fillerEnabled: false, fillerGrid: false, gridColor: '60,255,150',
+    palette: { background: '#07100B', surface: '#0C1A12', textPrimary: '#D6FFE6', textSecondary: '#7FB89A', accent1: '#33FF99', accent2: '#7CFFCB', money: '#33FF99', up: '#33FF99', down: '#FF5C5C' },
+    typography: { display: 'Share Tech Mono', body: 'IBM Plex Sans', mono: 'JetBrains Mono', case: 'none' },
+    assetStyle: 'blueprint-wireframe',
+    background: { mode: 'flat', color: '#07100B', grain: 0.28 },
+    camera: { movement: 'minimal', pushZoom: 1.0, maxTravel: 0.9, minDwell: 0.5, easing: 'snap' },
+    motion: { bobAmp: 0.4, entrance: 'fade_up', fillerDensity: 'none' },
+  },
+  vintage_press: {
+    fillerEnabled: false, fillerGrid: false, gridColor: '120,110,90',
+    palette: { background: '#ECE3CE', surface: '#DED2B4', textPrimary: '#1E1B16', textSecondary: '#5A5346', accent1: '#B23A2E', accent2: '#2E4756', money: '#6B5A2E', up: '#4A6B3E', down: '#B23A2E' },
+    typography: { display: 'Zilla Slab', body: 'Bitter', mono: 'Courier Prime', case: 'title' },
+    assetStyle: 'line-illustration',
+    background: { mode: 'paper', color: '#ECE3CE', color2: '#D8CBA8', grain: 0.38 },
+    camera: { movement: 'cinematic', pushZoom: 0.94, maxTravel: 1.6, minDwell: 0.9, easing: 'ease_in_out' },
+    motion: { bobAmp: 0.4, entrance: 'fade_up', fillerDensity: 'none' },
+  },
+  editorial_magazine: {
+    fillerEnabled: false, fillerGrid: false, gridColor: '180,180,180',
+    palette: { background: '#FAF8F3', surface: '#EFEBE2', textPrimary: '#14110E', textSecondary: '#6E6A62', accent1: '#E5392F', accent2: '#1A1A1A', money: '#B8860B', up: '#0E7C5A', down: '#E5392F' },
+    typography: { display: 'Fraunces', body: 'Inter', mono: 'Space Mono', case: 'title' },
+    assetStyle: 'line-illustration',
+    background: { mode: 'flat', color: '#FAF8F3', grain: 0 },
+    camera: { movement: 'gentle', pushZoom: 0.97, maxTravel: 1.0, minDwell: 0.8, easing: 'ease_in_out' },
+    motion: { bobAmp: 0.4, entrance: 'fade_up', fillerDensity: 'none' },
+  },
+  chalkboard: {
+    fillerEnabled: false, fillerGrid: false, gridColor: '230,230,220',
+    palette: { background: '#1E2B24', surface: '#25342C', textPrimary: '#F1EEE3', textSecondary: '#B9C2B6', accent1: '#FFE08A', accent2: '#8FD0C9', money: '#FFE08A', up: '#9BD1A0', down: '#FF8A7A' },
+    typography: { display: 'Architects Daughter', body: 'Patrick Hand', mono: 'Cutive Mono', case: 'none' },
+    assetStyle: 'hand-drawn',
+    background: { mode: 'flat', color: '#1E2B24', grain: 0.3 },
+    camera: { movement: 'gentle', pushZoom: 0.95, maxTravel: 1.3, minDwell: 0.7, easing: 'ease_in_out' },
+    motion: { bobAmp: 1.0, entrance: 'draw_on', fillerDensity: 'low' },
+  },
 };
 
 // ── Adapters ───────────────────────────────────────────────────────────────────

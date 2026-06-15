@@ -1,0 +1,14 @@
+<svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70 380 L70 130 Q70 90 110 90 L190 90 Q230 90 230 130 L230 380" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M70 240 Q60 240 60 260 L60 320 Q60 340 80 340 L220 340 Q240 340 240 320 L240 260 Q240 240 230 240" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M85 130 Q85 110 110 110 L190 110 Q215 110 215 130 L215 235" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="150" y1="120" x2="150" y2="235" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="118" y1="115" x2="118" y2="235" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="182" y1="115" x2="182" y2="235" stroke="#FFFFFF" stroke-width="1"/>
+  <path d="M78 260 Q78 252 88 252 L212 252 Q222 252 222 260 L222 325 Q222 332 212 332 L88 332 Q78 332 78 325 Z" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="150" y1="252" x2="150" y2="332" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="70" y1="340" x2="70" y2="380" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="230" y1="340" x2="230" y2="380" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="90" y1="340" x2="90" y2="380" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="210" y1="340" x2="210" y2="380" stroke="#FFFFFF" stroke-width="1"/>
+</svg>

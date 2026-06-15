@@ -12,6 +12,10 @@ export const ARCHETYPE_IDS = [
   'flat_motion_explainer',
   'documentary_slate',
   'notebook_sketch',
+  'tech_terminal',
+  'vintage_press',
+  'editorial_magazine',
+  'chalkboard',
 ] as const;
 export type ArchetypeId = (typeof ARCHETYPE_IDS)[number];
 

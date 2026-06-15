@@ -1,0 +1,24 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <rect x="50" y="40" width="320" height="220" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="50" y1="260" x2="370" y2="260" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="50" y1="40" x2="50" y2="260" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="46" y1="60" x2="50" y2="60" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="46" y1="100" x2="50" y2="100" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="46" y1="140" x2="50" y2="140" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="46" y1="180" x2="50" y2="180" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="46" y1="220" x2="50" y2="220" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="110" y1="260" x2="110" y2="264" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="170" y1="260" x2="170" y2="264" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="230" y1="260" x2="230" y2="264" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="290" y1="260" x2="290" y2="264" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="350" y1="260" x2="350" y2="264" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="50" y1="100" x2="370" y2="100" stroke="#FFFFFF" stroke-width="0.75" stroke-dasharray="3 4"/>
+  <line x1="50" y1="160" x2="370" y2="160" stroke="#FFFFFF" stroke-width="0.75" stroke-dasharray="3 4"/>
+  <line x1="50" y1="220" x2="370" y2="220" stroke="#FFFFFF" stroke-width="0.75" stroke-dasharray="3 4"/>
+  <path d="M50 252 C 130 250, 190 245, 230 230 C 270 215, 300 185, 325 140 C 345 105, 358 75, 365 50" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="110" cy="250" r="3" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="170" cy="244" r="3" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="230" cy="230" r="3" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="290" cy="178" r="3" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="345" cy="100" r="3" stroke="#FFFFFF" stroke-width="1.5"/>
+</svg>

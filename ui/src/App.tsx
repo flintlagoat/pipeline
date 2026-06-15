@@ -983,7 +983,7 @@ function Slider({ label, min, max, step, value, onChange, fmt, hint }: { label: 
   );
 }
 
-const ARCHETYPES = ['blueprint_board', 'flat_motion_explainer', 'documentary_slate', 'notebook_sketch'];
+const ARCHETYPES = ['blueprint_board', 'flat_motion_explainer', 'documentary_slate', 'notebook_sketch', 'tech_terminal', 'vintage_press', 'editorial_magazine', 'chalkboard'];
 
 // ── shared spec field editor (used by New + Edit) ──
 function SpecFields({ spec, patch }: { spec: ChannelSpec; patch: (path: string[], value: unknown) => void }) {

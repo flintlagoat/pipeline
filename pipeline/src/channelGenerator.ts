@@ -4,7 +4,7 @@ import * as path from 'path';
 import { ChannelSpec, ChannelSpecSchema } from './types/channelSpec';
 import { CHANNEL_SPEC_SYSTEM_PROMPT, buildChannelSpecUserPrompt } from './prompts/channelSpecPrompt';
 import { saveChannelSpec, channelSpecExists } from './channelSpec';
-import { applyDistinctness } from './channelDistinct';
+import { applyDistinctness, loadArchetypeCounts } from './channelDistinct';
 
 // Channel Generator (PART 1d). title + description → a complete, validated ChannelSpec on
 // claude-opus-4-8. The model picks/blends an archetype and customizes all tokens. The `id` is
@@ -45,8 +45,11 @@ export async function generateChannelSpec(
   if (!description.trim()) throw new Error('Channel generation needs a non-empty description.');
 
   const id = uniqueId(slugify(title));
+  // Surface the studio's current archetype distribution so the generator spreads picks instead of
+  // funnelling every new channel onto the same look.
+  const existingArchetypes = loadArchetypeCounts(id);
   const messages: Anthropic.MessageParam[] = [
-    { role: 'user', content: buildChannelSpecUserPrompt(title, description, opts) },
+    { role: 'user', content: buildChannelSpecUserPrompt(title, description, { ...opts, existingArchetypes }) },
   ];
 
   let lastErr = '';

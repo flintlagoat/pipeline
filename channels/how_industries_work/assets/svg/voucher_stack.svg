@@ -1,0 +1,27 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#FFFFFF" fill="none" stroke-width="2" stroke-linejoin="round">
+    <!-- bottom voucher -->
+    <rect x="70" y="160" width="240" height="90" rx="4"/>
+    <!-- middle voucher -->
+    <rect x="80" y="125" width="240" height="90" rx="4"/>
+    <!-- top voucher silhouette -->
+    <rect x="90" y="90" width="240" height="90" rx="4"/>
+  </g>
+  <g stroke="#FFFFFF" fill="none" stroke-width="1">
+    <!-- top voucher inner border (dashed coupon frame) -->
+    <rect x="100" y="100" width="220" height="70" rx="3" stroke-dasharray="6 5"/>
+    <!-- perforation line -->
+    <line x1="252" y1="92" x2="252" y2="178" stroke-dasharray="3 4"/>
+    <!-- left notches -->
+    <path d="M90 122 a6 6 0 0 0 0 16"/>
+    <!-- right notches -->
+    <path d="M330 122 a6 6 0 0 1 0 16"/>
+    <!-- text lines on main panel -->
+    <line x1="112" y1="118" x2="232" y2="118"/>
+    <line x1="112" y1="132" x2="210" y2="132"/>
+    <line x1="112" y1="150" x2="190" y2="150"/>
+    <!-- value box / star on stub -->
+    <circle cx="286" cy="135" r="18"/>
+    <polygon points="286,123 290,132 300,133 292,139 295,148 286,143 277,148 280,139 272,133 282,132"/>
+  </g>
+</svg>
