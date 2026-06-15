@@ -43,6 +43,21 @@
 >   (no clip). NOTE: the regenerated idk/video.mp4 + board_spec.json REPLACE the old ones on disk; the
 >   operator's original "bad" copy is still in their Downloads. Re-verify any future spec change with
 >   `npm run reprocess how_industries_work idk` then the direct renderer call (no Whisper needed).
+>   FOLLOW-UP (same session, operator-reported: "on panning out it clips all the way out as if skipping
+>   part of the transition" + "check 2:23–2:35"): the s10 `driftFrames` rewrite introduced a CAMERA SNAP
+>   regression — it emitted its last drift keyframe at exactly `toT`, colliding with the moment/hold
+>   keyframe the caller pushes AT `toT` (same timestamp). getCameraAtTime then saw a 0-duration segment
+>   and JUMPED instantly between the two (e.g. @145.4s / 2:25: w 614→1920 in one frame — a tight push-in
+>   snapping straight to fully zoomed out). 11 such duplicate-time keyframes existed. FIX (renderer/src/
+>   camera.ts): (a) drift keyframes are now spaced STRICTLY INSIDE (fromT,toT) via s/(n+1) so the last
+>   one never lands on toT; (b) DRIFT_MINFRAC 0.32→0.5 (cap drift zoom at ~2× so a push-in never
+>   whiplashes when the next reveal pulls back to the full content); (c) a defensive dedup pass at the end
+>   of buildCameraPath collapses keyframes within ~1 frame, keeping the LATER (destination) frame so the
+>   camera glides instead of snapping. VERIFIED: duplicate-time pairs 11→0; max per-frame Δwidth at the
+>   former snap points 1306px→≤42px (smooth); test:camera still passes. (The conclusion still holds ~7s
+>   on the chart+body while the payoff headline waits for its narration cue at 153s — a calm hold on rich
+>   content; the late headline leaves its slot briefly empty, a minor artifact of anchoring the punchline
+>   to its spoken words.)
 > Session 9 phase: PRODUCTIZATION — begin turning the pipeline into a sellable product, "Inkwell".
 >   Decided in a market brainstorm (full notes in memory [[productization-pivot]]): position as the
 >   ANTI-SLOP tool vs the demonetized stock-footage crowd; business model = free cloud demo → cloud
@@ -99,11 +114,20 @@
 >   3 credits → delete). Auth autoconfirm is ON (toggle in the Supabase dashboard later). Landing CTAs
 >   now point to /demo + a Sign-in link. website/.env.local holds ANTHROPIC_API_KEY (ALSO add it in
 >   Vercel env or the demo 503s in prod). website/supabase/migrations/0002_profiles.sql is the record.
+>   (7) SAVE-TO-STUDIO + LAUNCH-HARDEN + OPERATOR PREVIEW (done): demo channels SAVE to the user's
+>   account (channels table, RLS owner-only; /api/channels GET/POST; dashboard lists them — VERIFIED
+>   end-to-end with RLS). Public demo is per-IP RATE-LIMITED (demo_runs table, ~15/day — Anthropic
+>   cost protection). SEO: robots.ts + sitemap.ts + dynamic OG image + favicon (next/og). OPERATOR
+>   STUDIO: POST /api/channels/preview renders still frames of a draft ChannelSpec (base64, reuses
+>   generateChannelPreview) + a "Preview look" button in the New Channel modal (pipeline tsc + ui vite
+>   both clean). 3 Supabase tables now: leads, profiles, channels, demo_runs (migrations 0001-0003 +
+>   demo_runs created via Management API).
 >   NOT YET DONE (needs operator input/infra): a CLOUD RENDER BACKEND so the demo/app can produce full
 >   VIDEOS (the pipeline — canvas/ffmpeg/workers — can't run in Vercel serverless; needs a host like a
->   VM/Render/Fly worker); BILLING (e.g. Stripe) to buy credits + gate/rate-limit the demo in prod;
->   confirm the Vercel deploys are green; (optional/lower-value) an operator-UI channel-preview button
->   + transcription "choose at setup" UI; the hosted-brain anti-piracy split.
+>   VM/Render/Fly worker; the operator declined to start this until ready); BILLING (Stripe) to buy
+>   credits — needs the operator's Stripe account/keys; confirm the Vercel deploys are green (+ ensure
+>   ANTHROPIC_API_KEY is set in Vercel or the demo 503s); transcription "choose at setup" onboarding
+>   UI; the hosted-brain anti-piracy split.
 > Session 8 phase: GO LIVE — real credentials wired + the publish loop PROVEN end-to-end, plus a
 >   text-overlap render fix and a real posting schedule. Operator supplied all keys this session.
 >   (1) CREDENTIALS LIVE (all in `.env`, gitignored): FISH_API_KEY (real voice), YOUTUBE_API_KEY
