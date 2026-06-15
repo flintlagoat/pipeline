@@ -11,6 +11,7 @@ import { listMusicStems } from './audio/music';
 import { AudioConfig } from './types/specTypes';
 import { generateChannelSpec } from './channelGenerator';
 import { saveChannelSpec, loadChannelSpec, channelSpecExists, toChannelConfig } from './channelSpec';
+import { generateChannelPreview } from './channelPreview';
 import { ChannelSpecSchema } from './types/channelSpec';
 import { resolveBackend, TtsBackendId, TtsOptions } from './tts';
 import { fishApiKey } from './tts/backends/fish';
@@ -312,6 +313,23 @@ app.post('/api/channels/save', (req: Request, res: Response) => {
   try {
     saveChannelSpec(spec);
     res.json({ ok: true, id: spec.id });
+  } catch (e) {
+    res.status(500).json({ error: (e as Error).message });
+  }
+});
+
+// Render a few still preview frames of a (draft) channel's LOOK — no save, no audio, no API. Returns
+// the frames as base64 data URLs so an UNSAVED draft can be previewed in the browser before saving.
+app.post('/api/channels/preview', (req: Request, res: Response) => {
+  const parsed = ChannelSpecSchema.safeParse(req.body?.spec);
+  if (!parsed.success) {
+    return res.status(400).json({ error: parsed.error.issues.slice(0, 6).map((i) => `${i.path.join('.')}: ${i.message}`).join('; ') });
+  }
+  try {
+    const outDir = path.join(ROOT, 'output', '_preview_tmp', parsed.data.id);
+    const pngs = generateChannelPreview(parsed.data, outDir);
+    const images = pngs.map((p) => 'data:image/png;base64,' + fs.readFileSync(p).toString('base64'));
+    res.json({ ok: true, images });
   } catch (e) {
     res.status(500).json({ error: (e as Error).message });
   }

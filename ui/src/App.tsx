@@ -1191,11 +1191,14 @@ function NewChannelModal({ onClose, onCreated }: { onClose: () => void; onCreate
   const [busy, setBusy] = useState(false);
   const [saving, setSaving] = useState(false);
   const [spec, setSpec] = useState<ChannelSpec | null>(null);
+  const [previewBusy, setPreviewBusy] = useState(false);
+  const [previewImgs, setPreviewImgs] = useState<string[]>([]);
   const patch = patchSpec(setSpec);
 
   async function generate() {
     if (!title.trim() || !description.trim()) return;
     setBusy(true);
+    setPreviewImgs([]);
     try {
       const d = await jpost<{ spec: ChannelSpec }>('/api/channels/generate', { title, description, niche, audience, tone });
       setSpec(d.spec);
@@ -1209,6 +1212,15 @@ function NewChannelModal({ onClose, onCreated }: { onClose: () => void; onCreate
       const d = await jpost<{ id: string }>('/api/channels/save', { spec });
       onCreated(d.id);
     } catch (e) { alert((e as Error).message); } finally { setSaving(false); }
+  }
+
+  async function previewLook() {
+    if (!spec) return;
+    setPreviewBusy(true);
+    try {
+      const d = await jpost<{ images: string[] }>('/api/channels/preview', { spec });
+      setPreviewImgs(d.images);
+    } catch (e) { alert((e as Error).message); } finally { setPreviewBusy(false); }
   }
 
   return (
@@ -1231,9 +1243,17 @@ function NewChannelModal({ onClose, onCreated }: { onClose: () => void; onCreate
       ) : (
         <>
           <SpecFields spec={spec} patch={patch} />
+          {previewImgs.length > 0 && (
+            <div className="grid grid-cols-3 gap-2 max-[640px]:grid-cols-1">
+              {previewImgs.map((src, i) => (
+                <img key={i} src={src} alt={`look preview ${i + 1}`} className="w-full rounded border border-white/10" />
+              ))}
+            </div>
+          )}
           <div className="text-[11px] text-zinc-500">voice: {spec.scriptStyle.tone} · hook: {spec.scriptStyle.hookStyle}</div>
           <div className="flex justify-end gap-2">
-            <button onClick={() => setSpec(null)} className="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-sm">← Back</button>
+            <button onClick={() => { setSpec(null); setPreviewImgs([]); }} className="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-sm">← Back</button>
+            <button onClick={previewLook} disabled={previewBusy} className="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-sm disabled:opacity-40">{previewBusy ? 'rendering…' : previewImgs.length ? 'Re-preview' : 'Preview look'}</button>
             <button onClick={save} disabled={saving} className="px-4 py-1.5 rounded bg-emerald-500/25 border border-emerald-400/40 text-emerald-100 text-sm hover:bg-emerald-500/35 disabled:opacity-40">{saving ? 'saving…' : `Save & create (${spec.id})`}</button>
           </div>
         </>
