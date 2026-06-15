@@ -1,0 +1,29 @@
+{
+  "topic": "The Real Difference Between Baking Soda and Baking Powder",
+  "minutes": 7,
+  "scriptArc": "mechanism",
+  "packaging": {
+    "title": "Why Baking Soda Needs an Acid (Powder Doesn't)",
+    "altTitles": [
+      "The Real Reason Cookies Use Baking Soda",
+      "Baking Soda vs Powder: It's About Acid"
+    ],
+    "description": "A food science look at the real chemical difference between baking soda and baking powder, why one needs an acid like buttermilk to work, and how swapping them ruins your cookies and pancakes.",
+    "thumbnail": {
+      "bigText": "ONE NEEDS ACID",
+      "emphasisWord": "ACID",
+      "assetName": "ph_scale_chart",
+      "visualIdea": "two near-identical white spoonfuls of powder side by side, one fizzing violently with a lemon, the other sitting flat"
+    },
+    "hookPromise": "Two white powders that look identical do completely opposite things in your batter — and using the wrong one is why your cookies came out flat and metallic-tasting.",
+    "openLoops": [
+      "Why does baking soda need buttermilk, yogurt, or brown sugar nearby to actually rise?",
+      "Why can baking powder rise all on its own with just water?",
+      "What is that bitter, soapy taste when a recipe uses too much of one?"
+    ],
+    "payoff": "Baking powder is just baking soda with a dry acid already mixed in — so you can make your own powder from soda plus cream of tartar, and that's exactly why recipes pick one over the other depending on whether the batter is already acidic.",
+    "whyItWorks": "Nearly everyone who bakes has stood at the pantry wondering if the two are interchangeable, and the acid reveal answers a question they've genuinely had for years.",
+    "score": 78
+  },
+  "createdAt": "2026-06-15T16:15:40.609Z"
+}

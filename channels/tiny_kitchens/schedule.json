@@ -1,0 +1,9 @@
+{
+  "timezone": "America/New_York",
+  "cadence": { "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"], "times": ["10:00", "14:00"] },
+  "autoPublish": true,
+  "privacyStatus": "private",
+  "categoryId": "26",
+  "defaultTags": ["food science", "cooking explained", "kitchen science", "why does", "home cooking"],
+  "descriptionBoilerplate": "Music: Kevin MacLeod (incompetech.com) — licensed under Creative Commons: By Attribution 4.0 (creativecommons.org/licenses/by/4.0/)"
+}

@@ -1,0 +1,29 @@
+{
+  "topic": "Why Gas Stations Barely Make Money on Gas",
+  "minutes": 8,
+  "scriptArc": "expectation_gap",
+  "packaging": {
+    "title": "Why Gas Stations Barely Profit on Gas",
+    "altTitles": [
+      "The Real Reason Gas Is Cheap Out Front",
+      "Gas Stations Don't Sell Gas for Profit"
+    ],
+    "description": "A breakdown of how gas stations actually make money, why fuel margins are razor-thin, and how the convenience store inside is the real business. Covers credit card fees, the coffee-and-soda margin engine, and why cheap gas is bait.",
+    "thumbnail": {
+      "bigText": "PENNIES PER GALLON",
+      "emphasisWord": "PENNIES",
+      "assetName": "soda_cup",
+      "visualIdea": "A giant soda cup beside a tiny gas pump nozzle, the cup dwarfing the pump to flip the viewer's assumption"
+    },
+    "hookPromise": "The gas out front earns the station a few cents a gallon, and most of that goes straight to the credit card company. The real money is waiting inside, and they price the fuel cheap on purpose to get you through the door.",
+    "openLoops": [
+      "If a station nets only pennies per gallon, where does its actual profit come from?",
+      "Why does the credit card swipe quietly eat most of the fuel margin?",
+      "Why do stations sometimes lose money on gas and still want you to buy it?"
+    ],
+    "payoff": "A typical station keeps only a few cents per gallon after card fees, but a single fountain soda or coffee can carry a margin of 80–90 percent — the fuel is a loss-leader to fund the convenience store, which is the real business.",
+    "whyItWorks": "Everyone buys gas and assumes the pump is where the money is; flipping that to 'it's the soda' is a universal, shareable contradiction with a clean curiosity gap.",
+    "score": 84
+  },
+  "createdAt": "2026-06-15T16:06:29.302Z"
+}

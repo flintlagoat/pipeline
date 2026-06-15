@@ -13,6 +13,7 @@
     "thumbnail": "ts-node src/cli.ts thumbnail",
     "approve": "ts-node src/cli.ts approve",
     "status": "ts-node src/cli.ts status",
+    "studio": "ts-node --transpile-only src/studioStatus.ts",
     "youtube:auth": "ts-node src/cli.ts youtube:auth",
     "publish": "ts-node src/cli.ts publish",
     "analytics:pull": "ts-node src/cli.ts analytics:pull",

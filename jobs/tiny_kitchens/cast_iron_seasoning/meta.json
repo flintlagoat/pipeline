@@ -1,0 +1,29 @@
+{
+  "topic": "Why Cast Iron Pans Get Better With Age",
+  "minutes": 7,
+  "scriptArc": "origin_to_now",
+  "packaging": {
+    "title": "Why Cast Iron Gets Slicker the More You Use It",
+    "altTitles": [
+      "The Real Reason Old Cast Iron Beats New",
+      "How Cast Iron Becomes Nonstick On Its Own"
+    ],
+    "description": "A food science look at why a well-used cast iron skillet turns glassy and nonstick over time, the polymerized oil layer that builds up, and why brand-new pans never cook as well as your grandmother's.",
+    "thumbnail": {
+      "bigText": "BUILT BY OIL",
+      "emphasisWord": "OIL",
+      "assetName": "cast_iron_skillet_side_view",
+      "visualIdea": "A glossy black cast iron skillet at an angle with a fried egg sliding cleanly off its mirror-slick surface"
+    },
+    "hookPromise": "Your grandmother's beat-up skillet cooks better than a $200 new one, and the reason is a layer of cooked oil that's literally turned into plastic on the metal.",
+    "openLoops": [
+      "Why does a brand-new cast iron pan stick when an old one doesn't?",
+      "What is actually happening to the oil every time you heat the pan?",
+      "Why does washing it with soap NOT ruin it, despite what everyone says?"
+    ],
+    "payoff": "Repeated heating polymerizes the oil into a hard, smooth plastic-like coating bonded to the iron — the same chemistry as drying paint and varnish — so the 'seasoning' is a real engineered surface that genuinely improves with every cook.",
+    "whyItWorks": "Nearly everyone owns or has heard about cast iron and wondered why old ones are prized, and 'cooked oil becomes plastic' is a counterintuitive payoff worth repeating.",
+    "score": 81
+  },
+  "createdAt": "2026-06-15T16:11:50.446Z"
+}

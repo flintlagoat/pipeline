@@ -1,0 +1,29 @@
+{
+  "topic": "Why Concert Tickets Cost So Much (And It's Not the Artist)",
+  "minutes": 8,
+  "scriptArc": "myth_bust",
+  "packaging": {
+    "title": "Why Concert Tickets Really Cost $400",
+    "altTitles": [
+      "The Real Reason Concert Tickets Cost So Much",
+      "How Ticketmaster Quietly Sets the Price"
+    ],
+    "description": "A breakdown of the hidden fee structure, dynamic pricing, and the resale machine that decides what you actually pay for a concert ticket — and why the artist sees almost none of the markup.",
+    "thumbnail": {
+      "bigText": "$83 IN FEES",
+      "emphasisWord": "$83",
+      "assetName": "price_tag",
+      "visualIdea": "A single concert ticket with a giant price tag dangling, the fee line circled and bleeding red"
+    },
+    "hookPromise": "That $400 ticket isn't expensive because the band is greedy — it's the output of a pricing system designed so you can never tell what the seat is actually worth.",
+    "openLoops": [
+      "Why does the same seat cost three different prices in the same hour?",
+      "Where do the 'service fees' actually go, and who splits them?",
+      "Why does the artist often make more from a $30 t-shirt than your $400 ticket?"
+    ],
+    "payoff": "The venue, the ticketing platform, and the promoter are frequently the same parent company collecting on both sides — and they intentionally hold back inventory to feed their own resale market at a markup, so the 'sold out in seconds' scarcity is partly manufactured.",
+    "whyItWorks": "Nearly everyone has rage-bought an overpriced ticket and blamed the wrong party, so the promise to expose the real machine taps universal frustration with a concrete dollar gap.",
+    "score": 84
+  },
+  "createdAt": "2026-06-15T16:07:46.961Z"
+}

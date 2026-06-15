@@ -1,0 +1,28 @@
+{
+  "topic": "Why Salt Makes Even Sweet Things Taste Better",
+  "minutes": 7,
+  "scriptArc": "expectation_gap",
+  "packaging": {
+    "title": "Why a Pinch of Salt Makes Caramel Taste Sweeter",
+    "altTitles": [
+      "The Salt Trick Hiding in Every Dessert",
+      "Why Salt Belongs in Your Chocolate Chip Cookies"
+    ],
+    "description": "A food science look at why a tiny bit of salt makes sweet foods like caramel, cookies, and watermelon taste even sweeter, and how salt quietly silences bitterness on your tongue.",
+    "thumbnail": {
+      "bigText": "SWEETER WITH SALT",
+      "emphasisWord": "SALT",
+      "visualIdea": "A glossy caramel square with a few coarse salt flakes landing on top, single hero object on dark background"
+    },
+    "hookPromise": "The next time you make caramel, leaving out one pinch of salt is the difference between good and unforgettable — and it has nothing to do with the salt tasting salty.",
+    "openLoops": [
+      "How can salt make something taste sweeter when salt isn't sweet at all?",
+      "Why does a salted watermelon taste juicier and sweeter than a plain slice?",
+      "What is salt secretly hiding on your tongue that you never noticed was there?"
+    ],
+    "payoff": "Salt doesn't boost sweetness directly — it suppresses your bitter receptors, removing a hidden bitterness that was quietly masking the sugar all along, so the sweetness you tasted was there the whole time.",
+    "whyItWorks": "Everyone has salted caramel or watermelon and wondered why it works, so the curiosity gap is universal and the named dessert makes it instantly clickable.",
+    "score": 81
+  },
+  "createdAt": "2026-06-15T16:13:12.584Z"
+}

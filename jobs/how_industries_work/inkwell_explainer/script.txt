@@ -1,0 +1,33 @@
+You built a machine. Most days you only see one end of it: you type a request, and a finished video comes out the other side. This is the whole thing, start to finish, so nothing about it stays a mystery.
+
+At the highest level, there are two halves. There is the engine, which turns one topic into one finished video. And there is the product, called Inkwell, which is the engine wrapped in a website so other people can pay to use it. Same brain, two front doors.
+
+Start with the engine, because everything else is built on top of it. A video moves through a pipeline, one stage at a time, and each stage hands its work to the next.
+
+It begins with packaging, not writing. Before a single sentence of script exists, the system designs the title, the thumbnail words, and the promise the video has to keep. That is deliberate. On this platform, the title and thumbnail decide whether anyone clicks, so they are designed first, and the script is forced to pay them off.
+
+Then the script gets written. A large model drafts it against a strict shape: hook in the first fifteen seconds, open a question early, hold the payoff for the back third, end on a bridge into the next video. A second pass, the critic, rewrites anything weak. A third pass fact-checks the numbers and softens any claim that is too precise to defend. What comes out is narration prose, nothing fancy, just spoken words.
+
+Next is the voice. Either you record it yourself, or a hosted voice model reads the script. Either way, the audio is cleaned, run through transcription to get the exact start time of every single word, and trimmed so there is no dead air.
+
+Now the interesting part. Those timestamped words go back to the model, and it writes a board specification. Picture one enormous dark canvas, much wider than the screen. The model lays out sections across it, places every headline, label, diagram, and number, and stamps each one with the exact second it should appear, matched to the narration. It is a blueprint for the entire video, written as plain data.
+
+Any drawing the board calls for that does not exist yet gets generated once, as a clean vector illustration, and then saved forever. The asset library grows over time. Draw the airplane once, reuse it in every airline video after that.
+
+Then the renderer takes over. There is no browser anywhere in this. A native drawing engine paints every frame by hand, one at a time. A virtual camera glides across that giant canvas, pushing in, panning, settling, arriving on each element exactly as the narration introduces it. The frames stream straight into a video encoder, the audio is mixed in, and out comes a finished file. A thumbnail is rendered in the channel's style, a description with chapters is written for search, and the video is ready.
+
+Last, it publishes. The file is uploaded to YouTube and scheduled to go live at a set time. After it has been live a while, the system pulls its own analytics back in, looks at where people stopped watching, and feeds that lesson into the next script. The loop closes. It learns.
+
+That is one video. Now, why do the channels not all look the same.
+
+Every channel has its own specification: a palette, a set of fonts, a movement style, a voice, and one of eight visual archetypes, from a dark engineering blueprint to a warm paper sketchbook to a chalkboard. On top of that, a distinctness system stamps each new channel with its own curated skin, so two channels in the same style still look clearly different. That is not vanity. Platforms now demote content that looks mass-produced from a template. Looking genuinely distinct is the protection.
+
+So that is the engine. Here is the product wrapped around it.
+
+The website is Inkwell. A visitor types a channel idea and instantly sees a generated look and a sample frame in that channel's voice. That is the free demo, and it is the hook. If they sign up, they get an account with a few starter credits, they can save channels to their studio, and they can spend credits to generate full videos. Those full videos are rendered in the cloud by a separate worker service, so the customer's own computer does nothing heavy. The site runs on Vercel, the accounts and data on Supabase, the heavy rendering on a dedicated machine.
+
+Now the money. There are three layers. First, the free cloud demo, which costs us a little and pulls people in. Second, a subscription that sells render credits in the cloud. Third, and this is the important one, a paid app that a customer installs and runs on their own machine, so the rendering is free for us, but the brain, the prompts that design the packaging and the script and the board, stays on a hosted server they call into. They get the speed of running it locally. The valuable part, the prompts, never ship to their hard drive, so it cannot be copied. And separately from all of that, the channels themselves earn ad revenue once they are live.
+
+Which brings it back to you. When you send me a request like generate ten videos and schedule them, I am calling the exact same pipeline stages I just described, one job at a time, through the same queue the product uses. Your prompts and mine are the brain of this thing. The website is just a polite, paid way for a stranger to send the same kind of request you send me directly. Behind every button on that site is one of these stages running.
+
+So here is the shape of the whole machine, in one breath. An idea goes in. It becomes a package, then a script, then a voice, then a timed board, then drawn frames, then a published video. The video earns, the analytics come back, and the next idea is a little smarter than the last. You own every piece of that loop, end to end. Nothing in it is a black box anymore.

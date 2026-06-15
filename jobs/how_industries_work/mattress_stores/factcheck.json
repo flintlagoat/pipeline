@@ -1,0 +1,73 @@
+{
+  "claims": [
+    {
+      "text": "you buy one roughly every eight to ten years",
+      "confidence": "medium",
+      "issue": "plausible range but not precisely verifiable",
+      "fix": ""
+    },
+    {
+      "text": "maybe a fraction of a percent is in that ten-year window right now",
+      "confidence": "low",
+      "issue": "suspiciously specific percentage without source",
+      "fix": "maybe only a small fraction of a percent is in that ten-year window right now"
+    },
+    {
+      "text": "a single store can stay healthy selling somewhere around one mattress a day — sometimes fewer",
+      "confidence": "medium",
+      "issue": "stated as industry operator claim but not precisely verifiable",
+      "fix": ""
+    },
+    {
+      "text": "The wholesale cost of a mid-range bed — the foam, the springs, the fabric, the assembly — often sits around two to three hundred dollars",
+      "confidence": "medium",
+      "issue": "plausible range but depends on definition and market segment",
+      "fix": ""
+    },
+    {
+      "text": "That same mattress is routinely tagged at fifteen hundred, two thousand, sometimes three thousand",
+      "confidence": "medium",
+      "issue": "plausible range for retail pricing but varies by market and brand",
+      "fix": ""
+    },
+    {
+      "text": "Five, eight, even ten times cost",
+      "confidence": "medium",
+      "issue": "follows from previous claims; plausible but varies",
+      "fix": ""
+    },
+    {
+      "text": "zero percent for thirty-six months",
+      "confidence": "medium",
+      "issue": "common financing term but specific duration may vary",
+      "fix": ""
+    },
+    {
+      "text": "A mattress that cost the store three hundred dollars sells for, say, two thousand. That single sale clears seventeen hundred dollars of gross margin",
+      "confidence": "high",
+      "issue": "straightforward arithmetic (2000 - 300 = 1700)",
+      "fix": ""
+    },
+    {
+      "text": "A strip-mall store's daily rent might run a couple hundred dollars. Two employees, a few hundred more. Add utilities and overhead and you're looking at maybe five to seven hundred dollars to keep the lights on for a full day",
+      "confidence": "medium",
+      "issue": "plausible rough estimate but varies significantly by location and labor costs",
+      "fix": ""
+    },
+    {
+      "text": "The maker sells the bed for three hundred",
+      "confidence": "medium",
+      "issue": "consistent with earlier wholesale claim but simplified",
+      "fix": ""
+    },
+    {
+      "text": "the one week every decade you actually need them",
+      "confidence": "high",
+      "issue": "consistent with 'every eight to ten years' earlier; reasonable approximation",
+      "fix": ""
+    }
+  ],
+  "script": "This mattress store has had zero customers all day. It sits in a prime strip mall, pays real rent, has two employees standing around. And next year it'll still be open. This isn't money laundering. The real trick is printed right there on the price tag.\n\nWalk past one tomorrow. Acres of beds, fluorescent light, and nobody inside. Your instinct says a business this dead is weeks from collapse. Your instinct is wrong. The emptiness isn't a symptom of failure. It's the entire design.\n\nTo understand why, you have to answer three things that don't add up. How many mattresses does one store actually need to sell to survive? Why are there four of these stores on the same block? And why does a mattress carry one of the fattest markups in all of retail?\n\nStart with the first one. A mattress is a high-consideration, low-frequency purchase. You buy one roughly every eight to ten years. You can't really try it online the way you try shoes. You walk in, you lie down, you feel awkward, you leave. That long gap between purchases means the store doesn't need foot traffic. It needs the right person, occasionally.\n\nSo how few customers is enough? Out of everyone driving past, maybe only a small fraction of a percent is in that ten-year window right now. The store isn't fishing in a busy pond. It's waiting by a very quiet one — and it only needs to catch a few fish.\n\nIndustry operators have said for years that a single store can stay healthy selling somewhere around one mattress a day — sometimes fewer. Not one an hour. One a day. An entire shift of two employees and a silent showroom can be justified by a single transaction before closing time. Now the empty store stops looking sick. But you still don't know why one sale is enough — and that's where it gets strange.\n\nPeel back the markup. Most retail runs on thin margins. A grocery store keeps maybe a penny or two on the dollar. Electronics, often single digits. A mattress is a different animal. The wholesale cost of a mid-range bed — the foam, the springs, the fabric, the assembly — often sits around two to three hundred dollars. That same mattress is routinely tagged at fifteen hundred, two thousand, sometimes three thousand.\n\nThat's not a markup. That's a multiplier. Five, eight, even ten times cost. There are few legal products in a strip mall priced that far above what they cost to make. So why can they get away with it?\n\nBecause you cannot comparison shop a mattress. Manufacturers deliberately sell the same bed under different names to different chains. The \"Cloud Supreme\" at one store and the \"Dream Elite\" down the road can be the identical slab of foam off the identical line — just rebadged. When you try to compare prices, there's nothing to compare. No two beds match. The product is engineered to be unshoppable.\n\nAnd that explains the cluster. Why four mattress stores on one block, fighting over the same dead pond? Because they're often not really fighting. Some share a parent company. And even the independents benefit, because a mattress is the rare purchase where you want to visit several stores in one trip. The block becomes a destination. Each store knows the buyer will walk into three others — and since no bed matches, the customer can't anchor on a number. Everyone keeps their margin intact.\n\nNow layer in the financing, because this is where the price tag does its quietest work. A huge share of mattresses sell on store credit — \"zero percent for thirty-six months.\" That does two things. It hides the price, turning three thousand dollars into a painless monthly figure. And it lets the salesperson stop selling a mattress and start selling a payment. The number on the tag stops mattering. What matters is forty dollars a month, and almost anyone says yes to forty dollars a month.\n\nSo stack it together, and you reach the center. The real reason these stores never close.\n\nA mattress that cost the store three hundred dollars sells for, say, two thousand. That single sale clears seventeen hundred dollars of gross margin. A strip-mall store's daily rent might run a couple hundred dollars. Two employees, a few hundred more. Add utilities and overhead and you're looking at maybe five to seven hundred dollars to keep the lights on for a full day. So one sale doesn't cover the day. One sale covers two or three days. A store selling a single bed every other day — the one that looks abandoned every time you drive past — isn't surviving. It's comfortably profitable.\n\nThat's the whole secret. The emptiness isn't the problem the business is fighting. It's what the business is designed to afford. Crowds would mean lower prices, more staff, more cost. Silence is cheaper.\n\nLook from the manufacturer's side and it gets cleaner. The maker sells the bed for three hundred. The store keeps the rest. So the manufacturer wants stores everywhere — every empty showroom is another shelf, costing them nothing. That's why the strip-mall footprint never shrinks even as everyone shops online. The stores aren't competing for your daily attention. They're blanketing the map, waiting for the one week every decade you actually need them.\n\nSo the next time you pass that lifeless showroom and think \"how is this place still open\" — flip it. It's still open precisely because it's empty.\n\nWhich raises the next question — if a product this simple can be marked up eight times, what happens when someone sells the exact same foam in a box, ships it to your door, and cuts the showroom out entirely? Because that fight is already happening, and the price tag is about to tell a very different story.",
+  "changed": true,
+  "lowCount": 1
+}

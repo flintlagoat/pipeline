@@ -1,0 +1,49 @@
+{
+  "claims": [
+    {
+      "text": "Every recipe calls for it",
+      "confidence": "medium",
+      "issue": "Not every caramel recipe calls for salt; many traditional ones don't. This is an overstatement.",
+      "fix": "Most modern caramel recipes call for it"
+    },
+    {
+      "text": "Push sugar past about 340°F",
+      "confidence": "medium",
+      "issue": "Caramelization begins around 320–330°F and progresses through stages; 340°F is within the range but presented as a precise threshold.",
+      "fix": "Push sugar past roughly 340°F (or around 330–340°F)"
+    },
+    {
+      "text": "sucrose breaking apart and recombining into those deep, toasty, rum-and-butterscotch notes",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "In the early 1990s, researchers including Paul Breslin at the Monell Chemical Senses Center in Philadelphia ran careful experiments",
+      "confidence": "medium",
+      "issue": "Breslin's work on sodium and bitterness is real, but the specific timing ('early 1990s') is approximate and the claim about which experiments is somewhat vague.",
+      "fix": "In the 1990s, researchers including Paul Breslin at the Monell Chemical Senses Center in Philadelphia conducted experiments"
+    },
+    {
+      "text": "sodium ions are remarkably good at *blocking* bitterness",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "the bitterness falls, sometimes dramatically",
+      "confidence": "medium",
+      "issue": "'Sometimes dramatically' is vague; the effect size varies by compound and concentration, but the claim is directionally sound.",
+      "fix": ""
+    },
+    {
+      "text": "Tonic water's a perfect test: a pinch of salt tames the quinine bite almost magically",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    }
+  ],
+  "script": "A pinch of salt in your caramel. Every recipe calls for it, and you assumed it's there to make things a little salty. It isn't. That one pinch is the difference between caramel that's good and caramel you can't stop thinking about — and the strange part is it works by making the caramel taste *sweeter*, not saltier.\n\nWhich makes no sense. Salt isn't sweet. There's no sugar in it. So how can adding a thing that tastes of nothing-but-salt make sugar taste like more sugar? Your tongue should just be adding two flavors together. Instead, something else is happening — and the reason is stranger than the trick itself.\n\nHere's the experiment you can run tonight. Take a slice of watermelon. Taste it. Now sprinkle a few grains of salt on the next bite. Suddenly it's juicier, brighter, almost candy-sweet. People have done this for centuries — mango with chili-salt in Mexico, salted watermelon at Southern cookouts. The fruit didn't get more sugar. So what changed?\n\nFor a long time, food scientists had a tidy answer, and it was mostly wrong. The old story: sodium lands on your sweet receptors and amplifies the signal. A flavor booster. Turn the sugar up to eleven. Sounds reasonable. But when researchers measured it, the effect was small — and at higher concentrations salt actually starts to *suppress* sweetness. A booster that switches to a brake? That's not a booster.\n\nSo separate what you *think* is happening from what's actually happening on your tongue. You think: salt adds saltiness, sugar adds sweetness, the two stack into something richer. A simple addition problem.\n\nBut it's a subtraction problem. And to see it, you have to know there was something hiding in your caramel the whole time that you never consciously tasted.\n\nCaramel isn't just melted sugar. Push sugar past about 340°F and it doesn't simply brown — it shatters into hundreds of new compounds. That's what caramelization *is*: sucrose breaking apart and recombining into those deep, toasty, rum-and-butterscotch notes. Wonderful. But a chunk of those new molecules are genuinely bitter — furans, certain caramelan compounds — bitterness born in the same pan that made the sweetness.\n\nSo your perfect caramel is secretly a tug-of-war. Sweet on one side, a quiet thread of bitterness on the other. You never notice the bitterness *as* bitterness — it's too faint to name. But it's sitting on top of the sweetness like a thin gray film, dulling it. The sugar is all there. You're just not getting the full force of it.\n\nAnd here's where salt stops being a booster and becomes something far stranger. Sodium doesn't go to your sweet receptors at all. It goes after the bitter ones.\n\nIn the early 1990s, researchers including Paul Breslin at the Monell Chemical Senses Center in Philadelphia ran careful experiments with sodium and bitter compounds. They found sodium ions are remarkably good at *blocking* bitterness — interfering with how your bitter receptors fire. Drop salt into a bitter solution and the bitterness falls, sometimes dramatically. Tonic water's a perfect test: a pinch of salt tames the quinine bite almost magically.\n\nNow line that up with the caramel. The salt lands on your tongue and quietly switches off that hidden thread of bitterness — the gray film. And the instant the bitterness lifts, the sweetness that was masked underneath comes rushing forward. Nothing got added to the sweet side. Something got *removed* from the other side.\n\nThat's the whole secret, and it's beautifully sneaky. Your tongue was tasting the full sweetness all along. The bitterness was just standing in front of it. Salt doesn't turn the sugar up — it pulls the curtain back. What you call \"sweeter\" is really \"less hidden.\"\n\nGo back to the watermelon and it clicks. Ripe melon carries faint bitter and sour notes that blunt its sugar. Salt suppresses them, and the sweetness floods through — juicier, more candied, without one extra molecule of sugar.\n\nWhich is also why amount matters so much. Use too much and you cross a line — now you taste actual saltiness, and the salt competes with the sweet signal instead of clearing the path. That's the brake the old \"booster\" theory tripped over. A pinch unmasks. A spoonful overwhelms. The window is narrow, which is exactly why recipes say *a pinch* and mean it.\n\nAnd here's the part that reframes every dessert you've ever made. Bitterness isn't a flaw you're correcting — it's the dimmer switch on your sweetness you didn't know was installed. Chocolate, coffee, dark caramel, browned butter: all the deepest, most grown-up flavors carry bitterness as part of the package. A little salt doesn't erase their complexity. It lifts the lid so the sweetness can finally breathe.\n\nSo next time you scatter flaky salt onto a caramel square and it tastes impossibly sweet, you didn't add sweetness. You revealed it. The sugar was always there, waiting behind a wall you couldn't even feel — and a few grains knocked it down.\n\nWhich raises a stranger question. If salt can hide bitterness from you, what else is your tongue quietly editing out before you ever taste it? Because bitterness isn't the only flavor playing tricks back there — sourness has a way of impersonating sweetness too, and that's a whole different sleight of hand.",
+  "changed": false,
+  "lowCount": 0
+}

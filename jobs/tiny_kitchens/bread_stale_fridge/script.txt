@@ -1,0 +1,25 @@
+You put bread in the fridge to keep it fresh — and you're making it go stale significantly faster than if you'd left it on the counter. Same loaf, colder shelf, worse bread. There's a single molecule behind it, and the reason is stranger than the trick.
+
+Here's the answer everybody reaches for first: the fridge dries the bread out. Cold air, moisture escapes, crumb cracks. Makes sense. But if drying were the whole story, sealing the bag tight would fix it. It doesn't. Sealed bread in the fridge still stales faster than open bread on the counter. So staling isn't really about losing water — hold onto that, because it's the first thing that stops making sense.
+
+Here's a clue. Take a stale slice, microwave it ten seconds, and it goes soft again. Like new. If stale bread were just dried-out bread, heat would do nothing — you can't un-dry something by warming it. But the softness comes right back. Which means whatever went stale never left the bread. It just changed shape.
+
+And what changed shape is the starch. Bread is mostly starch, and starch is two molecules — long sugar chains called amylose and amylopectin. When you bake a loaf, water and heat force those tidy crystal chains to unravel into a loose, chaotic tangle. Bakers call this gelatinization. That swollen mess is exactly what fresh bread feels like in your mouth.
+
+But those molecules don't want to stay messy. Slowly, they creep back into neat crystalline order — squeezing out the water trapped between them, locking into a rigid lattice. The bread firms up. That's staleness, and it has a name: retrogradation. The wild part? The water isn't gone. It's been pushed out of the starch and is still sitting inside the loaf. A stale slice holds almost as much total moisture as a fresh one — it just can't reach your tongue, because the starch has crystallized and won't let go.
+
+So now the real question. If staling is starch recrystallizing, why would the fridge speed that up? Cold slows almost everything. Cold milk lasts longer. Cold leftovers last longer. Why is bread the rebel?
+
+Because recrystallization isn't spoiling. It's not bacteria, not a reaction that runs faster when warm. It's physical — molecules slotting into place, like cars finding parking spots. And there's a temperature where they slot in fastest. Too hot, they jiggle too much to settle. Too cold, they freeze before they can move. There's a sweet spot in between — roughly 0 to 10 degrees Celsius. And your fridge runs at about 4. Right in the bullseye. You've accidentally built a machine set to the exact temperature where bread stales as fast as physically possible.
+
+Counter temperature, around 20 degrees, is too warm for the starch to lock together efficiently — the molecules are too restless. So bread on the counter stays soft longer. The fridge isn't preserving your bread. It's incubating its staleness.
+
+Which finally explains the freezer. Drop below freezing, and the water locks into ice and the starch can't move at all. No movement, no recrystallization. The whole process slams to a stop. You're not keeping the bread fresh — you're freezing time, pausing the starch mid-tangle, exactly as soft as the day it went in.
+
+And the microwave? The same trick in reverse. Heat the slice past about 60 degrees and you give the recrystallized starch enough energy to break its lattice and unravel again — straight back to that soft, gelatinized state. You're re-melting the crystals you accidentally grew. The catch: it's temporary. Let it cool and the molecules find their parking spots all over again, often worse than before, because you've now driven off some of that trapped water for real.
+
+There's even a workaround baked into modern bread. Read the label on a soft sandwich loaf and you'll often find enzymes — maltogenic amylases, sometimes listed just as "enzymes." They snip the amylopectin chains shorter so they can't line up into crystals as neatly. That's why supermarket bread stays squishy for a week while a fresh bakery baguette is a brick by morning. The baguette has nothing stopping its starch from retrograding. It's not fresher or more natural failing you — it's just defenseless.
+
+So the next time you tuck a loaf into the cold to save it, remember: you're handing it to the one temperature that ages it quickest. Counter for a few days. Freezer for weeks. The fridge, almost never.
+
+And notice the strangest part — the water never leaves, it just gets locked where your tongue can't find it. So what is "dry" really measuring? Because that same hidden-moisture trick is what makes a day-old cookie go hard while a day-old cracker stays crisp — two foods, opposite fates, same molecule.

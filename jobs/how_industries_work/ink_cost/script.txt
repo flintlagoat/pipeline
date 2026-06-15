@@ -1,0 +1,35 @@
+That little cartridge on your desk holds about five milliliters of ink. Priced by the gallon, that ink runs to several thousand dollars a gallon. A bottle of vintage Dom Pérignon, drop for drop, costs a fraction of that. You are buying the most expensive liquid in your house. And the printer it feeds was sold to you at a loss on purpose, so you'll keep refilling at their price.
+
+Here's the part nobody tells you. The machine isn't the product. The machine is the bait. Follow one dollar through this system and you'll see exactly where it pools, who skims it, and why your printer is quietly designed to throw away ink you already paid for.
+
+Start at the store. You see an inkjet printer for forty dollars, sometimes thirty. That price is a lie in your favor. HP, Canon, Epson, Brother — they routinely sell the hardware below what it costs to build. Scanner bed, print head, motors, circuit board, that's not a forty-dollar object. So why hand it over at a loss?
+
+Because they're not selling you a printer. They're selling you a subscription you don't know you signed. The contract is written in ink.
+
+Insiders call this "razor and blades," after Gillette — give away the handle, charge forever for the blades. King Gillette supposedly invented it over a century ago, and printer companies turned it into an art form. The hardware is the hook. The recurring revenue is the whole business.
+
+And the numbers are extreme. HP's printing division has, in good years, pulled operating margins well above typical hardware margins — and the lion's share of that profit comes not from printers but from supplies. Ink and toner. The boxes you buy again and again. One executive flatly called Instant Ink subscriptions one of HP's most valuable customer relationships. They mean it.
+
+So what's actually inside that cartridge to justify several thousand dollars a gallon? Let's open it. There's a sponge or a foam reservoir. There's the ink itself — pigment or dye, water, some chemistry to stop it clogging. The raw materials cost pennies. Genuinely, pennies. The ink is not what you're paying for.
+
+You're paying for two other things. First, on many cartridges, the print head — the array of microscopic nozzles that fire droplets smaller than a human hair, thousands of times a second. Real engineering. And it gets thrown out every time the cartridge empties. Second, you're paying for a tiny piece of silicon. A microchip. Hold that thought, because that chip is the whole trick.
+
+First, the part you can feel. Ever had your printer refuse to print a plain black document because the magenta ran dry? You only wanted black text. The yellow and cyan are irrelevant. The printer still locks up and demands you replace color you weren't even using.
+
+That's not a malfunction. The printer cross-checks all cartridges before it prints anything. Companies justify it by claiming color ink protects the print head from drying. Maybe. But the effect is that one empty tank holds your whole machine hostage and pushes you toward a full set of replacements. The inconvenience isn't a bug. It's leverage.
+
+Now follow the dollar further, because there's a reason refilling is so painful. You'd think a market this profitable would attract cheap competition. It does. Third-party and refill cartridges sell for a fraction of the brand price. So why doesn't everyone just buy those?
+
+Because the manufacturers fight them at every level. Firmware updates that suddenly reject third-party cartridges overnight. Printers that throw "non-genuine" warnings designed to scare you. And endless patent lawsuits over the cartridge design itself. The ink is cheap. The fortress around the ink is what costs money to build, and they spend heavily to keep it standing.
+
+Here's where it stops making sense, and here's the payoff you've been waiting for. That microchip inside the cartridge isn't measuring ink. It's counting pages. It runs an estimate — how many sheets you've printed, how much it assumes you've used — and when that counter hits a preset number, the chip declares the cartridge empty and locks itself out.
+
+Notice what that means. The chip never looks at the ink. So if you print lots of light, sparse pages, the cartridge can lock you out while there's still real, paid-for ink sloshing inside. Independent testers have weighed "empty" cartridges and found anywhere from a fifth to nearly half of the ink still in the tank. You bought that ink. You're throwing it in the bin because a counter said so.
+
+That is the entire system in one component. The printer was the bait, sold at a loss to get into your house. The ink is the trap. And the chip is the spring — it doesn't wait for the ink to run out, it forces the repurchase early, on a schedule that serves them, not you. You're not buying ink by the drop. You're buying permission to print, metered by a chip that ends the meter before the tank is empty.
+
+And the genius of it is the framing. Forty dollars feels cheap. A box of ink feels routine. Spread the cost across hundreds of small refills and nobody ever sits down to add up what they've paid — which over a printer's life can run many times the hardware price, sometimes the cost of a far better laser machine they could have bought instead.
+
+There's a quiet reason laser printers exist for exactly the people who do the math — offices, who buy by spreadsheet and won't tolerate a counter chip eating their toner. The cheap inkjet is aimed at the rest of us, who buy on the sticker and pay on the back end.
+
+Which raises the obvious next question — if the device is the loss leader and the consumable is the profit, where else is that exact trap hiding? Look at the coffee pod in your kitchen. The same chip, the same logic, the same fortress. And that one might be even harder to escape.

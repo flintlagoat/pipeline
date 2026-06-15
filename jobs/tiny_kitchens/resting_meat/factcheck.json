@@ -1,0 +1,55 @@
+{
+  "claims": [
+    {
+      "text": "close to a tablespoon of juice runs out in seconds",
+      "confidence": "medium",
+      "issue": "specific volume measurement is plausible but not precisely quantifiable without controlled experiment",
+      "fix": ""
+    },
+    {
+      "text": "Your steak is roughly 70 to 75 percent water by weight",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "Above about 120 degrees Fahrenheit, the proteins denature",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    },
+    {
+      "text": "A steak cut immediately can shed several times more liquid than one rested ten minutes",
+      "confidence": "medium",
+      "issue": "plausible range but 'several times' is imprecise without citing the actual study",
+      "fix": ""
+    },
+    {
+      "text": "A thin cut, a flank or a skirt, has almost no thermal mass. It drops through that 120-degree threshold in a minute or two",
+      "confidence": "medium",
+      "issue": "plausible but 'a minute or two' is approximated and depends on thickness, starting temperature, and environment",
+      "fix": ""
+    },
+    {
+      "text": "A thick roast holds heat at its core for ages — which is why a big prime rib genuinely wants 15 to 20 minutes",
+      "confidence": "medium",
+      "issue": "'15 to 20 minutes' is a reasonable guideline but presented as a precise recommendation without acknowledging variables",
+      "fix": ""
+    },
+    {
+      "text": "The core of a thick roast can climb another 5 to 10 degrees after it leaves the oven",
+      "confidence": "medium",
+      "issue": "carryover cooking range is plausible but depends heavily on roast size, starting temperature, and environment",
+      "fix": ""
+    },
+    {
+      "text": "Below roughly 120 degrees, the contracted proteins release their grip",
+      "confidence": "high",
+      "issue": "",
+      "fix": ""
+    }
+  ],
+  "script": "Cut a steak the instant it leaves the pan, and watch the board flood — close to a tablespoon of juice runs out in seconds. That's flavor you paid for, pooling on wood instead of in your mouth. Wait five minutes and almost none escapes. Here's the invisible reason why.\n\nNow, \"everyone knows\" what resting does. The juices need time to \"settle\" — they've been swirling around in there, and given a minute they redistribute themselves evenly. Calm, even, settled.\n\nThat's a lovely story. It's also exactly backwards. Juice doesn't slosh around inside a steak like water in a bottle. It's locked inside muscle cells. So if resting works — and it absolutely does — something far stranger is happening than liquid finding its level.\n\nStart with where that flood even comes from. Your steak is roughly 70 to 75 percent water by weight. Most of it isn't free-flowing — it's trapped between tightly coiled proteins inside each muscle fiber, fibers bundled together like cables in a thick rope.\n\nCook that rope and heat does something violent. Above about 120 degrees Fahrenheit, the proteins denature — they uncoil, then seize up, contracting. As they contract, they wring themselves out. Picture twisting a wet towel: the harder you twist, the more water gets squeezed into the spaces between the fibers, pooling near the surface.\n\nSo a hot steak isn't a sponge full of evenly spread moisture. It's a wrung towel, with a reservoir of loose liquid pushed out of the cells. Slice in now and you've opened the dam — that's your tablespoon, running for the door. And here's the part that should bother you: the hotter the steak, the more those proteins are still contracted, the bigger the reservoir.\n\nWhich raises the obvious question. If resting doesn't make the juice \"settle,\" what is it actually doing in those five minutes? Something is pulling that liquid back from the brink.\n\nCooling. That's the whole trick. As the steak sits, its internal temperature keeps falling — and the proteins that seized up start to relax. The towel un-twists. And as the fibers loosen, they physically reabsorb the water they'd squeezed out. The juice isn't settling. It's getting sucked back into the cells it came from.\n\nThis is the payoff the myth completely hides. Below roughly 120 degrees, the contracted proteins release their grip and re-grab the moisture, so resting literally drags liquid off your future cutting board and back into the meat. You're not waiting for calm. You're waiting for the meat to cool just enough to take its water back.\n\nAnd there's a sneakier second reason a hot steak bleeds more. Warm juice is thinner — less viscous, it flows fast through any cut you make. Let the steak drop even 10 or 15 degrees and that same liquid thickens, clings to the fibers, resists running out. So cooling fights the flood from both directions: tighter cells re-absorb it, and what's left moves slower.\n\nYou can actually measure this. Food scientists have weighed steaks before and after resting, then weighed the juice lost on cutting. A steak cut immediately can shed several times more liquid than one rested ten minutes. Same cut, same doneness. The only variable is whether you let the proteins relax before your knife arrives.\n\nHere's where it gets genuinely useful — because if resting is really about temperature, the rules change. A thin cut, a flank or a skirt, has almost no thermal mass. It drops through that 120-degree threshold in a minute or two, so resting it ten minutes does nothing but make it cold. A thick roast holds heat at its core for ages — which is why a big prime rib genuinely wants 15 to 20 minutes. Resting time isn't a fixed ritual. It scales with how long the meat takes to cool.\n\nAnd this is the part most people get backwards. That same retained heat keeps cooking the meat. The core of a thick roast can climb another 5 to 10 degrees after it leaves the oven. So resting isn't just protecting juice — it's the window where your steak finishes cooking on its own. Pull it early, rest it, and the carryover lands it exactly where you wanted.\n\nWhich means resting does two invisible jobs in the same five minutes. The proteins relax and reclaim their water — and the residual heat nudges the center to its final doneness. The flood on the board and the bullseye-pink center are governed by the exact same falling-temperature curve.\n\nBut here's the door this opens. If cooling lets the fibers reabsorb water, what happens when you reheat that steak the next day — do those proteins seize up and wring themselves out all over again? And is that, secretly, why reheated meat almost always tastes drier than the first night? That's a temperature story too — and it runs in reverse.",
+  "changed": false,
+  "lowCount": 0
+}

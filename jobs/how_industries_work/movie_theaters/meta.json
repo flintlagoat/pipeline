@@ -1,0 +1,29 @@
+{
+  "topic": "Why Movie Theaters Make Almost Nothing on Tickets",
+  "minutes": 8,
+  "scriptArc": "follow_money",
+  "packaging": {
+    "title": "Why Movie Theaters Lose Money on Tickets",
+    "altTitles": [
+      "The Real Reason Popcorn Costs $12",
+      "How Theaters Survive on Popcorn, Not Tickets"
+    ],
+    "description": "A breakdown of the studio revenue split that takes nearly all ticket sales, and why movie theaters actually make their money at the concession stand. The hidden economics of why your popcorn costs more than the film.",
+    "thumbnail": {
+      "bigText": "90% TO STUDIOS",
+      "emphasisWord": "90%",
+      "assetName": "money_flow_diagram",
+      "visualIdea": "A movie ticket with an arrow flowing almost all its cash toward a film studio, leaving the theater a few cents"
+    },
+    "hookPromise": "When you buy a $15 movie ticket, the theater might keep less than a dollar of it — and the studios designed it that way on purpose.",
+    "openLoops": [
+      "Why do studios take a bigger cut in a movie's opening weekend than weeks later?",
+      "Why are theaters legally desperate to keep you in the building for the trailers and the lobby?",
+      "Why does a bag of popcorn that costs cents to make cost more than the ticket itself?"
+    ],
+    "payoff": "The studio-theater split slides over a film's run — studios can take up to 90% in week one — so theaters earn almost nothing on the screen and survive almost entirely on concessions, which is why popcorn margins run around 85% and the whole building is engineered to funnel you past the snack counter.",
+    "whyItWorks": "Everyone has overpaid for popcorn and felt the pinch, so the hidden mechanism behind a universal annoyance has both wide demand and a sharp curiosity gap.",
+    "score": 84
+  },
+  "createdAt": "2026-06-15T16:05:00.779Z"
+}

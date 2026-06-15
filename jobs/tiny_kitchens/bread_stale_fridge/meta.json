@@ -1,0 +1,28 @@
+{
+  "topic": "Why Bread Goes Stale Faster in the Fridge",
+  "minutes": 7,
+  "scriptArc": "layers",
+  "packaging": {
+    "title": "Why the Fridge Makes Bread Stale Faster",
+    "altTitles": [
+      "The Real Reason Bread Goes Stale in the Fridge",
+      "Your Fridge Is Staling Your Bread on Purpose"
+    ],
+    "description": "A look at the food science of starch retrogradation and why refrigerating bread speeds up staling instead of preserving it, plus the temperature that actually keeps bread fresh.",
+    "thumbnail": {
+      "bigText": "COLDER MEANS STALER",
+      "emphasisWord": "STALER",
+      "visualIdea": "A single bread slice halfway inside an open fridge, its cut edge visibly dried and cracking with crumb dust falling"
+    },
+    "hookPromise": "You put bread in the fridge to keep it fresh, but you're actually making it go stale up to six times faster than leaving it on the counter — and here's the molecule responsible.",
+    "openLoops": [
+      "If cold ruins bread, why does the freezer somehow save it?",
+      "Why does microwaving stale bread make it soft again for a few minutes?",
+      "What's the one temperature zone that stales bread the fastest, and your fridge sits right in it?"
+    ],
+    "payoff": "Staling isn't bread drying out — it's starch molecules recrystallizing (retrogradation), and that recrystallization happens fastest at fridge temperatures around 4°C, while freezing stops it cold and reheating temporarily melts it back to soft.",
+    "whyItWorks": "Nearly everyone has refrigerated bread assuming it helps, so the counterintuitive 'you're doing it backwards' gap has huge broad appeal and a clean molecular payoff that fits the niche.",
+    "score": 82
+  },
+  "createdAt": "2026-06-15T16:10:32.489Z"
+}

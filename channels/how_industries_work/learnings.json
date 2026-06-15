@@ -1,7 +1,7 @@
 {
   "version": 1,
   "channelId": "how_industries_work",
-  "updatedAt": "2026-06-12T16:20:40.143Z",
+  "updatedAt": "2026-06-15T19:56:09.092Z",
   "thresholds": {
     "promoteSampleSize": 3,
     "minConfidence": 0.6
@@ -13,6 +13,12 @@
   "changelog": [
     {
       "date": "2026-06-12",
+      "change": "No change",
+      "why": "No published videos in the log yet — nothing to learn from (default to no change).",
+      "evidence": "0 videos"
+    },
+    {
+      "date": "2026-06-15",
       "change": "No change",
       "why": "No published videos in the log yet — nothing to learn from (default to no change).",
       "evidence": "0 videos"

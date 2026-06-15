@@ -1,0 +1,33 @@
+That $400 concert ticket. You assume the band is taking the lion's share — paying for the artist's private jet. That's exactly backwards. The artist often sees a fraction of that number, and the rest disappears into a pricing machine built so you can never tell what your seat is actually worth.
+
+Start with the receipt. Face value: $317. Then the line that bleeds red — $83 in fees. A "service fee." A "facility charge." A "delivery fee" for an email. Click refresh, and the same seat in the same row now costs $420. An hour later, $360. Same wood, same view. Three prices in one afternoon.
+
+Here's what nobody tells you. The price on the screen isn't a measure of the seat. It's a measure of how much the system thinks you, personally, will tolerate right now.
+
+Concert tickets run on dynamic pricing — the same engine that moves airline fares. Ticketmaster calls its version "Platinum." It watches demand in real time and pushes the price the second a show gets hot. In 2022, Bruce Springsteen "Platinum" seats spiked past $5,000 — not on a scalper site, on the official one. The face value moved itself.
+
+So who actually gets the $83? This is the part the word "service fee" is built to hide. That fee gets split. A chunk goes to the ticketing platform. But a large slice is quietly kicked back to the venue — and sometimes the promoter — under a private contract you never see. It isn't paying for service. It's revenue-sharing dressed up as a clerical cost.
+
+Why hide it in a fee? Because of one number the artist negotiated. Performers sign deals based on face value. Raise the face value, and the artist's cut climbs too. So they keep face value low and pile the money into fees — which the artist's contract usually doesn't touch. The fee exists, in part, to route money around the person whose name is on the marquee.
+
+Which brings us to the t-shirt. At the merch table, a $35 hoodie can put more cash in the artist's pocket than your entire ticket. Touring is brutal — crew, trucks, insurance, the venue's cut, the promoter's cut. Many mid-level acts barely break even on ticket revenue and survive on merch, where the margins are theirs. You think you're funding the band by buying the seat. You're mostly funding everyone standing between you and the band.
+
+Now the myth turns load-bearing. "It sold out in seconds — that's just demand." That's the story the system needs you to believe. Here's what actually happens to the inventory.
+
+Walk through where an arena's seats go before the public ever clicks "buy." A block is held for the artist and their team. A block for the venue's suite and season-ticket holders. A block for sponsors, the credit-card presale, the fan-club presale, radio promotions. By the time the "general public on-sale" opens, the truly available pool can be a sliver of the building. State investigations into major shows have found well under half the house — sometimes far less — actually reaches the open sale.
+
+So the "sold out in seconds" you experienced was real demand hitting an artificially tiny door. The scarcity wasn't all organic. Some of it was manufactured upstream, before you ever got in line.
+
+And here's the card I held back — the reason the whole thing holds together. Look at who owns what. Live Nation and Ticketmaster merged in 2010 into Live Nation Entertainment. That single firm is the largest concert promoter in the world, the operator of a huge slice of major U.S. venues, and the dominant ticketing platform. The promoter who books the show, the building you sit in, and the website that charges you the fee — frequently the same parent company.
+
+Sit with what that means. They collect when the ticket sells. They collect the fee on top. And then — through resale platforms they also operate — they collect again when that ticket changes hands at a markup, with another fee. One company, paid on the original sale, the fee, and the resale of the very same seat.
+
+That's why holding inventory back isn't a glitch. It's the strategy. If you control the primary sale and the resale market, steering tickets toward resale — where prices float higher and you skim a second fee — is simply more profitable than selling them straight. In 2024, the Department of Justice filed an antitrust suit seeking to break the company apart, alleging exactly this: that the same firm sitting on every side of the transaction inflates what you pay.
+
+So the $400 isn't the cost of a performance. It's the output of a closed loop — where the company that decides how many seats you can see is the same one that prices them, charges the fee, and profits when the seat gets resold above face.
+
+The "greedy artist" myth survives because it points your anger at the one person in the chain with the least control over the price. The promoter, the venue, and the platform would much rather you blame the name on the shirt than read the contract behind the fee.
+
+So next time a show "sells out in seconds" and resale seats appear minutes later at triple the price — ask who owns the resale site. The answer is usually printed, very small, at the bottom of the page that just took your $83.
+
+And if one company can sit on every side of a ticket — what happens when that same playbook moves to the thing you do dozens of times a week without a second thought: your food delivery, your ride home, the screen you're watching right now?

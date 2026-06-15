@@ -1,0 +1,29 @@
+{
+  "topic": "Why Resting Meat Makes It Juicier",
+  "minutes": 7,
+  "scriptArc": "myth_bust",
+  "packaging": {
+    "title": "Why Cutting Steak Too Soon Floods Your Board",
+    "altTitles": [
+      "The Real Reason Resting Steak Makes It Juicier",
+      "Why Steak Bleeds When You Cut It Early"
+    ],
+    "description": "A food science look at what really happens inside a steak as it rests, why slicing too soon spills the juice onto your cutting board, and how muscle proteins reabsorb water as the meat cools.",
+    "thumbnail": {
+      "bigText": "5 MIN = JUICY",
+      "emphasisWord": "JUICY",
+      "assetName": "cast_iron_skillet_side_view",
+      "visualIdea": "A just-cut steak with a glistening pool of juice escaping onto the board, a timer ticking beside it"
+    },
+    "hookPromise": "Cut your steak the second it leaves the pan and you'll watch a tablespoon of flavor run onto the board — here's the invisible reason waiting five minutes saves it.",
+    "openLoops": [
+      "Where exactly does the juice go while the steak 'rests' — it doesn't just sit there?",
+      "Why does a hot steak push out more liquid than a slightly cooled one?",
+      "Is resting actually about the juice, or is the temperature doing something we can't see?"
+    ],
+    "payoff": "The juice isn't 'settling' — as the meat cools below ~120°F, contracted muscle proteins relax and physically reabsorb the water they squeezed out during cooking, so resting literally pulls liquid back into the fibers instead of onto your board.",
+    "whyItWorks": "Nearly everyone has cut a steak early and seen the juice spill, so the curiosity gap is universal and the answer is a genuinely counterintuitive bit of protein science.",
+    "score": 84
+  },
+  "createdAt": "2026-06-15T16:14:25.724Z"
+}

@@ -1,0 +1,29 @@
+{
+  "topic": "Why Mattress Stores Are Always Empty But Never Close",
+  "minutes": 8,
+  "scriptArc": "layers",
+  "packaging": {
+    "title": "Why Empty Mattress Stores Never Close",
+    "altTitles": [
+      "The Real Reason Mattress Stores Stay Empty",
+      "How Mattress Stores Survive With No Customers"
+    ],
+    "description": "A breakdown of the hidden economics of mattress retail: why stores with almost no foot traffic stay profitable, the role of huge markups, low-rent locations, and how a single sale can cover days of overhead.",
+    "thumbnail": {
+      "bigText": "1 SALE A DAY",
+      "emphasisWord": "1",
+      "assetName": "price_tag",
+      "visualIdea": "A lone mattress price tag reading a huge markup, set against the silhouette of an empty showroom"
+    },
+    "hookPromise": "This mattress store has had zero customers all day, sits in a prime strip mall, and will still be open next year — and it's not money laundering. The real mechanism is hiding in the price tag.",
+    "openLoops": [
+      "How many mattresses does one store actually need to sell to survive?",
+      "Why do they cluster four mattress stores on the same block?",
+      "Why is the markup on a mattress higher than almost any retail product?"
+    ],
+    "payoff": "A mattress costing the store $300 routinely sells for $1,500–$3,000, so a single sale clears a day of rent and payroll — meaning an 'empty' store selling one bed every couple of days is comfortably profitable, and the emptiness is the business model, not a warning sign.",
+    "whyItWorks": "Nearly everyone has driven past a deserted mattress store and quietly wondered how it survives, making the curiosity gap universal and instantly relatable.",
+    "score": 88
+  },
+  "createdAt": "2026-06-15T16:09:20.125Z"
+}

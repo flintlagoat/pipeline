@@ -1,0 +1,29 @@
+{
+  "topic": "Why Printer Ink Costs More Than Champagne",
+  "minutes": 8,
+  "scriptArc": "follow_money",
+  "packaging": {
+    "title": "Why Printer Ink Costs More Than Champagne",
+    "altTitles": [
+      "The Real Reason Printer Ink Is So Expensive",
+      "How Printers Are Sold at a Loss on Purpose"
+    ],
+    "description": "A breakdown of the razor-and-blades pricing model behind inkjet printers, why a gallon of ink costs more than fine champagne, and how manufacturers engineer cartridges to keep you locked in.",
+    "thumbnail": {
+      "bigText": "$2700 A GALLON",
+      "emphasisWord": "$2700",
+      "assetName": "price_tag",
+      "visualIdea": "A tiny ink cartridge on a price tag next to a champagne bottle, the cartridge clearly winning"
+    },
+    "hookPromise": "Drop for drop, the ink in your printer costs more than vintage champagne, and the printer itself is sold to you at a loss on purpose, so you'll keep refilling at their price.",
+    "openLoops": [
+      "Why would a company sell you the printer for less than it costs to make?",
+      "What's actually inside a cartridge that justifies a $2700-per-gallon price?",
+      "Why does your printer refuse to print in black when only the color ink runs out?"
+    ],
+    "payoff": "The cartridge contains a microchip that counts pages and locks itself out before the ink is actually gone, meaning you throw away paid-for ink to force a repurchase, the printer is the bait, the ink is the trap.",
+    "whyItWorks": "Everyone has cursed at printer ink, and the champagne comparison turns a universal annoyance into a shocking number that demands explanation.",
+    "score": 84
+  },
+  "createdAt": "2026-06-15T16:03:16.157Z"
+}
