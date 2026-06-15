@@ -1,5 +1,7 @@
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
+import GenerateVideo from '@/components/GenerateVideo';
+import WatchButton from '@/components/WatchButton';
 
 export const metadata = { title: 'Your studio — Inkwell' };
 
@@ -19,6 +21,12 @@ export default async function AppPage() {
     .select('id,title,niche,archetype,created_at')
     .order('created_at', { ascending: false });
   const chs = (channels ?? []) as { id: string; title: string | null; niche: string | null; archetype: string | null; created_at: string }[];
+
+  const { data: videos } = await supabase
+    .from('videos')
+    .select('id,title,topic,status,error,created_at')
+    .order('created_at', { ascending: false });
+  const vids = (videos ?? []) as { id: string; title: string | null; topic: string | null; status: string; error: string | null; created_at: string }[];
 
   return (
     <main>
@@ -76,12 +84,38 @@ export default async function AppPage() {
           </div>
         )}
 
+        {chs.length > 0 && (
+          <div className="mt-8">
+            <GenerateVideo channels={chs.map((c) => ({ id: c.id, title: c.title }))} />
+          </div>
+        )}
+
+        {vids.length > 0 && (
+          <div className="mt-8 card p-6">
+            <h2 className="text-lg font-semibold text-white">Your videos</h2>
+            <div className="mt-4 divide-y divide-white/5">
+              {vids.map((v) => (
+                <div key={v.id} className="flex items-center justify-between gap-3 py-3">
+                  <div className="min-w-0">
+                    <div className="truncate font-medium text-white">{v.topic || v.title || 'Untitled'}</div>
+                    <div className="text-sm capitalize text-slate-500">{v.status}{v.error ? ` — ${v.error}` : ''}</div>
+                  </div>
+                  {v.status === 'ready' ? (
+                    <WatchButton videoId={v.id} />
+                  ) : (
+                    <span className="rounded-md border border-white/10 px-2 py-1 text-xs capitalize text-slate-400">{v.status}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="mt-8 card p-6">
           <h2 className="text-lg font-semibold text-white">Coming to your studio</h2>
           <ul className="mt-3 space-y-2 text-sm text-slate-400">
-            <li>· Generate full videos from your channels (retention-engineered script + rendered animation)</li>
-            <li>· Auto-publish on a schedule + analytics that improve every video</li>
-            <li>· Buy credits or go local with the desktop app</li>
+            <li>· Auto-publish to YouTube on a schedule + analytics that improve every video</li>
+            <li>· Buy more credits, or go local with the desktop app</li>
           </ul>
         </div>
       </section>
