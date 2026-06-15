@@ -122,12 +122,24 @@
 >   generateChannelPreview) + a "Preview look" button in the New Channel modal (pipeline tsc + ui vite
 >   both clean). 3 Supabase tables now: leads, profiles, channels, demo_runs (migrations 0001-0003 +
 >   demo_runs created via Management API).
->   NOT YET DONE (needs operator input/infra): a CLOUD RENDER BACKEND so the demo/app can produce full
->   VIDEOS (the pipeline — canvas/ffmpeg/workers — can't run in Vercel serverless; needs a host like a
->   VM/Render/Fly worker; the operator declined to start this until ready); BILLING (Stripe) to buy
->   credits — needs the operator's Stripe account/keys; confirm the Vercel deploys are green (+ ensure
->   ANTHROPIC_API_KEY is set in Vercel or the demo 503s); transcription "choose at setup" onboarding
->   UI; the hosted-brain anti-piracy split.
+>   (8) LIVE IN PRODUCTION + CLOUD RENDER BACKEND BUILT & DEPLOYED. Site is LIVE:
+>   https://inkwell-silk-seven.vercel.app (Vercel project `inkwell`, framework fixed to nextjs, all env
+>   set incl ANTHROPIC_API_KEY + RENDER_API_URL + RENDER_SECRET — managed via the operator's Vercel
+>   token over api.vercel.com). Production demo verified live. RENDER WORKER: NEW pipeline/src/
+>   renderService.ts (Express: POST /render, Bearer RENDER_SECRET → runs script→voiceover→processJob
+>   for one video → uploads video.mp4 to Supabase Storage bucket `videos` → updates a `videos` row) +
+>   root Dockerfile/.dockerignore (lean: cloud transcription, no Python). DEPLOYED to Render as
+>   `inkwell-render` (srv-d8nko6ho3t8c73cthcvg, https://inkwell-render.onrender.com, FREE plan, team
+>   tea-d8nkd0bbc2fs73f56bd0) via the operator's Render API key — building from the repo. Website wired:
+>   videos table + private Storage bucket (RLS owner-only), /api/videos/generate (credit-gated → inserts
+>   row → dispatches to RENDER_API_URL), /api/videos/[id]/url (signed playback URL), dashboard "Generate
+>   a video" + "Your videos". 5 Supabase tables: leads, profiles, channels, demo_runs, videos.
+>   NOT YET WORKING / needs operator: (a) a FREE GROQ KEY as TRANSCRIBE_API_KEY in the Render service
+>   env (renders fail at transcription without it — console.groq.com); (b) the Render FREE plan is
+>   512MB + spins down on idle → a 1080p render will likely OOM / get killed mid-job, so add a card +
+>   upgrade to Standard (2GB) for reliable rendering; (c) the first Render Docker build (~10-15min) +
+>   a real end-to-end render were NOT yet verified. THEN: BILLING (Stripe — operator said do it LAST);
+>   transcription "choose at setup" onboarding UI; the hosted-brain anti-piracy split.
 > Session 8 phase: GO LIVE — real credentials wired + the publish loop PROVEN end-to-end, plus a
 >   text-overlap render fix and a real posting schedule. Operator supplied all keys this session.
 >   (1) CREDENTIALS LIVE (all in `.env`, gitignored): FISH_API_KEY (real voice), YOUTUBE_API_KEY
