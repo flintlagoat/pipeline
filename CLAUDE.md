@@ -5,7 +5,41 @@
 >   log + session history.
 > READ THIS FILE COMPLETELY before writing any code.
 > UPDATE THIS FILE before ending every session.
-> Last updated: 2026-06-15 (session 11)
+> Last updated: 2026-06-16 (session 12)
+> Session 12 phase: 10-VIDEO ROLLOUT + OOM ROOT-CAUSE FIX + SVG/website improvements. Operator asked to
+>   generate + schedule the next 10 videos (5 per channel, how_industries_work + tiny_kitchens, non-dup,
+>   on-theme, 2/channel/day at 10AM & 2PM ET) via the queue, plus a hand-written "Inside Inkwell" explainer
+>   (rendered, private). Generated all 10 scripts (packaging→critic→fact-check chain) + the explainer; set
+>   per-job publish.json with explicit publishAt slots (6/16–6/18); created tiny_kitchens/schedule.json.
+>   THE BIG ISSUE: renders kept failing in a cascade. ROOT CAUSE — the box has 20 CORES, so the renderer
+>   defaulted to 19 worker threads; on a machine with only ~2–4GB free RAM (operator's browser + Whisper
+>   each eat GBs) a 1080p render OOM'd (exit 1), and the wedged machine then couldn't even SPAWN the next
+>   process (Windows 0xC0000142 STATUS_DLL_INIT_FAILED), so the queue marked all remaining jobs failed in
+>   ~1 second. FIXES (all committed, all tsc-clean):
+>   (1) RENDER_WORKERS=1 in .env — single-process rendering (~1GB peak), can't OOM at this free-RAM level;
+>   slower but reliability > speed (uploads are quota-gated anyway). Verified: bread (the OOM victim)
+>   re-rendered cleanly single-process.
+>   (2) server.ts REAL cooldown — the per-job setTimeout cooldown was a no-op because setInterval(
+>   tryStartNext,4000) drained the queue independently. Replaced with a module-level `pauseUntil` that
+>   tryStartNext honors (10s after success, 90s after a failure) so a transient resource crunch can't
+>   blast through the whole batch again.
+>   (3) renderer/src/index.ts memory-aware default — default workers = min(cores-1, free-RAM/1.2GB with a
+>   1GB reserve); RENDER_WORKERS/opts still override. Prevents the 19-worker OOM on any many-core/low-RAM
+>   box (incl. the cloud worker on a small instance).
+>   (4) SVG CLARITY (operator: generated SVGs "hard to understand at a glance") — svgAssetSystemPrompt.ts
+>   got a READ-AT-A-GLANCE rule block (ONE large centered iconic subject ~80% of viewBox, strict detail
+>   budget, single clear metaphor for abstract concepts). Verified by generating + rasterizing concrete +
+>   abstract samples in both channel styles (cast-iron skillet + gas nozzle = instantly readable).
+>   (5) WEBSITE — dashboard auto-refresh while videos render (new components/AutoRefresh.tsx; re-fetches
+>   every 6s only while a video is pending + a pulsing indicator). COMMITTED LOCAL ONLY, NOT PUSHED (prod
+>   auto-deploys on push — operator reviews first).
+>   RESULTS: ink_cost, movie_theaters, bread, gas all rendered + uploaded (scheduled private→public 6/16
+>   on YouTube: ahhqKIJ1iOc, 5H7gppN5qnM, -nZCfyJCaxc, + gas). Explainer rendered (private, draft). The
+>   remaining ~6 render single-process overnight via the queue. NOTE: the first 4 videos generated their
+>   SVGs BEFORE the clarity fix (old prompt); the rest use the improved prompt — re-render the first 4 if
+>   you want the clearer assets. Quota: ~6 uploads/day total (per-project); resets daily; publishAt slots
+>   ensure correct go-live even if an upload is re-published the next day. Monitor: `npm run studio`.
+>   Control render parallelism via RENDER_WORKERS in .env (raise it once more RAM is free for speed).
 > Session 11 phase: CHANNEL-LOOK VARIETY OVERHAUL — operator reported channel generation "most of the
 >   time does notebook look and isn't unique or far varying from the others." DIAGNOSED two root causes:
 >   (a) ARCHETYPE-SELECTION BIAS — both generators (pipeline prompts/channelSpecPrompt.ts AND the live
