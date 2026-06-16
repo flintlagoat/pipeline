@@ -108,6 +108,13 @@ function LookPreview({ spec }: { spec: Spec }) {
   );
 }
 
+const EXAMPLE_IDEAS = [
+  'the hidden economics of coffee shops',
+  'how the airline industry really works',
+  'the science of bread baking',
+  'why subscriptions keep getting more expensive',
+];
+
 export default function ChannelDemo() {
   const [idea, setIdea] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
@@ -140,9 +147,10 @@ export default function ChannelDemo() {
     }
   }
 
-  async function generate(e: React.FormEvent) {
-    e.preventDefault();
-    if (idea.trim().length < 4) return;
+  async function run(text: string) {
+    const v = text.trim();
+    if (v.length < 4 || status === 'loading') return;
+    setIdea(v);
     setStatus('loading');
     setErr('');
     setSaved(false);
@@ -150,7 +158,7 @@ export default function ChannelDemo() {
       const res = await fetch('/api/demo/channel', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ idea }),
+        body: JSON.stringify({ idea: v }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed');
@@ -160,6 +168,10 @@ export default function ChannelDemo() {
       setErr(e instanceof Error ? e.message : 'Failed');
       setStatus('error');
     }
+  }
+  function generate(e: React.FormEvent) {
+    e.preventDefault();
+    run(idea);
   }
 
   return (
@@ -182,6 +194,20 @@ export default function ChannelDemo() {
         </div>
         {status === 'error' && <p className="mt-2 px-1 text-sm text-rose-400">{err}</p>}
         <p className="mt-2 px-1 text-xs text-slate-500">Free preview — generates your channel&apos;s look + a sample frame in seconds.</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <span className="px-1 py-1 text-xs text-slate-600">Try:</span>
+          {EXAMPLE_IDEAS.map((ex) => (
+            <button
+              key={ex}
+              type="button"
+              onClick={() => run(ex)}
+              disabled={status === 'loading'}
+              className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-400 transition hover:border-quill-500 hover:text-white disabled:opacity-50"
+            >
+              {ex}
+            </button>
+          ))}
+        </div>
       </form>
 
       {status === 'loading' && (
