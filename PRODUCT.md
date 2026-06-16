@@ -2,7 +2,7 @@
 
 > Read this FIRST for the product/website/cloud side. `CLAUDE.md` is the deep log of the video
 > ENGINE (pipeline + renderer) and its session history; `GROWTH_ENGINE.md` is the content strategy.
-> Last updated: 2026-06-14 (end of session 9 — productization).
+> Last updated: 2026-06-16 (overnight engine + website hardening — see "Overnight update" before §7).
 
 ---
 
@@ -126,6 +126,27 @@ healthy on Render, Groq transcription key set).
 website's local server may be stale across restarts — prod (Vercel) is the source of truth. The
 render worker materializes user channels from Supabase to disk each job (ephemeral FS — fine since
 the MP4 is uploaded to Storage).
+
+---
+
+## Overnight update — 2026-06-16 (engine + website hardening)
+
+**Engine (committed):** root-caused + fixed an OOM cascade in the local render queue — a 20-core box
+defaulted to **19 render workers** and exhausted RAM, so renders died (`exit 1` / Windows
+`0xC0000142`) and the queue burned through the rest in seconds. Fixes: `RENDER_WORKERS=1` in local
+`.env` (single-process; reliable when free RAM is low); a real `pauseUntil` cooldown in
+`pipeline/src/server.ts` (the `setInterval` drain was bypassing the per-job cooldown — now 90s after a
+failure); and a **memory-aware default worker cap** in `renderer/src/index.ts`
+(`min(cores-1, freeRAM/1.2GB)`, `RENDER_WORKERS` still overrides). **This memory-aware cap also
+protects the cloud render worker** (§6.1): on a small Render instance it will no longer over-spawn and
+OOM — worth keeping in mind alongside the plan upgrade. Also improved SVG asset legibility (one iconic,
+read-at-a-glance subject) in `pipeline/src/prompts/svgAssetSystemPrompt.ts`.
+
+**Website (COMMITTED LOCALLY — NOT pushed; review, then push to deploy):**
+- Dashboard **auto-refresh while videos render** (`components/AutoRefresh.tsx`) — the §6 nice-to-have;
+  re-fetches every 6s only while a video is pending, with a live pending indicator.
+- **One-click example-idea chips** on the demo (`components/ChannelDemo.tsx`) to lower friction.
+- Verify with `cd website && npm run build`, then `git push` to auto-deploy (Vercel).
 
 ---
 
