@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import GenerateVideo from '@/components/GenerateVideo';
 import WatchButton from '@/components/WatchButton';
+import AutoRefresh from '@/components/AutoRefresh';
 
 export const metadata = { title: 'Your studio — Inkwell' };
 
@@ -27,6 +28,7 @@ export default async function AppPage() {
     .select('id,title,topic,status,error,created_at')
     .order('created_at', { ascending: false });
   const vids = (videos ?? []) as { id: string; title: string | null; topic: string | null; status: string; error: string | null; created_at: string }[];
+  const hasPending = vids.some((v) => v.status === 'queued' || v.status === 'rendering');
 
   return (
     <main>
@@ -92,24 +94,42 @@ export default async function AppPage() {
 
         {vids.length > 0 && (
           <div className="mt-8 card p-6">
-            <h2 className="text-lg font-semibold text-white">Your videos</h2>
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-white">Your videos</h2>
+              {hasPending && (
+                <span className="flex items-center gap-2 text-xs text-slate-400">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-quill-500" />
+                  Updating while rendering…
+                </span>
+              )}
+            </div>
             <div className="mt-4 divide-y divide-white/5">
-              {vids.map((v) => (
-                <div key={v.id} className="flex items-center justify-between gap-3 py-3">
-                  <div className="min-w-0">
-                    <div className="truncate font-medium text-white">{v.topic || v.title || 'Untitled'}</div>
-                    <div className="text-sm capitalize text-slate-500">{v.status}{v.error ? ` — ${v.error}` : ''}</div>
+              {vids.map((v) => {
+                const pending = v.status === 'queued' || v.status === 'rendering';
+                const failed = v.status === 'failed';
+                return (
+                  <div key={v.id} className="flex items-center justify-between gap-3 py-3">
+                    <div className="min-w-0">
+                      <div className="truncate font-medium text-white">{v.topic || v.title || 'Untitled'}</div>
+                      <div className={`text-sm capitalize ${failed ? 'text-rose-400' : 'text-slate-500'}`}>
+                        {v.status}{v.error ? ` — ${v.error}` : ''}
+                      </div>
+                    </div>
+                    {v.status === 'ready' ? (
+                      <WatchButton videoId={v.id} />
+                    ) : (
+                      <span className={`flex items-center gap-2 rounded-md border px-2 py-1 text-xs capitalize ${failed ? 'border-rose-500/30 text-rose-400' : 'border-white/10 text-slate-400'}`}>
+                        {pending && <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-quill-500" />}
+                        {v.status}
+                      </span>
+                    )}
                   </div>
-                  {v.status === 'ready' ? (
-                    <WatchButton videoId={v.id} />
-                  ) : (
-                    <span className="rounded-md border border-white/10 px-2 py-1 text-xs capitalize text-slate-400">{v.status}</span>
-                  )}
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
+        <AutoRefresh active={hasPending} />
 
         <div className="mt-8 card p-6">
           <h2 className="text-lg font-semibold text-white">Coming to your studio</h2>

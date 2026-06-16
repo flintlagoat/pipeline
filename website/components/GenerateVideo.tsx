@@ -25,7 +25,7 @@ export default function GenerateVideo({ channels }: { channels: { id: string; ti
       setTopic('');
       setMsg(
         data.configured
-          ? 'Queued — your video is rendering. It will appear below in a few minutes (refresh to update).'
+          ? 'Queued — your video is rendering. It will update below automatically as it finishes.'
           : 'Queued. The render worker isn’t connected yet; it will start once configured.'
       );
       router.refresh();
