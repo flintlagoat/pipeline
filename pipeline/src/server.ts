@@ -147,6 +147,10 @@ function loadQueue(): QueueItem[] {
 
 let queue: QueueItem[] = loadQueue();
 let activeKey: string | null = null;
+// The queue drain timer (and any manual trigger) won't start a new render before this time. Used as
+// a cooldown so the OS fully reclaims memory/handles between renders — back-to-back renders on a
+// RAM-constrained box can wedge it so badly the next process can't even spawn (Windows 0xC0000142).
+let pauseUntil = 0;
 
 function saveQueue(): void {
   try {
@@ -214,18 +218,16 @@ function beginRun(item: QueueItem): void {
 
     saveQueue();
     broadcastQueue();
-    // Cooldown before the next job: a render saturates every core, so give the OS a moment to
-    // reclaim memory/handles between jobs. If a job failed FAST (e.g. the machine was wedged and the
-    // process couldn't even spawn — Windows 0xC0000142), back off much longer so a transient
-    // resource crunch can't blast through and fail the whole queue in seconds.
-    const ranMs = item.startedAt ? Date.now() - new Date(item.startedAt).getTime() : 0;
-    const cooldownMs = code !== 0 && ranMs < 20000 ? 60000 : 8000;
-    setTimeout(tryStartNext, cooldownMs);
+    // Cooldown before the next render so the OS fully reclaims memory between jobs. A FAILURE almost
+    // always means resource pressure here, so back off much longer to let the machine recover before
+    // we try to spawn anything again. The drain timer below honors `pauseUntil`.
+    pauseUntil = Date.now() + (code === 0 ? 10000 : 90000);
   });
 }
 
 function tryStartNext(): void {
   if (activeKey) return;
+  if (Date.now() < pauseUntil) return; // honor the inter-render cooldown
   const now = Date.now();
   const due = queue
     .filter((it) => it.status === 'waiting' && (it.runAt === null || new Date(it.runAt).getTime() <= now))
