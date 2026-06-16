@@ -73,10 +73,19 @@ export async function renderVideo(
   const envWorkers = process.env.RENDER_WORKERS ? parseInt(process.env.RENDER_WORKERS, 10) : undefined;
   const MIN_FRAMES_PER_WORKER = draft ? 120 : 240;
   const coreCap = Math.max(1, os.cpus().length - 1);
-  let nWorkers = options.workers ?? (envWorkers && envWorkers > 0 ? envWorkers : coreCap);
+  // Cap default workers by FREE RAM too: each 1080p worker peaks ~1.2GB, and over-spawning on a box
+  // with many cores but little free memory OOMs the render — and can wedge the machine so badly the
+  // next process can't even spawn (Windows 0xC0000142). RENDER_WORKERS / opts still override this.
+  const PER_WORKER_GB = 1.2, RESERVE_GB = 1.0;
+  const memCap = Math.max(1, Math.floor((os.freemem() / 1024 ** 3 - RESERVE_GB) / PER_WORKER_GB));
+  const autoCap = Math.min(coreCap, memCap);
+  let nWorkers = options.workers ?? (envWorkers && envWorkers > 0 ? envWorkers : autoCap);
   // Don't spin up more workers than there's meaningful work for (unless explicitly forced).
   if (options.workers === undefined && (!envWorkers || envWorkers <= 0)) {
     nWorkers = Math.min(nWorkers, Math.max(1, Math.ceil(totalFrames / MIN_FRAMES_PER_WORKER)));
+    if (memCap < coreCap) {
+      console.log(`  workers limited to ${nWorkers} by free RAM (~${(os.freemem() / 1024 ** 3).toFixed(1)}GB free; ${coreCap} cores available)`);
+    }
   }
   nWorkers = Math.max(1, Math.min(nWorkers, totalFrames));
 
