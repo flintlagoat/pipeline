@@ -398,16 +398,27 @@ function Footer() {
 
 export default function Page() {
   return (
-    <main>
+    <>
+      {/* Skip link — keyboard users jump past the nav straight to content. */}
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-semibold focus:text-ink-950"
+      >
+        Skip to content
+      </a>
       <Nav />
-      <Hero />
-      <Problem />
-      <Difference />
-      <How />
-      <Features />
-      <Pricing />
-      <WaitlistCTA />
+      {/* Page-level landmarks: <header> (Nav) and <footer> are now siblings of <main>, not nested
+          inside it, so screen readers get one banner / one main / one contentinfo. */}
+      <main id="content">
+        <Hero />
+        <Problem />
+        <Difference />
+        <How />
+        <Features />
+        <Pricing />
+        <WaitlistCTA />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
